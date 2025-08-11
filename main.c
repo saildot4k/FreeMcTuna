@@ -477,14 +477,6 @@ DeleteFolder(temp_path);
 	mcSync(0, NULL, &ret);
 	ret = mcMkDir(mcport, 0, "BOOT");
 	mcSync(0, NULL, &ret);
-	ret = mcMkDir(mcport, 0, "FMCBD-1.966");
-	mcSync(0, NULL, &ret);
-	ret = mcMkDir(mcport, 0, "FMCBD-1.953");
-	mcSync(0, NULL, &ret);
-	ret = mcMkDir(mcport, 0, "FMCBD-1.8C");
-	mcSync(0, NULL, &ret);
-	ret = mcMkDir(mcport, 0, "SYS_FMCB-CFG");
-	mcSync(0, NULL, &ret);
 	ret = mcMkDir(mcport, 0, "APPS");
 	mcSync(0, NULL, &ret);
 	ret = mcMkDir(mcport, 0, "POWEROFF");
@@ -534,11 +526,6 @@ DeleteFolder(temp_path);
     {
         return 6;
     }
-    retorno = write_embed(&fmcbd_elf, size_fmcbd_elf, "FMCBD-1.966", "FMCBD-1.966.ELF", mcport);
-    if (retorno < 0)
-    {
-        return 6;
-    }
     retorno = write_embed(&copy_icn, size_copy_icn, "BOOT", "copy.icn", mcport);
     if (retorno < 0)
     {
@@ -559,17 +546,32 @@ DeleteFolder(temp_path);
     {
         return 6;
     }
+    retorno = write_embed(&esr_elf, size_esr_elf, "BOOT", "GH2MANGR.ELF", mcport);
+    if (retorno < 0)
+    {
+        return 6;
+    }
+    retorno = write_embed(&esr_elf, size_esr_elf, "BOOT", "osdmenu.elf", mcport);
+    if (retorno < 0)
+    {
+        return 6;
+    }
+    retorno = write_embed(&esr_elf, size_esr_elf, "BOOT", "WHATISBOOTX.TXT", mcport);
+    if (retorno < 0)
+    {
+        return 6;
+    }
+    retorno = write_embed(&esr_elf, size_esr_elf, "BOOT", "APPINFO.PBT", mcport);
+    if (retorno < 0)
+    {
+        return 6;
+    }
     retorno = write_embed(&config_ini, size_config_ini, "BOOT", "CONFIG.INI", mcport);
     if (retorno < 0)
     {
         return 6;
     }
     // Adding sysconf items
-    retorno = write_embed(&sysconffmcb_cfg_elf, size_sysconffmcb_cfg_elf, "SYS_FMCB-CFG", "FMCB-CFG.ELF", mcport);
-    if (retorno < 0)
-    {
-        return 6;
-    }
     retorno = write_embed(&sysconffreemcb_cnf, size_sysconffreemcb_cnf, "SYS-CONF", "FREEMCB.CNF", mcport);
     if (retorno < 0)
     {
@@ -586,6 +588,11 @@ DeleteFolder(temp_path);
         return 6;
     }
     retorno = write_embed(&sysconfps2bbl_ini, size_sysconfps2bbl_ini, "SYS-CONF", "PS2BBL.INI", mcport);
+    if (retorno < 0)
+    {
+        return 6;
+    }
+    retorno = write_embed(&sysconfps2bbl_ini, size_sysconfps2bbl_ini, "SYS-CONF", "PSXBBL.INI", mcport);
     if (retorno < 0)
     {
         return 6;
@@ -625,52 +632,21 @@ DeleteFolder(temp_path);
     {
         return 6;
     }
-    retorno = write_embed(&ldrfmcbdicon_sys, size_ldrfmcbdicon_sys, "FMCBD-1.966", "icon.sys", mcport);
+	retorno = write_embed(&sysconfsysconf_icn, size_sysconfsysconf_icn, "SYS-CONF", "APPINFO.PBT", mcport);
     if (retorno < 0)
     {
         return 6;
     }
-    retorno = write_embed(&ldrfmcbdfmcb_icn, size_ldrfmcbdfmcb_icn, "FMCBD-1.966", "FMCB.icn", mcport);
+	retorno = write_embed(&sysconfsysconf_icn, size_sysconfsysconf_icn, "SYS-CONF", "OSDMENU.CNF", mcport);
     if (retorno < 0)
     {
         return 6;
     }
-    retorno = write_embed(&ldrfmcbddel_icn, size_ldrfmcbddel_icn, "FMCBD-1.966", "del.icn", mcport);
-    if (retorno < 0)
-    {
-        return 6;
-    }
-    retorno = write_embed(&ldrfmcbdcopy_icn, size_ldrfmcbdcopy_icn, "FMCBD-1.966", "copy.icn", mcport);
-    if (retorno < 0)
-    {
-        return 6;
-    }
-    retorno = write_embed(&fmcbcfgcopy_icn, size_fmcbcfgcopy_icn, "SYS_FMCB-CFG", "copy.icn", mcport);
-    if (retorno < 0)
-    {
-        return 6;
-    }
-    retorno = write_embed(&fmcbcfgdel_icn, size_fmcbcfgdel_icn, "SYS_FMCB-CFG", "del.icn", mcport);
-    if (retorno < 0)
-    {
-        return 6;
-    }
-    retorno = write_embed(&fmcbcfgicon_sys, size_fmcbcfgicon_sys, "SYS_FMCB-CFG", "icon.sys", mcport);
-    if (retorno < 0)
-    {
-        return 6;
-    }
-    retorno = write_embed(&title_cfg, size_title_cfg, "SYS_FMCB-CFG", "title.cfg", mcport);
-    if (retorno < 0)
-    {
-        return 6;
-    }
-    retorno = write_embed(&fmcbcfglist_icn, size_fmcbcfglist_icn, "SYS_FMCB-CFG", "list.icn", mcport);
-    if (retorno < 0)
-    {
-        return 6;
-    }
-        retorno = write_embed(&restartdel_icn, size_restartdel_icn, "RESTART", "del.icn", mcport);
+
+
+	// Adding restart items
+	
+            retorno = write_embed(&restartdel_icn, size_restartdel_icn, "RESTART", "del.icn", mcport);
     if (retorno < 0)
     {
         return 6;
@@ -690,6 +666,7 @@ DeleteFolder(temp_path);
     {
         return 6;
     }
+	// Adding poweroff items
     retorno = write_embed(&powerdel_icn, size_powerdel_icn, "POWEROFF", "del.icn", mcport);
     if (retorno < 0)
     {
@@ -710,62 +687,7 @@ DeleteFolder(temp_path);
     {
         return 6;
     }
-    retorno = write_embed(&fmcbdninesix_elf, size_fmcbdninesix_elf, "FMCBD-1.966", "FMCBD-1.966.ELF", mcport);
-    if (retorno < 0)
-    {
-        return 6;
-    }
-    retorno = write_embed(&fmcbdninefivecopy_icn, size_fmcbdninefivecopy_icn, "FMCBD-1.953", "copy.icn", mcport);
-    if (retorno < 0)
-    {
-        return 6;
-    }
-    retorno = write_embed(&fmcbdninefivedel_icn, size_fmcbdninefivedel_icn, "FMCBD-1.953", "del.icn", mcport);
-    if (retorno < 0)
-    {
-        return 6;
-    }
-    retorno = write_embed(&fmcbdninefive_icn, size_fmcbdninefive_icn, "FMCBD-1.953", "FMCB.icn", mcport);
-    if (retorno < 0)
-    {
-        return 6;
-    }
-    retorno = write_embed(&fmcbdninefive_elf, size_fmcbdninefive_elf, "FMCBD-1.953", "FMCBD-1.953.ELF", mcport);
-    if (retorno < 0)
-    {
-        return 6;
-    }
-    retorno = write_embed(&fmcbdninefiveicon_sys, size_fmcbdninefiveicon_sys, "FMCBD-1.953", "icon.sys", mcport);
-    if (retorno < 0)
-    {
-        return 6;
-    }
-    retorno = write_embed(&fmcbdeightcopy_icn, size_fmcbdeightcopy_icn, "FMCBD-1.8C", "copy.icn", mcport);
-    if (retorno < 0)
-    {
-        return 6;
-    }
-    retorno = write_embed(&fmcbdeightdel_icn, size_fmcbdeightdel_icn, "FMCBD-1.8C", "del.icn", mcport);
-    if (retorno < 0)
-    {
-        return 6;
-    }
-    retorno = write_embed(&fmcbdeight_icn, size_fmcbdeight_icn, "FMCBD-1.8C", "FMCB.icn", mcport);
-    if (retorno < 0)
-    {
-        return 6;
-    }
-    retorno = write_embed(&fmcbdeight_elf, size_fmcbdeight_elf, "FMCBD-1.8C", "FMCBD-1.8C.ELF", mcport);
-    if (retorno < 0)
-    {
-        return 6;
-    }
-    retorno = write_embed(&fmcbdeighticon_sys, size_fmcbdeighticon_sys, "FMCBD-1.8C", "icon.sys", mcport);
-    if (retorno < 0)
-    {
-        return 6;
-    }
-    retorno = write_embed(&apps_icn, size_apps_icn, "APPS", "APPS.icn", mcport);
+        retorno = write_embed(&apps_icn, size_apps_icn, "APPS", "APPS.icn", mcport);
     if (retorno < 0)
     {
         return 6;

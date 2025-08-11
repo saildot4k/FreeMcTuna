@@ -1,0 +1,7 @@
+WHATISBOOTX?
+
+BOOT.ELF = PS2BBL MMCE unsigned no extra devices
+	NOTE: Edit SYS-CONF/PS2BBL.INI as needed. 
+
+BOOT2.ELF = WLE ISR EXFAT
+
