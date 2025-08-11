@@ -71,9 +71,6 @@ extern int size_opentuna_fat170;
 extern u8 opentuna_sys[];
 extern int size_opentuna_sys;
 //----------------------------------------//
-extern u8 fmcbd_elf[];
-extern int size_fmcbd_elf;
-//----------------------------------------//
 extern u8 boot2_elf[];
 extern int size_boot2_elf;
 //----------------------------------------//
@@ -97,12 +94,6 @@ extern int size_boot_elf;
 //----------------------------------------//
 extern u8 esr_elf[];
 extern int size_esr_elf;
-//----------------------------------------//
-extern u8 sysconffmcb_cfg_elf[];
-extern int size_sysconffmcb_cfg_elf;
-//----------------------------------------//
-extern u8 sysconffreemcb_cnf[];
-extern int size_sysconffreemcb_cnf;
 //----------------------------------------//
 extern u8 sysconfipconfig_dat[];
 extern int size_sysconfipconfig_dat;
@@ -137,30 +128,6 @@ extern int size_sysconfsysconf_icn;
 extern u8 title_cfg[];
 extern int size_title_cfg;
 //----------------------------------------//
-extern u8 ldrfmcbdicon_sys[];
-extern int size_ldrfmcbdicon_sys;
-//----------------------------------------//
-extern u8 ldrfmcbdfmcb_icn[];
-extern int size_ldrfmcbdfmcb_icn;
-//----------------------------------------//
-extern u8 ldrfmcbddel_icn[];
-extern int size_ldrfmcbddel_icn;
-//----------------------------------------//
-extern u8 ldrfmcbdcopy_icn[];
-extern int size_ldrfmcbdcopy_icn;
-//----------------------------------------//
-extern u8 fmcbcfgcopy_icn[];
-extern int size_fmcbcfgcopy_icn;
-//----------------------------------------//
-extern u8 fmcbcfgdel_icn[];
-extern int size_fmcbcfgdel_icn;
-//----------------------------------------//
-extern u8 fmcbcfgicon_sys[];
-extern int size_fmcbcfgicon_sys;
-//----------------------------------------//
-extern u8 fmcbcfglist_icn[];
-extern int size_fmcbcfglist_icn;
-//----------------------------------------//
 extern u8 restartdel_icn[];
 extern int size_restartdel_icn;
 //----------------------------------------//
@@ -184,51 +151,6 @@ extern int size_powerlist_icn;
 //----------------------------------------//
 extern u8 poweroff_elf[];
 extern int size_poweroff_elf;
-//----------------------------------------//
-extern u8 fmcbdninesixcopy_icn[];
-extern int size_fmcbdninesixcopy_icn;
-//----------------------------------------//
-extern u8 fmcbdninesixdel_icn[];
-extern int size_fmcbdninesixdel_icn;
-//----------------------------------------//
-extern u8 fmcbdninesix_icn[];
-extern int size_fmcbdninesix_icn;
-//----------------------------------------//
-extern u8 fmcbdninesix_elf[];
-extern int size_fmcbdninesix_elf;
-//----------------------------------------//
-extern u8 fmcbdninesixicon_sys[];
-extern int size_fmcbdninesixicon_sys;
-//----------------------------------------//
-extern u8 fmcbdninefivecopy_icn[];
-extern int size_fmcbdninefivecopy_icn;
-//----------------------------------------//
-extern u8 fmcbdninefivedel_icn[];
-extern int size_fmcbdninefivedel_icn;
-//----------------------------------------//
-extern u8 fmcbdninefive_icn[];
-extern int size_fmcbdninefive_icn;
-//----------------------------------------//
-extern u8 fmcbdninefive_elf[];
-extern int size_fmcbdninefive_elf;
-//----------------------------------------//
-extern u8 fmcbdninefiveicon_sys[];
-extern int size_fmcbdninefiveicon_sys;
-//----------------------------------------//
-extern u8 fmcbdeightcopy_icn[];
-extern int size_fmcbdeightcopy_icn;
-//----------------------------------------//
-extern u8 fmcbdeightdel_icn[];
-extern int size_fmcbdeightdel_icn;
-//----------------------------------------//
-extern u8 fmcbdeight_icn[];
-extern int size_fmcbdeight_icn;
-//----------------------------------------//
-extern u8 fmcbdeight_elf[];
-extern int size_fmcbdeight_elf;
-//----------------------------------------//
-extern u8 fmcbdeighticon_sys[];
-extern int size_fmcbdeighticon_sys;
 //----------------------------------------//
 extern u8 apps_icn[];
 extern int size_apps_icn;
