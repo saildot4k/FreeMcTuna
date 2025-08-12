@@ -81,7 +81,7 @@ boot_icn.s:
 appinfo_pbt.s:
 	bin2s INSTALL/BOOT/APPINFO.PBT appinfo_pbt.s appinfo_pbt
 
-gh2manger_elf.s:
+gh2mangr_elf.s:
 	bin2s INSTALL/BOOT/GH2MANGR.ELF gh2mangr_elf.s gh2mangr_elf
 
 whatisbootx_txt.s:
