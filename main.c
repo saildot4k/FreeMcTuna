@@ -106,7 +106,7 @@ extern u8 whatisbootx_txt[];
 extern int size_whatisbootx_txt;
 //----------------------------------------//
 ///SYS-CONF FOLDER
-extern u8 size_bootappinfo_pbt[];
+extern u8 size_sysconfappinfo_pbt[];
 extern int size_sysconfappinfo_pbt;
 //----------------------------------------//
 extern u8 sysconfcopy_icn[];
