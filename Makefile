@@ -3,22 +3,23 @@ EE_BIN_PACKED = FMCT-INSTALLER.ELF
 EE_BIN_STRIPPED = stripped.elf
 EE_OBJS = main.o gs.o pad.o  gs_asm.o ps2_asm.o dma_asm.o
 EE_OBJS += restartdel_icn.o restarticon_sys.o restartlist_icn.o restart_elf.o powerdel_icn.o powericon_sys.o powerlist_icn.o poweroff_elf.o apps_icn.o appsdel_icn.o appsicon_sys.o  \
-	title_cfg.o esr_elf.o boot2_elf.o boot_elf.o icon_sys.o copy_icn.o del_icn.o boot_icn.o config_ini.o OpenTuna_sys.o OpenTuna_SLIMS.o OpenTuna_FAT-170.o \
+	esr_elf.o boot2_elf.o boot_elf.o icon_sys.o copy_icn.o del_icn.o boot_icn.o config_ini.o appinfo_pbt.o gh2manger_elf.o whatisbootx_txt.o OpenTuna_sys.o OpenTuna_SLIMS.o OpenTuna_FAT-170.o \
 	OpenTuna_FAT-110-120-150-160.o PADMAN_irx.o SIO2MAN_irx.o MCMAN_irx.o MCSERV_irx.o \
 	sysconffreemcb_cnf.o sysconfipconfig_dat.o \
 	sysconflaunchelf_cnf.o sysconfps2bbl_ini.o sysconfusbd_irx.o sysconfusbhdfsd_irx.o sysconfcopy_icn.o sysconfdel_icn.o sysconfendvdpl_irx.o sysconficon_sys.o \
-	sysconfsysconf_icn.o
+	sysconfsysconf_icn.o sysconfappinfo_pbt.o sysconfpsxbbl_ini.o sysconfosdmenu_cnf.o
 EE_SRC = restartdel_icn.s restarticon_sys.s restartlist_icn.s restart_elf.s powerdel_icn.s powericon_sys.s powerlist_icn.s poweroff_elf.s \
-	apps_icn.s appsdel_icn.s appsicon_sys.s title_cfg.s esr_elf.s boot2_elf.s boot_elf.s icon_sys.s copy_icn.s del_icn.s \
-	boot_icn.s config_ini.s OpenTuna_sys.s OpenTuna_SLIMS.s OpenTuna_FAT-170.s OpenTuna_FAT-110-120-150-160.s \
+	apps_icn.s appsdel_icn.s appsicon_sys.s esr_elf.s boot2_elf.s boot_elf.s icon_sys.s copy_icn.s del_icn.s \
+	boot_icn.s config_ini.s appinfo_pbt.s gh2manger_elf.s whatisbootx_txt.s OpenTuna_sys.s OpenTuna_SLIMS.s OpenTuna_FAT-170.s OpenTuna_FAT-110-120-150-160.s \
 	PADMAN_irx.c SIO2MAN_irx.c MCMAN_irx.c MCSERV_irx.c \
 	sysconffreemcb_cnf.s sysconfipconfig_dat.s sysconflaunchelf_cnf.s sysconfps2bbl_ini.s \
-	sysconfusbd_irx.s sysconfusbhdfsd_irx.s sysconfcopy_icn.s sysconfdel_icn.s sysconfendvdpl_irx.s sysconficon_sys.s sysconfsysconf_icn.s
+	sysconfusbd_irx.s sysconfusbhdfsd_irx.s sysconfcopy_icn.s sysconfdel_icn.s sysconfendvdpl_irx.s sysconficon_sys.s sysconfsysconf_icn.s sysconfappinfo_pbt.s sysconfpsxbbl_ini.s sysconfosdmenu_cnf.s
 	   
 EE_LIBS = -ldebug -lcdvd -lpatches -lpadx -lmc
 
 all:
 	$(MAKE) $(EE_BIN_PACKED)
+# RESTART assets
 restartdel_icn.s:
 	bin2s INSTALL/RESTART/DEL.ICN restartdel_icn.s restartdel_icn
 
@@ -31,6 +32,7 @@ restartlist_icn.s:
 restart_elf.s:
 	bin2s INSTALL/RESTART/RESTART.ELF restart_elf.s restart_elf
 
+# POWEROFF assets
 powerdel_icn.s:
 	bin2s INSTALL/POWEROFF/DEL.ICN powerdel_icn.s powerdel_icn
 
@@ -43,6 +45,7 @@ powerlist_icn.s:
 poweroff_elf.s:
 	bin2s INSTALL/POWEROFF/POWEROFF.ELF poweroff_elf.s poweroff_elf
 
+#APPS assets
 apps_icn.s:
 	bin2s INSTALL/APPS/APPS.ICN apps_icn.s apps_icn
 
@@ -52,9 +55,9 @@ appsdel_icn.s:
 appsicon_sys.s:
 	bin2s INSTALL/APPS/ICON.SYS appsicon_sys.s appsicon_sys
 
+# BOOT assets
 esr_elf.s:
 	bin2s INSTALL/BOOT/ESR.ELF esr_elf.s esr_elf
-
 
 boot2_elf.s:
 	bin2s INSTALL/BOOT/BOOT2.ELF boot2_elf.s boot2_elf
@@ -76,7 +79,19 @@ boot_icn.s:
 
 config_ini.s:
 	bin2s INSTALL/BOOT/CONFIG.INI config_ini.s config_ini
+# BOOT Testing additions...
+appinfo_pbt.s:
+	bin2s INSTALL/BOOT/APPINFO.PBT appinfo_pbt.s appinfo_pbt
 
+gh2manger_elf.s:
+	bin2s INSTALL/BOOT/GH2MANGER.ELF gh2manger_elf.s gh2manger_elf
+
+whatisbootx_txt.s:
+	bin2s INSTALL/BOOT/WHATISBOOTX.TXT whatisbootx_txt.s whatisbootx_txt
+
+
+
+# SYS-CONF assets
 sysconffreemcb_cnf.s:
 	bin2s INSTALL/SYS-CONF/FREEMCB.CNF sysconffreemcb_cnf.s sysconffreemcb_cnf
 
@@ -109,7 +124,17 @@ sysconficon_sys.s:
 
 sysconfsysconf_icn.s:
 	bin2s INSTALL/SYS-CONF/SYSCONF.ICN sysconfsysconf_icn.s sysconfsysconf_icn
+# SYS-CONF testing addtions
+sysconfappinfo_pbt.s:
+	bin2s INSTALL/SYS-CONF/APPINFO.PBT sysconfappinfo_pbt.s sysconfappinfo_pbt
 
+sysconfpsxbbl_ini.s:
+	bin2s INSTALL/SYS-CONF/PSXBBL.INI sysconfpsxbbl_ini.s sysconfpsxbbl_ini
+
+sysconfosdmenu_cnf.s:
+	bin2s INSTALL/SYS-CONF/OSDMENU.CNF sysconfosdmenu_cnf.s sysconfosdmenu_cnf
+
+# OPENTUNA assets
 OpenTuna_sys.s:
 	bin2s INSTALL/OPENTUNA/icon.sys OpenTuna_sys.s opentuna_sys
 
@@ -122,6 +147,7 @@ OpenTuna_FAT-110-120-150-160.s:
 OpenTuna_FAT-170.s:
 	bin2s INSTALL/OPENTUNA/OpenTuna_FAT-170.bin OpenTuna_FAT-170.s opentuna_fat170
 
+# OTHER
 SIO2MAN_irx.c: $(PS2SDK)/iop/irx/freesio2.irx
 	bin2c $(PS2SDK)/iop/irx/freesio2.irx SIO2MAN_irx.c SIO2MAN_irx
 
