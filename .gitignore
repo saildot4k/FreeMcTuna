@@ -33,6 +33,8 @@ DETAILED_CHANGELOG
 !.clang-format
 !.clang-format-ignore
 !.mailmap
+/INSTALL/*
+/MANUAL INSTALL/*
 
 #
 # Generated source files
