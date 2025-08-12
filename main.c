@@ -481,7 +481,7 @@ DeleteFolder(temp_path);
     {
         return 6;
     }
-    retorno = write_embed(&boot_icn, size_boot_icn, "BOOT", "BOOT.icn", mcport);
+    retorno = write_embed(&boot_icn, size_boot_icn, "BOOT", "boot.icn", mcport);
     if (retorno < 0)
     {
         return 6;

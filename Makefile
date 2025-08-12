@@ -69,13 +69,13 @@ icon_sys.s:
 	bin2s INSTALL/BOOT/ICON.SYS icon_sys.s icon_sys
 
 copy_icn.s:
-	bin2s INSTALL/BOOT/COPY.ICN copy_icn.s copy_icn
+	bin2s INSTALL/BOOT/copy.icn copy_icn.s copy_icn
 
 del_icn.s:
-	bin2s INSTALL/BOOT/DEL.ICN del_icn.s del_icn
+	bin2s INSTALL/BOOT/del.icn del_icn.s del_icn
 
 boot_icn.s:
-	bin2s INSTALL/BOOT/BOOT.icn boot_icn.s boot_icn
+	bin2s INSTALL/BOOT/boot.icn boot_icn.s boot_icn
 
 # BOOT Testing additions...
 appinfo_pbt.s:
