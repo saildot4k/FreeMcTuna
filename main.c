@@ -71,14 +71,18 @@ extern int size_opentuna_fat170;
 extern u8 opentuna_sys[];
 extern int size_opentuna_sys;
 //----------------------------------------//
+///BOOT FOLDER
+extern u8 appinfo_pbt[];
+extern int size_appinfo_pbt;
+//----------------------------------------//
+extern u8 boot_elf[];
+extern int size_boot_elf;
+//----------------------------------------//
 extern u8 boot2_elf[];
 extern int size_boot2_elf;
 //----------------------------------------//
 extern u8 boot_icn[];
 extern int size_boot_icn;
-//----------------------------------------//
-extern u8 icon_sys[];
-extern int size_icon_sys;
 //----------------------------------------//
 extern u8 copy_icn[];
 extern int size_copy_icn;
@@ -86,29 +90,24 @@ extern int size_copy_icn;
 extern u8 del_icn[];
 extern int size_del_icn;
 //----------------------------------------//
-extern u8 config_ini[];
-extern int size_config_ini;
-//----------------------------------------//
-extern u8 boot_elf[];
-extern int size_boot_elf;
+extern u8 icon_sys[];
+extern int size_icon_sys;
 //----------------------------------------//
 extern u8 esr_elf[];
 extern int size_esr_elf;
 //----------------------------------------//
-extern u8 sysconfipconfig_dat[];
-extern int size_sysconfipconfig_dat;
+extern u8 gh2manger_elf[];
+extern int size_gh2mangr_elf;
 //----------------------------------------//
-extern u8 sysconflaunchelf_cnf[];
-extern int size_sysconflaunchelf_cnf;
+extern u8 osdmenu_elf[];
+extern int size_osdmenu_elf;
 //----------------------------------------//
-extern u8 sysconfps2bbl_ini[];
-extern int size_sysconfps2bbl_ini;
+extern u8 whatisbootx_txt[];
+extern int size_whatisbootx_txt;
 //----------------------------------------//
-extern u8 sysconfusbd_irx[];
-extern int size_sysconfusbd_irx;
-//----------------------------------------//
-extern u8 sysconfusbhdfsd_irx[];
-extern int size_sysconfusbhdfsd_irx;
+///SYS-CONF FOLDER
+extern u8 size_bootappinfo_pbt[];
+extern int size_sysconfappinfo_pbt;
 //----------------------------------------//
 extern u8 sysconfcopy_icn[];
 extern int size_sysconfcopy_icn;
@@ -119,15 +118,37 @@ extern int size_sysconfdel_icn;
 extern u8 sysconfendvdpl_irx[];
 extern int size_sysconfendvdpl_irx;
 //----------------------------------------//
+extern u8 sysconffreemcb_cnf[];
+extern int size_sysconffreemcb_cnf;
+//----------------------------------------//
 extern u8 sysconficon_sys[];
 extern int size_sysconficon_sys;
+//----------------------------------------//
+extern u8 sysconfipconfig_dat[];
+extern int size_sysconfipconfig_dat;
+//----------------------------------------//
+extern u8 sysconflaunchelf_cnf[];
+extern int size_sysconflaunchelf_cnf;
+//----------------------------------------//
+extern u8 sysconfosdmenu_cnf[];
+extern int size_sysconfosdmenu_cnf;
+//----------------------------------------//
+extern u8 sysconfps2bbl_ini[];
+extern int size_sysconfps2bbl_ini;
+//----------------------------------------//
+extern u8 sysconfpsxbbl_ini[];
+extern int size_sysconfpsxbbl_ini;
 //----------------------------------------//
 extern u8 sysconfsysconf_icn[];
 extern int size_sysconfsysconf_icn;
 //----------------------------------------//
-extern u8 title_cfg[];
-extern int size_title_cfg;
+extern u8 sysconfusbd_irx[];
+extern int size_sysconfusbd_irx;
 //----------------------------------------//
+extern u8 sysconfusbhdfsd_irx[];
+extern int size_sysconfusbhdfsd_irx;
+//----------------------------------------//
+///RESTART FOLDER
 extern u8 restartdel_icn[];
 extern int size_restartdel_icn;
 //----------------------------------------//
@@ -140,6 +161,7 @@ extern int size_restartlist_icn;
 extern u8 restart_elf[];
 extern int size_restart_elf;
 //----------------------------------------//
+///POWEROFF FOLDER
 extern u8 powerdel_icn[];
 extern int size_powerdel_icn;
 //----------------------------------------//
@@ -152,6 +174,7 @@ extern int size_powerlist_icn;
 extern u8 poweroff_elf[];
 extern int size_poweroff_elf;
 //----------------------------------------//
+///APPS FOLDER
 extern u8 apps_icn[];
 extern int size_apps_icn;
 //----------------------------------------//
@@ -468,27 +491,22 @@ DeleteFolder(temp_path);
     {
         return 6;
     }
-    retorno = write_embed(&esr_elf, size_esr_elf, "BOOT", "GH2MANGR.ELF", mcport);
+    retorno = write_embed(&gh2manger_elf, size_gh2mangr_elf, "BOOT", "GH2MANGR.ELF", mcport);
     if (retorno < 0)
     {
         return 6;
     }
-    retorno = write_embed(&esr_elf, size_esr_elf, "BOOT", "osdmenu.elf", mcport);
+    retorno = write_embed(&osdmenu_elf, size_osdmenu_elf, "BOOT", "osdmenu.elf", mcport);
     if (retorno < 0)
     {
         return 6;
     }
-    retorno = write_embed(&esr_elf, size_esr_elf, "BOOT", "WHATISBOOTX.TXT", mcport);
+    retorno = write_embed(&whatisbootx_txt, size_whatisbootx_txt, "BOOT", "WHATISBOOTX.TXT", mcport);
     if (retorno < 0)
     {
         return 6;
     }
-    retorno = write_embed(&esr_elf, size_esr_elf, "BOOT", "APPINFO.PBT", mcport);
-    if (retorno < 0)
-    {
-        return 6;
-    }
-    retorno = write_embed(&config_ini, size_config_ini, "BOOT", "CONFIG.INI", mcport);
+    retorno = write_embed(&appinfo_pbt, size_appinfo_pbt, "BOOT", "APPINFO.PBT", mcport);
     if (retorno < 0)
     {
         return 6;
@@ -514,7 +532,7 @@ DeleteFolder(temp_path);
     {
         return 6;
     }
-    retorno = write_embed(&sysconfps2bbl_ini, size_sysconfps2bbl_ini, "SYS-CONF", "PSXBBL.INI", mcport);
+    retorno = write_embed(&sysconfpsxbbl_ini, size_sysconfpsxbbl_ini, "SYS-CONF", "PSXBBL.INI", mcport);
     if (retorno < 0)
     {
         return 6;
@@ -554,12 +572,12 @@ DeleteFolder(temp_path);
     {
         return 6;
     }
-	retorno = write_embed(&sysconfsysconf_icn, size_sysconfsysconf_icn, "SYS-CONF", "APPINFO.PBT", mcport);
+	retorno = write_embed(&sysconfappinfo_pbt, size_sysconfappinfo_pbt, "SYS-CONF", "APPINFO.PBT", mcport);
     if (retorno < 0)
     {
         return 6;
     }
-	retorno = write_embed(&sysconfsysconf_icn, size_sysconfsysconf_icn, "SYS-CONF", "OSDMENU.CNF", mcport);
+	retorno = write_embed(&sysconfosdmenu_cnf, size_sysconfosdmenu_cnf, "SYS-CONF", "OSDMENU.CNF", mcport);
     if (retorno < 0)
     {
         return 6;
