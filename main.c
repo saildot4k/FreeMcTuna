@@ -96,9 +96,6 @@ extern int size_icon_sys;
 extern u8 esr_elf[];
 extern int size_esr_elf;
 //----------------------------------------//
-extern u8 gh2mangr_elf[];
-extern int size_gh2mangr_elf;
-//----------------------------------------//
 extern u8 osdmenu_elf[];
 extern int size_osdmenu_elf;
 //----------------------------------------//
@@ -487,11 +484,6 @@ DeleteFolder(temp_path);
         return 6;
     }
     retorno = write_embed(&esr_elf, size_esr_elf, "BOOT", "ESR.ELF", mcport);
-    if (retorno < 0)
-    {
-        return 6;
-    }
-    retorno = write_embed(&gh2mangr_elf, size_gh2mangr_elf, "BOOT", "GH2MANGR.ELF", mcport);
     if (retorno < 0)
     {
         return 6;
