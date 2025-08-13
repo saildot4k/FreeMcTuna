@@ -16,7 +16,7 @@ OSDSYS_cursor_acceleration = 150
 OSDSYS_left_cursor =
 OSDSYS_right_cursor =
 OSDSYS_menu_top_delimiter =
-OSDSYS_menu_bottom_delimiter = ps2homebrewstore.com
+OSDSYS_menu_bottom_delimiter =
 OSDSYS_num_displayed_items = 20
 OSDSYS_Skip_MC = 1
 OSDSYS_Skip_HDD = 1
@@ -37,12 +37,10 @@ path1_OSDSYS_ITEM_1 = cdrom
 arg_OSDSYS_ITEM_1 = -nologo
 # --------------------------------------------------
 # --------------------------------------------------
-name_OSDSYS_ITEM_2 = NHDDL - MMCE & exFAT HDD
+name_OSDSYS_ITEM_2 = NHDDL
 path1_OSDSYS_ITEM_2 = usb:/APPS/nhddl.elf
 path2_OSDSYS_ITEM_2 = mmce?:/APPS/nhddl.elf
 path3_OSDSYS_ITEM_2 = mc?:/APP_NHDDL/nhddl.elf
-arg_OSDSYS_ITEM_2 = -mode=mmce
-arg_OSDSYS_ITEM_2 = -mode=ata
 # --------------------------------------------------
 name_OSDSYS_ITEM_4 = Open PS2 Loader
 path1_OSDSYS_ITEM_4 = usb:/APPS/APP_OPL/OPL.ELF
@@ -51,9 +49,9 @@ path3_OSDSYS_ITEM_4 = mc?:/APP_OPL/OPL.ELF
 # --------------------------------------------------
 # --------------------------------------------------
 name_OSDSYS_ITEM_9 = wLE ISR exFAT USB
-path1_OSDSYS_ITEM_9 = mc?:/APP_WLE-ISR-XF/WLE-ISR-XF.ELF
-path2_OSDSYS_ITEM_9 = mmce?:/APPS/APP_WLE-ISR-XF/WLE-ISR-XF.ELF
-path3_OSDSYS_ITEM_9 = usb:/APPS/APP_WLE-ISR-XF/WLE-ISR-XF.ELF
+path1_OSDSYS_ITEM_9 = mass:/APPS/APP_WLE-ISR-XF/WLE-ISR-XF.ELF
+path2_OSDSYS_ITEM_9 = mc?:/APP_WLE-ISR-XF/WLE-ISR-XF.ELF
+path3_OSDSYS_ITEM_9 = mc?:/BOOT/BOOT2.ELF
 # --------------------------------------------------
 # --------------------------------------------------
 name_OSDSYS_ITEM_249 = Reboot
