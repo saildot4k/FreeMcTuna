@@ -471,7 +471,7 @@ neutrino_modules_fhi_bd_defrag_irx.s:
 	bin2s INSTALL/NEUTRINO/modules/fhi_bd_defrag.irx neutrino_modules_fhi_bd_defrag_irx.s neutrino_modules_fhi_bd_defrag_irx
 
 neutrino_modules_filexio_irx.s:
-	bin2s INSTALL/NEUTRINO/modules/fileXio.irx neutrino_modules_filexio_irx.s neutrino_modules_filexio_irxF
+	bin2s INSTALL/NEUTRINO/modules/fileXio.irx neutrino_modules_filexio_irx.s neutrino_modules_filexio_irx
 
 neutrino_modules_hdlfs_irx.s:
 	bin2s INSTALL/NEUTRINO/modules/hdlfs.irx neutrino_modules_hdlfs_irx.s neutrino_modules_hdlfs_irx
@@ -533,16 +533,16 @@ neutrino_title_cfg.s:
 neutrino_version_txt.s:
 	bin2s INSTALL/NEUTRINO/version.txt neutrino_version_txt.s neutrino_version_txt
 
-opentuna_opentuna_fat_110_120_150_160_bin.s:
+opentuna_fats.s:
 	bin2s INSTALL/OPENTUNA/OpenTuna_FAT-110-120-150-160.bin opentuna_opentuna_fat_110_120_150_160_bin.s opentuna_opentuna_fat_110_120_150_160_bin
 
-opentuna_opentuna_fat_170_bin.s:
+opentuna_fat170.s:
 	bin2s INSTALL/OPENTUNA/OpenTuna_FAT-170.bin opentuna_opentuna_fat_170_bin.s opentuna_opentuna_fat_170_bin
 
-opentuna_opentuna_slims_bin.s:
+opentuna_slims.s:
 	bin2s INSTALL/OPENTUNA/OpenTuna_Slims.bin opentuna_opentuna_slims_bin.s opentuna_opentuna_slims_bin
 
-opentuna_icon_sys.s:
+opentuna_sys.s:
 	bin2s INSTALL/OPENTUNA/icon.sys opentuna_icon_sys.s opentuna_icon_sys
 
 poweroff_poweroff_elf.s:
