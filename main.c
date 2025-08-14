@@ -792,17 +792,17 @@ static int install(int mcport, int icon_variant)
 		return 6;
 	}
 	// APPS folder
-	retorno = write_embed(&apps_apps_icn, size_apps_apps_icn, "APPS", "APPS.ICN", mcport);
+	retorno = write_embed(&apps_apps_icn, size_apps_apps_icn, "APPS", "APPS.icn", mcport);
 	if (retorno < 0)
 	{
 		return 6;
 	}
-	retorno = write_embed(&apps_del_icn, size_apps_del_icn, "APPS", "DEL.ICN", mcport);
+	retorno = write_embed(&apps_del_icn, size_apps_del_icn, "APPS", "del.icn", mcport);
 	if (retorno < 0)
 	{
 		return 6;
 	}
-	retorno = write_embed(&apps_icon_sys, size_apps_icon_sys, "APPS", "ICON.SYS", mcport);
+	retorno = write_embed(&apps_icon_sys, size_apps_icon_sys, "APPS", "icon.sys", mcport);
 	if (retorno < 0)
 	{
 		return 6;
