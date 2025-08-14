@@ -324,16 +324,16 @@ boot_boot_icn.s:
 	bin2s INSTALL/BOOT/BOOT.ICN boot_boot_icn.s boot_boot_icn
 
 boot_copy_icn.s:
-	bin2s INSTALL/BOOT/copy.icn boot_copy_icn.s boot_copy_icn
+	bin2s INSTALL/BOOT/COPY.ICN boot_copy_icn.s boot_copy_icn
 
 boot_del_icn.s:
-	bin2s INSTALL/BOOT/del.icn boot_del_icn.s boot_del_icn
+	bin2s INSTALL/BOOT/DEL.ICN boot_del_icn.s boot_del_icn
 
 boot_icon_sys.s:
-	bin2s INSTALL/BOOT/icon.sys boot_icon_sys.s boot_icon_sys
+	bin2s INSTALL/BOOT/ICON.SYS boot_icon_sys.s boot_icon_sys
 
 boot_osdmenu_elf.s:
-	bin2s INSTALL/BOOT/osdmenu.elf boot_osdmenu_elf.s boot_osdmenu_elf
+	bin2s INSTALL/BOOT/OSDMENU.ELF boot_osdmenu_elf.s boot_osdmenu_elf
 
 neutrino_appinfo_pbt.s:
 	bin2s INSTALL/NEUTRINO/APPINFO.PBT neutrino_appinfo_pbt.s neutrino_appinfo_pbt
