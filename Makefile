@@ -522,7 +522,7 @@ neutrino_modules_usbd_mini_irx.s:
 	bin2s INSTALL/NEUTRINO/modules/usbd_mini.irx neutrino_modules_usbd_mini_irx.s neutrino_modules_usbd_mini_irx
 
 neutrino_modules_usbmass_bd_mini_irx.s:
-	bin2s INSTALL/NEUTRINO/modules/usbmass_bd_mini.IRX neutrino_modules_usbmass_bd_mini_irx.s neutrino_modules_usbmass_bd_mini_irx
+	bin2s INSTALL/NEUTRINO/modules/usbmass_bd_mini.irx neutrino_modules_usbmass_bd_mini_irx.s neutrino_modules_usbmass_bd_mini_irx
 
 neutrino_neutrino_elf.s:
 	bin2s INSTALL/NEUTRINO/neutrino.elf neutrino_neutrino_elf.s neutrino_neutrino_elf
