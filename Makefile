@@ -420,7 +420,7 @@ neutrino_list_icn.s:
 	bin2s INSTALL/NEUTRINO/list.icn neutrino_list_icn.s neutrino_list_icn
 
 neutrino_modules_ieee1394_bd_mini_irx.s:
-	bin2s INSTALL/NEUTRINO/modules/ieee1394_bd_mini.irx neutrino_modules_ieee1394_bd_mini_irx.s neutrino_modules_ieee1394_bd_mini_irx
+	bin2s INSTALL/NEUTRINO/modules/IEEE1394_bd_mini.irx neutrino_modules_ieee1394_bd_mini_irx.s neutrino_modules_ieee1394_bd_mini_irx
 
 neutrino_modules_ata_bd_irx.s:
 	bin2s INSTALL/NEUTRINO/modules/ata_bd.irx neutrino_modules_ata_bd_irx.s neutrino_modules_ata_bd_irx
