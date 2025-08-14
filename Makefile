@@ -333,7 +333,7 @@ boot_icon_sys.s:
 	bin2s INSTALL/BOOT/ICON.SYS boot_icon_sys.s boot_icon_sys
 
 boot_osdmenu_elf.s:
-	bin2s INSTALL/BOOT/OSDMENU.ELF boot_osdmenu_elf.s boot_osdmenu_elf
+	bin2s INSTALL/BOOT/osdmenu.elf boot_osdmenu_elf.s boot_osdmenu_elf
 
 neutrino_appinfo_pbt.s:
 	bin2s INSTALL/NEUTRINO/APPINFO.PBT neutrino_appinfo_pbt.s neutrino_appinfo_pbt
