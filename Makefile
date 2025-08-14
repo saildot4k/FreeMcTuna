@@ -396,7 +396,7 @@ neutrino_config_i_dev9_ns_toml.s:
 	bin2s INSTALL/NEUTRINO/config/i_dev9_ns.toml neutrino_config_i_dev9_ns_toml.s neutrino_config_i_dev9_ns_toml
 
 neutrino_config_p_membo_toml.s:
-	bin2s INSTALL/NEUTRINO/config/p_membo.toml neutrino_config_p_membo_toml.s neutrino_config_p_membo_toml
+	bin2s INSTALL/NEUTRINO/config/p-membo.toml neutrino_config_p_membo_toml.s neutrino_config_p_membo_toml
 
 neutrino_config_p_membo2k_toml.s:
 	bin2s INSTALL/NEUTRINO/config/p-membo2k.toml neutrino_config_p_membo2k_toml.s neutrino_config_p_membo2k_toml
