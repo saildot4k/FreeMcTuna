@@ -2,7 +2,7 @@ EE_BIN = Installer.elf
 EE_BIN_PACKED = OPENTUNAtoPS2BBL-INSTALLER-AIO.ELF
 EE_BIN_STRIPPED = stripped.elf
 EE_OBJS = main.o gs.o pad.o  gs_asm.o ps2_asm.o dma_asm.o
-EE_OBJS += opentuna_icon_sys.o opentuna_opentuna_slims_bin.o opentuna_opentuna_fat_170_bin.o opentuna_opentuna_fat_110_120_150_160_bin.o \
+EE_OBJS += opentuna_sys.o opentuna_opentuna_slims_bin.o opentuna_opentuna_fat_170_bin.o opentuna_opentuna_fat_110_120_150_160_bin.o \
 	MCMAN_irx.o \
 	SIO2MAN_irx.o \
 	MCSERV_irx.o \
@@ -123,7 +123,7 @@ EE_OBJS += opentuna_icon_sys.o opentuna_opentuna_slims_bin.o opentuna_opentuna_f
 	sys_conf_endvdpl_irx.o \
 	sys_conf_icon_sys.o \
 	sys_conf_sysconf_icn.o
-EE_SRC = oopentuna_icon_sys.s opentuna_opentuna_slims_bin.s opentuna_opentuna_fat_170_bin.s opentuna_opentuna_fat_110_120_150_160_bin.s \
+EE_SRC = oopentuna_sys.s opentuna_opentuna_slims_bin.s opentuna_opentuna_fat_170_bin.s opentuna_opentuna_fat_110_120_150_160_bin.s \
 	MCMAN_irx.s \
 	SIO2MAN_irx.s \
 	MCSERV_irx.s \
