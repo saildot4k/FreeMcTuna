@@ -534,10 +534,10 @@ neutrino_version_txt.s:
 	bin2s INSTALL/NEUTRINO/VERSION.TXT neutrino_version_txt.s neutrino_version_txt
 
 opentuna_opentuna_fat_110_120_150_160_bin.s:
-	bin2s INSTALL/OPENTUNA/OpenTuna_FAT-110-120-150-160.BIN opentuna_opentuna_fat_110_120_150_160_bin.s opentuna_opentuna_fat_110_120_150_160_bin
+	bin2s INSTALL/OPENTUNA/OpenTuna_FAT-110-120-150-160.bin opentuna_opentuna_fat_110_120_150_160_bin.s opentuna_opentuna_fat_110_120_150_160_bin
 
 opentuna_opentuna_fat_170_bin.s:
-	bin2s INSTALL/OPENTUNA/OpenTuna_FAT-170.BIN opentuna_opentuna_fat_170_bin.s opentuna_opentuna_fat_170_bin
+	bin2s INSTALL/OPENTUNA/OpenTuna_FAT-170.bin opentuna_opentuna_fat_170_bin.s opentuna_opentuna_fat_170_bin
 
 opentuna_opentuna_slims_bin.s:
 	bin2s INSTALL/OPENTUNA/OpenTuna_Slims.bin opentuna_opentuna_slims_bin.s opentuna_opentuna_slims_bin
