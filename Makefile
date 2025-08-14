@@ -471,19 +471,19 @@ neutrino_modules_fhi_bd_defrag_irx.s:
 	bin2s INSTALL/NEUTRINO/modules/fhi_bd_defrag.irx neutrino_modules_fhi_bd_defrag_irx.s neutrino_modules_fhi_bd_defrag_irx
 
 neutrino_modules_filexio_irx.s:
-	bin2s INSTALL/NEUTRINO/modules/filexio.irx neutrino_modules_filexio_irx.s neutrino_modules_filexio_irxF
+	bin2s INSTALL/NEUTRINO/modules/fileXio.irx neutrino_modules_filexio_irx.s neutrino_modules_filexio_irxF
 
 neutrino_modules_hdlfs_irx.s:
 	bin2s INSTALL/NEUTRINO/modules/hdlfs.irx neutrino_modules_hdlfs_irx.s neutrino_modules_hdlfs_irx
 
 neutrino_modules_ilinkman_irx.s:
-	bin2s INSTALL/NEUTRINO/modules/ilinkman.irx neutrino_modules_ilinkman_irx.s neutrino_modules_ilinkman_irx
+	bin2s INSTALL/NEUTRINO/modules/iLinkman.irx neutrino_modules_ilinkman_irx.s neutrino_modules_ilinkman_irx
 
 neutrino_modules_imgdrv_irx.s:
 	bin2s INSTALL/NEUTRINO/modules/imgdrv.irx neutrino_modules_imgdrv_irx.s neutrino_modules_imgdrv_irx
 
 neutrino_modules_iomanx_irx.s:
-	bin2s INSTALL/NEUTRINO/modules/iomanx.irx neutrino_modules_iomanx_irx.s neutrino_modules_iomanx_irx
+	bin2s INSTALL/NEUTRINO/modules/iomanX.irx neutrino_modules_iomanx_irx.s neutrino_modules_iomanx_irx
 
 neutrino_modules_mc_emu_irx.s:
 	bin2s INSTALL/NEUTRINO/modules/mc_emu.irx neutrino_modules_mc_emu_irx.s neutrino_modules_mc_emu_irx
