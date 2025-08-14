@@ -1,5 +1,5 @@
 EE_BIN = Installer.elf
-EE_BIN_PACKED = OPENTUNAtoPS2BBL-INSTALLER.ELF
+EE_BIN_PACKED = OPENTUNAtoPS2BBL-INSTALLER-AIO.ELF
 EE_BIN_STRIPPED = stripped.elf
 EE_OBJS = main.o gs.o pad.o  gs_asm.o ps2_asm.o dma_asm.o
 EE_OBJS += opentuna_icon_sys.o opentuna_opentuna_slims_bin.o opentuna_opentuna_fat_170_bin.o opentuna_opentuna_fat_110_120_150_160_bin.o \
@@ -420,7 +420,7 @@ neutrino_list_icn.s:
 	bin2s INSTALL/NEUTRINO/list.icn neutrino_list_icn.s neutrino_list_icn
 
 neutrino_modules_ieee1394_bd_mini_irx.s:
-	bin2s INSTALL/NEUTRINO/modules/IEEE1394_BD_MINI.IRX neutrino_modules_ieee1394_bd_mini_irx.s neutrino_modules_ieee1394_bd_mini_irx
+	bin2s INSTALL/NEUTRINO/modules/ieee1394_bd_mini.irx neutrino_modules_ieee1394_bd_mini_irx.s neutrino_modules_ieee1394_bd_mini_irx
 
 neutrino_modules_ata_bd_irx.s:
 	bin2s INSTALL/NEUTRINO/modules/ata_bd.irx neutrino_modules_ata_bd_irx.s neutrino_modules_ata_bd_irx

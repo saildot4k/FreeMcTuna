@@ -30,18 +30,18 @@ jobs:
         if: ${{ success() }}
         uses: actions/upload-artifact@v4
         with:
-          name: OPENTUNAtoPS2BBL-INSTALLER_${{ env.sha8 }}
-          path: OPENTUNAtoPS2BBL-INSTALLER.ELF
+          name: OPENTUNAtoPS2BBL-INSTALLER-AIO_${{ env.sha8 }}
+          path: OPENTUNAtoPS2BBL-INSTALLER-AIO.ELF
 
       # Ensure release step can find the ELF file
       - name: Debug - Check ELF file exists
-        run: ls -lah OPENTUNAtoPS2BBL-INSTALLER.ELF
+        run: ls -lah OPENTUNAtoPS2BBL-INSTALLER-AIO.ELF
 
       - name: Create release
         if: github.ref == 'refs/heads/Free-McTuna-OpenTuna-Installer-AIO'
         uses: marvinpinto/action-automatic-releases@latest
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
-          automatic_release_tag: "TunaPS2BBL2OSDMENU"
-          title: "OpenTuna w/ PS2BBL & OSDMenu"
-          files: OPENTUNAtoPS2BBL-INSTALLER.ELF
+          automatic_release_tag: "TunaPS2BBL2OSDMENU-AIO"
+          title: "OpenTuna w/ PS2BBL & OSDMenu-AIO"
+          files: OPENTUNAtoPS2BBL-INSTALLER-AIO.ELF
