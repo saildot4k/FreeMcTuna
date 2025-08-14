@@ -636,6 +636,12 @@ static int install(int mcport, int icon_variant)
 
 	sprintf(temp_path,"mc%u:APPS", mcport);
 		DeleteFolder(temp_path);
+	sprintf(temp_path,"mc%u:OPL", mcport);
+		DeleteFolder(temp_path);
+	sprintf(temp_path,"mc%u:APP_OPL", mcport);
+		DeleteFolder(temp_path);
+	sprintf(temp_path,"mc%u:OPNPS2LD", mcport);
+		DeleteFolder(temp_path);
 	sprintf(temp_path,"mc%u:APP_ESR-LAUNCHER", mcport);
 		DeleteFolder(temp_path);
 	sprintf(temp_path,"mc%u:BOOT", mcport);
@@ -843,7 +849,7 @@ static int install(int mcport, int icon_variant)
 		return 6;
 	}
 
-			retorno = write_embed(&ps1_dkwdrv_icon_sys, size_ps1_dkwdrv_icon_sys, "PS1_DKWDRV", "icon_sys", mcport);
+			retorno = write_embed(&ps1_dkwdrv_icon_sys, size_ps1_dkwdrv_icon_sys, "PS1_DKWDRV", "icon.sys", mcport);
 	if (retorno < 0)
 	{
 		return 6;
