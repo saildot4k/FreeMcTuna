@@ -42,16 +42,19 @@ path1_OSDSYS_ITEM_2 = cdrom
 name_OSDSYS_ITEM_3 = ESR Launcher
 path1_OSDSYS_ITEM_3 = mc?:BOOT/ESR.ELF
 # --------------------------------------------------
+name_OSDSYS_ITEM_4 = DKWDRV
+path1_OSDSYS_ITEM_4 = mc?:PS1_DKWDRV/DKWDRV.ELF
 # --------------------------------------------------
-name_OSDSYS_ITEM_4 = NHDDL
-path1_OSDSYS_ITEM_4 = usb:/APPS/nhddl.elf
-path2_OSDSYS_ITEM_4 = mmce?:/APPS/nhddl.elf
-path3_OSDSYS_ITEM_4 = mc?:/APP_NHDDL/nhddl.elf
 # --------------------------------------------------
-name_OSDSYS_ITEM_5 = Open PS2 Loader
-path1_OSDSYS_ITEM_5 = usb:/APPS/APP_OPL/OPL.ELF
-path2_OSDSYS_ITEM_5 = mmce?:/APPS/APP_OPL/OPL.ELF
-path3_OSDSYS_ITEM_5 = mc?:/APP_OPL/OPL.ELF
+name_OSDSYS_ITEM_7 = NHDDL
+path1_OSDSYS_ITEM_7 = usb:/APPS/nhddl.elf
+path2_OSDSYS_ITEM_7 = mmce?:/APPS/nhddl.elf
+path3_OSDSYS_ITEM_7 = mc?:/APP_NHDDL/nhddl.elf
+# --------------------------------------------------
+name_OSDSYS_ITEM_8 = Open PS2 Loader
+path1_OSDSYS_ITEM_8 = usb:/APPS/APP_OPL/OPL.ELF
+path2_OSDSYS_ITEM_8 = mmce?:/APPS/APP_OPL/OPL.ELF
+path3_OSDSYS_ITEM_8 = mc?:/APP_OPL/OPL.ELF
 # --------------------------------------------------
 # --------------------------------------------------
 name_OSDSYS_ITEM_9 = wLE ISR exFAT USB

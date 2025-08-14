@@ -73,7 +73,7 @@ extern u8 opentuna_sys[];
 extern int size_opentuna_sys;
 //----------------------------------------//
 
-///BOOT FOLDER
+//APPS FOLDER
 extern u8 apps_apps_icn[];
 extern int size_apps_apps_icn;
 
@@ -83,6 +83,7 @@ extern int size_apps_del_icn;
 extern u8 apps_icon_sys[];
 extern int size_apps_icon_sys;
 
+// APP_NHDDL
 extern u8 app_nhddl_appinfo_pbt[];
 extern int size_app_nhddl_appinfo_pbt;
 
@@ -107,6 +108,7 @@ extern int size_app_nhddl_nhddl_yaml;
 extern u8 app_nhddl_title_cfg[];
 extern int size_app_nhddl_title_cfg;
 
+// APP_OPL
 extern u8 app_opl_appinfo_pbt[];
 extern int size_app_opl_appinfo_pbt;
 
@@ -128,6 +130,26 @@ extern int size_app_opl_list_icn;
 extern u8 app_opl_title_cfg[];
 extern int size_app_opl_title_cfg;
 
+// PS1_DKWDRV
+extern u8 ps1_dkwdrv_copy_icn[];
+extern int size_ps1_dkwdrv_copy_icn;
+
+extern u8 ps1_dkwdrv_del_icn[];
+extern int size_ps1_dkwdrv_del_icn;
+
+extern u8 ps1_dkwdrv_dkwdrv_elf[];
+extern int size_ps1_dkwdrv_dkwdrv_elf;
+
+extern u8 ps1_dkwdrv_icon_sys[];
+extern int size_ps1_dkwdrv_icon_sys;
+
+extern u8 ps1_dkwdrv_list_icn[];
+extern int size_ps1_dkwdrv_list_icn;
+
+extern u8 ps1_dkwdrv_title_cfg[];
+extern int size_ps1_dkwdrv_title_cfg;
+
+// BOOT
 extern u8 boot_appinfo_pbt[];
 extern int size_boot_appinfo_pbt;
 
@@ -158,6 +180,7 @@ extern int size_boot_icon_sys;
 extern u8 boot_osdmenu_elf[];
 extern int size_boot_osdmenu_elf;
 
+// NEUTRINO
 extern u8 neutrino_appinfo_pbt[];
 extern int size_neutrino_appinfo_pbt;
 
@@ -356,6 +379,7 @@ extern int size_neutrino_title_cfg;
 extern u8 neutrino_version_txt[];
 extern int size_neutrino_version_txt;
 
+// POWEROFF
 extern u8 poweroff_poweroff_elf[];
 extern int size_poweroff_poweroff_elf;
 
@@ -368,6 +392,7 @@ extern int size_poweroff_icon_sys;
 extern u8 poweroff_list_icn[];
 extern int size_poweroff_list_icn;
 
+// RESTART
 extern u8 restart_restart_elf[];
 extern int size_restart_restart_elf;
 
@@ -380,6 +405,7 @@ extern int size_restart_icon_sys;
 extern u8 restart_list_icn[];
 extern int size_restart_list_icn;
 
+// SYS-CONF
 extern u8 sys_conf_appinfo_pbt[];
 extern int size_sys_conf_appinfo_pbt;
 
@@ -640,6 +666,10 @@ static int install(int mcport, int icon_variant)
 		DeleteFolder(temp_path);
 	sprintf(temp_path, "mc%u:FUNTUNA", mcport);
 		DeleteFolder(temp_path);
+	sprintf(temp_path, "mc%u:DKWDRV", mcport);
+		DeleteFolder(temp_path);
+	sprintf(temp_path, "mc%u:PS1_DKWDRV", mcport);
+		DeleteFolder(temp_path);
 
 	//If the files exists, we have an error:
 	if (mcport == 0)
@@ -686,6 +716,9 @@ static int install(int mcport, int icon_variant)
     mcSync(0, NULL, &ret);
     ret = mcMkDir(mcport, 0, "NEUTRINO/modules");
     mcSync(0, NULL, &ret);
+	ret = mcMkDir(mcport, 0, "PS1_DKWDRV");
+    mcSync(0, NULL, &ret);
+
 		retorno = -12; ///to ensure installation quits if none of the hacked icons are written
 	if (icon_variant == SLIMS)
 	{
@@ -787,6 +820,42 @@ static int install(int mcport, int icon_variant)
 		return 6;
 	}
 	retorno = write_embed(&app_opl_title_cfg, size_app_opl_title_cfg, "APP_OPL", "title.cfg", mcport);
+	if (retorno < 0)
+	{
+		return 6;
+	}
+	// PS1_DKWDRV folder
+		retorno = write_embed(&ps1_dkwdrv_copy_icn, size_ps1_dkwdrv_copy_icn, "PS1_DKWDRV", "copy.icn", mcport);
+	if (retorno < 0)
+	{
+		return 6;
+	}
+
+			retorno = write_embed(&ps1_dkwdrv_del_icn, size_ps1_dkwdrv_del_icn, "PS1_DKWDRV", "del.icn", mcport);
+	if (retorno < 0)
+	{
+		return 6;
+	}
+
+			retorno = write_embed(&ps1_dkwdrv_dkwdrv_elf, size_ps1_dkwdrv_dkwdrv_elf, "PS1_DKWDRV", "DKWDRV.ELF", mcport);
+	if (retorno < 0)
+	{
+		return 6;
+	}
+
+			retorno = write_embed(&ps1_dkwdrv_icon_sys, size_ps1_dkwdrv_icon_sys, "PS1_DKWDRV", "icon_sys", mcport);
+	if (retorno < 0)
+	{
+		return 6;
+	}
+
+			retorno = write_embed(&ps1_dkwdrv_list_icn, size_ps1_dkwdrv_list_icn, "PS1_DKWDRV", "list.icn", mcport);
+	if (retorno < 0)
+	{
+		return 6;
+	}
+
+			retorno = write_embed(&ps1_dkwdrv_title_cfg, size_ps1_dkwdrv_title_cfg, "PS1_DKWDRV", "title.cfg", mcport);
 	if (retorno < 0)
 	{
 		return 6;

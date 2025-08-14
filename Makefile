@@ -25,6 +25,12 @@ EE_OBJS += OpenTuna_sys.o OpenTuna_SLIMS.o OpenTuna_FAT-170.o OpenTuna_FAT-110-1
 	app_opl_icon_sys.o \
 	app_opl_list_icn.o \
 	app_opl_title_cfg.o \
+	ps1_dkwdrv_copy_icn.o \
+	ps1_dkwdrv_del_icn.o \
+	ps1_dkwdrv_dkwdrv_elf.o \
+	ps1_dkwdrv_icon_sys.o \
+	ps1_dkwdrv_list_icn.o \
+	ps1_dkwdrv_title_cfg.o \
 	boot_appinfo_pbt.o \
 	boot_boot_elf.o \
 	boot_boot2_elf.o \
@@ -146,6 +152,12 @@ EE_SRC = OpenTuna_sys.s OpenTuna_SLIMS.s OpenTuna_FAT-170.s OpenTuna_FAT-110-120
 	app_opl_icon_sys.s \
 	app_opl_list_icn.s \
 	app_opl_title_cfg.s \
+	ps1_dkwdrv_copy_icn.s \
+	ps1_dkwdrv_del_icn.s \
+	ps1_dkwdrv_dkwdrv_elf.s \
+	ps1_dkwdrv_icon_sys.s \
+	ps1_dkwdrv_list_icn.s \
+	ps1_dkwdrv_title_cfg.s \
 	boot_appinfo_pbt.s \
 	boot_boot_elf.s \
 	boot_boot2_elf.s \
@@ -264,6 +276,7 @@ OpenTuna_FAT-170.s:
 	bin2s INSTALL/OPENTUNA/OpenTuna_FAT-170.bin OpenTuna_FAT-170.s opentuna_fat170
 
 # Auto-generated bin2s rules from INSTALL
+# APPS
 apps_apps_icn.s:
 	bin2s INSTALL/APPS/APPS.ICN apps_apps_icn.s apps_apps_icn
 
@@ -273,6 +286,7 @@ apps_del_icn.s:
 apps_icon_sys.s:
 	bin2s INSTALL/APPS/ICON.SYS apps_icon_sys.s apps_icon_sys
 
+# APP_NHDDL
 app_nhddl_appinfo_pbt.s:
 	bin2s INSTALL/APP_NHDDL/APPINFO.PBT app_nhddl_appinfo_pbt.s app_nhddl_appinfo_pbt
 
@@ -297,6 +311,7 @@ app_nhddl_nhddl_yaml.s:
 app_nhddl_title_cfg.s:
 	bin2s INSTALL/APP_NHDDL/title.cfg app_nhddl_title_cfg.s app_nhddl_title_cfg
 
+# APP_OPL
 app_opl_appinfo_pbt.s:
 	bin2s INSTALL/APP_OPL/APPINFO.PBT app_opl_appinfo_pbt.s app_opl_appinfo_pbt
 
@@ -318,6 +333,27 @@ app_opl_list_icn.s:
 app_opl_title_cfg.s:
 	bin2s INSTALL/APP_OPL/title.cfg app_opl_title_cfg.s app_opl_title_cfg
 
+# PS1_DKWDRV
+ps1_dkwdrv_copy_icn:
+	bin2s INSTALL/PS1_DKWDRV/copy.icn ps1_dkwdrv_copy_icn.s ps1_dkwdrv_copy_icn
+
+ps1_dkwdrv_del_icn:
+	bin2s INSTALL/PS1_DKWDRV/del.icn ps1_dkwdrv_del_icn.s ps1_dkwdrv_del_icn
+
+
+ps1_dkwdrv_dkwdrv_elf:
+	bin2s INSTALL/PS1_DKWDRV/DKWDRV.ELF ps1_dkwdrv_dkwdrv_elf.s ps1_dkwdrv_dkwdrv_elf
+
+ps1_dkwdrv_icon_sys:
+	bin2s INSTALL/PS1_DKWDRV/icon.sys ps1_dkwdrv_icon_sys.s ps1_dkwdrv_icon_sys
+
+ps1_dkwdrv_list_icn:
+	bin2s INSTALL/PS1_DKWDRV/list.icn ps1_dkwdrv_list_icn.s ps1_dkwdrv_list_icn
+
+ps1_dkwdrv_title_cfg:
+	bin2s INSTALL/PS1_DKWDRV/titl.cfg ps1_dkwdrv_title_cfg.s ps1_dkwdrv_title_cfg
+
+# BOOT
 boot_appinfo_pbt.s:
 	bin2s INSTALL/BOOT/APPINFO.PBT boot_appinfo_pbt.s boot_appinfo_pbt
 
@@ -348,6 +384,7 @@ boot_icon_sys.s:
 boot_osdmenu_elf.s:
 	bin2s INSTALL/BOOT/osdmenu.elf boot_osdmenu_elf.s boot_osdmenu_elf
 
+# NEUTRINO
 neutrino_appinfo_pbt.s:
 	bin2s INSTALL/NEUTRINO/APPINFO.PBT neutrino_appinfo_pbt.s neutrino_appinfo_pbt
 
@@ -546,6 +583,7 @@ neutrino_title_cfg.s:
 neutrino_version_txt.s:
 	bin2s INSTALL/NEUTRINO/version.txt neutrino_version_txt.s neutrino_version_txt
 
+# POWEROFF
 poweroff_poweroff_elf.s:
 	bin2s INSTALL/POWEROFF/POWEROFF.ELF poweroff_poweroff_elf.s poweroff_poweroff_elf
 
@@ -558,6 +596,7 @@ poweroff_icon_sys.s:
 poweroff_list_icn.s:
 	bin2s INSTALL/POWEROFF/LIST.ICN poweroff_list_icn.s poweroff_list_icn
 
+# RESTART
 restart_restart_elf.s:
 	bin2s INSTALL/RESTART/RESTART.ELF restart_restart_elf.s restart_restart_elf
 
@@ -570,6 +609,7 @@ restart_icon_sys.s:
 restart_list_icn.s:
 	bin2s INSTALL/RESTART/LIST.ICN restart_list_icn.s restart_list_icn
 
+# SYS-CONF
 sys_conf_appinfo_pbt.s:
 	bin2s INSTALL/SYS-CONF/APPINFO.PBT sys_conf_appinfo_pbt.s sys_conf_appinfo_pbt
 
