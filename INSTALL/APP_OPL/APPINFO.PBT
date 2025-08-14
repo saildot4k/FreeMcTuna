@@ -1,5 +1,5 @@
 # SAS (Save Application Support) compliant BM Script
-# Due to wildcard bug on memory card and mmce, bootdevice:/BM/SCRIPTS/BMRTFLDR.PBT must exist to work. Update as needed
+# Due to wildcard bug on memory card and mmce, bootdevice:/BM/SCRIPTS/DEFINEDROOTFOLDER.PBT must exist to work. Update as needed
 
 # Change this information to describe the application and where it should be ran from for memcard (SAS) or other devices (SAS_NON_MC)
 # SAS is the App folder name. SAS_NON_MC defines if app is in root of non-memcard device (non_mc:/$SAS$) or APP folder (non_mc:/APPS/$SAS$)
@@ -7,38 +7,26 @@
 #
 # Some devices are case sensitive! Make sure your case matches!
 #
-# Source: github.com/pcm720/nhddl
-SET "TITLE" "[APP] NHDDL"
-SET "VERSION" "nightly gfeeb78a"
-SET "AUTHOR" "pcm720"
-SET "DESC" "A Neutrino launcher"
-SET "ELF" "nhddl.elf"
-SET "SAS" "APP_NHDDL"
+# Source: github.com/ps2homebrew/Open-PS2-Loader
+SET "TITLE" "[APP] OPL 1.2 Official Beta 2241"
+SET "VERSION" "1.2.0 Beta 2241"
+SET "AUTHOR" "ps2homebrew.github.io"
+SET "DESC" "Open PS2 Loader (OPL) is a 100% Open source game and application loader for the PS2 and PS3 units. It supports three categories of devices: Block Device Mass Storage Devices, Network Shares and PlayStation 2 HDD Units."
+SET "ELF" "OPL.ELF"
+SET "SAS" "APP_OPL"
 # Comment out 1 of the 2 lines below. If app is in non-mc:/$SAS$ comment out the first, if in non-mc:/APPS/$SAS$ comment out the second
 # SET "SAS_NON_MC" "$SAS$"
 SET "SAS_NON_MC" "APPS/$SAS$"
 #
 # If an app does not boot, then one of these compatibility options may need to be set to 0, 1, 2 or 3
 # 0= No compatibility options, 1= SHUTDOWN "MM", 2= SET "BM.AUTOLOAD_FSD_EN" "0", 3= CC SLEEP
-SET "COMP_MODE_MC" "1"
-SET "COMP_MODE_MMCE" "1"
-SET "COMP_MODE_USB" "1"
-SET "COMP_MODE_HDD_APA" "1"
-SET "COMP_MODE_DFFS" "1"
+SET "COMP_MODE_MC" "0"
+SET "COMP_MODE_MMCE" "0"
+SET "COMP_MODE_USB" "0"
+SET "COMP_MODE_HDD_APA" "0"
+SET "COMP_MODE_DFFS" "0"
 #
-# Comment/uncomment the modes you desire. This uses argv, nhddl.yaml is not needed
-# UDPBD uses IP specified in BootManager. Do not forget to edit device:/NEUTRINO/config/bsd-udpbd.toml and/or device:/NEUTRINO/config/bsd-udpbd-hdd.toml
-SET "ATA" "-mode=ata"
-SET "HDL" "-mode=hdl"
-SET "MMCE" "-mode=mmce"
-SET "MX4SIO" "-mode=mx4sio"
-SET "UDPBD" "-mode=udpbd -udpbd_ip=$BM.CNF_NET_IP0$.$BM.CNF_NET_IP1$.$BM.CNF_NET_IP2$.$BM.CNF_NET_IP3$"
-SET "USB" "-mode=usb"
-SET "ILINK" "-mode=ilink"
-# Define the modes you want with wrapped in dollar signs $argument$ with a space in between:
-# For example: SET "ARGV" "$MMCE$ $ATA$"
-SET "ARGV" "$MMCE$"
-###############################################################################################
+
 # Do not change these 2 lines!
 GOTO "$ARG1$"
 RETURN -1
@@ -157,5 +145,5 @@ RETURN -1
     GOTO "RUN_COMP_MODE"
 
 :RUN_COMP_MODE
-    LOADEXEC "PBAT" "$BM.SCRIPTS$/LOADEXEC.PBT" "$PWD$/$ELF$" "$ARGV$"
+    LOADEXEC "PBAT" "$BM.SCRIPTS$/LOADEXEC.PBT" "$PWD$/$ELF$"
     EXIT 0
