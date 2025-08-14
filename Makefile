@@ -549,25 +549,25 @@ poweroff_poweroff_elf.s:
 	bin2s INSTALL/POWEROFF/POWEROFF.ELF poweroff_poweroff_elf.s poweroff_poweroff_elf
 
 poweroff_del_icn.s:
-	bin2s INSTALL/POWEROFF/del.icn poweroff_del_icn.s poweroff_del_icn
+	bin2s INSTALL/POWEROFF/DEL.ICN poweroff_del_icn.s poweroff_del_icn
 
 poweroff_icon_sys.s:
-	bin2s INSTALL/POWEROFF/icon.sys poweroff_icon_sys.s poweroff_icon_sys
+	bin2s INSTALL/POWEROFF/ICON.SYS poweroff_icon_sys.s poweroff_icon_sys
 
 poweroff_list_icn.s:
-	bin2s INSTALL/POWEROFF/list.icn poweroff_list_icn.s poweroff_list_icn
+	bin2s INSTALL/POWEROFF/LIST.ICN poweroff_list_icn.s poweroff_list_icn
 
 restart_restart_elf.s:
 	bin2s INSTALL/RESTART/RESTART.ELF restart_restart_elf.s restart_restart_elf
 
 restart_del_icn.s:
-	bin2s INSTALL/RESTART/del.icn restart_del_icn.s restart_del_icn
+	bin2s INSTALL/RESTART/DEL.ICN restart_del_icn.s restart_del_icn
 
 restart_icon_sys.s:
-	bin2s INSTALL/RESTART/icon.sys restart_icon_sys.s restart_icon_sys
+	bin2s INSTALL/RESTART/ICON.SYS restart_icon_sys.s restart_icon_sys
 
 restart_list_icn.s:
-	bin2s INSTALL/RESTART/list.icn restart_list_icn.s restart_list_icn
+	bin2s INSTALL/RESTART/LIST.ICN restart_list_icn.s restart_list_icn
 
 sys_conf_appinfo_pbt.s:
 	bin2s INSTALL/SYS-CONF/APPINFO.PBT sys_conf_appinfo_pbt.s sys_conf_appinfo_pbt
@@ -597,19 +597,19 @@ sys_conf_usbhdfsd_irx.s:
 	bin2s INSTALL/SYS-CONF/USBHDFSD.IRX sys_conf_usbhdfsd_irx.s sys_conf_usbhdfsd_irx
 
 sys_conf_copy_icn.s:
-	bin2s INSTALL/SYS-CONF/copy.icn sys_conf_copy_icn.s sys_conf_copy_icn
+	bin2s INSTALL/SYS-CONF/COPY.ICN sys_conf_copy_icn.s sys_conf_copy_icn
 
 sys_conf_del_icn.s:
-	bin2s INSTALL/SYS-CONF/del.icn sys_conf_del_icn.s sys_conf_del_icn
+	bin2s INSTALL/SYS-CONF/DEL.ICN sys_conf_del_icn.s sys_conf_del_icn
 
 sys_conf_endvdpl_irx.s:
-	bin2s INSTALL/SYS-CONF/endvdpl.irx sys_conf_endvdpl_irx.s sys_conf_endvdpl_irx
+	bin2s INSTALL/SYS-CONF/ENDVDPL.IRX sys_conf_endvdpl_irx.s sys_conf_endvdpl_irx
 
 sys_conf_icon_sys.s:
-	bin2s INSTALL/SYS-CONF/icon.sys sys_conf_icon_sys.s sys_conf_icon_sys
+	bin2s INSTALL/SYS-CONF/ICON.SYS sys_conf_icon_sys.s sys_conf_icon_sys
 
 sys_conf_sysconf_icn.s:
-	bin2s INSTALL/SYS-CONF/sysconf.icn sysconf_sysconf_icn.s sys_conf_sysconf_icn
+	bin2s INSTALL/SYS-CONF/SYSCONF.ICN sysconf_sysconf_icn.s sys_conf_sysconf_icn
 
 # OTHER
 SIO2MAN_irx.c: $(PS2SDK)/iop/irx/freesio2.irx
