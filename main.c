@@ -84,12 +84,6 @@ extern int size_apps_icon_sys;
 extern u8 app_nhddl_appinfo_pbt[];
 extern int size_app_nhddl_appinfo_pbt;
 //----------------------------------------//
-extern u8 app_nhddl_latest nhddl for neutrino_url[];
-extern int size_app_nhddl_latest nhddl for neutrino_url;
-//----------------------------------------//
-extern u8 app_nhddl_readme_md[];
-extern int size_app_nhddl_readme_md;
-//----------------------------------------//
 extern u8 app_nhddl_copy_icn[];
 extern int size_app_nhddl_copy_icn;
 //----------------------------------------//
@@ -164,12 +158,6 @@ extern int size_boot_osdmenu_elf;
 //----------------------------------------//
 extern u8 neutrino_appinfo_pbt[];
 extern int size_neutrino_appinfo_pbt;
-//----------------------------------------//
-extern u8 neutrino_latest neutrino - download and extract here_url[];
-extern int size_neutrino_latest neutrino - download and extract here_url;
-//----------------------------------------//
-extern u8 neutrino_readme_md[];
-extern int size_neutrino_readme_md;
 //----------------------------------------//
 extern u8 neutrino_config_bsd-ata_toml[];
 extern int size_neutrino_config_bsd-ata_toml;
@@ -377,9 +365,6 @@ extern int size_poweroff_icon_sys;
 //----------------------------------------//
 extern u8 poweroff_list_icn[];
 extern int size_poweroff_list_icn;
-//----------------------------------------//
-extern u8 restart_free mcboot latest release_url[];
-extern int size_restart_free mcboot latest release_url;
 //----------------------------------------//
 extern u8 restart_restart_elf[];
 extern int size_restart_restart_elf;
@@ -744,11 +729,6 @@ static int install(int mcport, int icon_variant)
 	{
 		return 6;
 	}
-	retorno = write_embed(&app_nhddl_latest nhddl for neutrino_url, size_app_nhddl_latest nhddl for neutrino_url, "APP_NHDDL", "Latest NHDDL for Neutrino.url", mcport);
-	if (retorno < 0)
-	{
-		return 6;
-	}
 	retorno = write_embed(&app_nhddl_list_icn, size_app_nhddl_list_icn, "APP_NHDDL", "list.icn", mcport);
 	if (retorno < 0)
 	{
@@ -760,11 +740,6 @@ static int install(int mcport, int icon_variant)
 		return 6;
 	}
 	retorno = write_embed(&app_nhddl_nhddl_yaml, size_app_nhddl_nhddl_yaml, "APP_NHDDL", "nhddl.yaml", mcport);
-	if (retorno < 0)
-	{
-		return 6;
-	}
-	retorno = write_embed(&app_nhddl_readme_md, size_app_nhddl_readme_md, "APP_NHDDL", "README.md", mcport);
 	if (retorno < 0)
 	{
 		return 6;
@@ -893,22 +868,12 @@ static int install(int mcport, int icon_variant)
 	{
 		return 6;
 	}
-	retorno = write_embed(&neutrino_latest neutrino - download and extract here_url, size_neutrino_latest neutrino - download and extract here_url, "NEUTRINO", "Latest Neutrino - Download and Extract Here.url", mcport);
-	if (retorno < 0)
-	{
-		return 6;
-	}
 	retorno = write_embed(&neutrino_list_icn, size_neutrino_list_icn, "NEUTRINO", "list.icn", mcport);
 	if (retorno < 0)
 	{
 		return 6;
 	}
 	retorno = write_embed(&neutrino_neutrino_elf, size_neutrino_neutrino_elf, "NEUTRINO", "neutrino.elf", mcport);
-	if (retorno < 0)
-	{
-		return 6;
-	}
-	retorno = write_embed(&neutrino_readme_md, size_neutrino_readme_md, "NEUTRINO", "README.md", mcport);
 	if (retorno < 0)
 	{
 		return 6;
@@ -1241,11 +1206,6 @@ static int install(int mcport, int icon_variant)
 	}
 	// RESTART folder
 	retorno = write_embed(&restart_del_icn, size_restart_del_icn, "RESTART", "del.icn", mcport);
-	if (retorno < 0)
-	{
-		return 6;
-	}
-	retorno = write_embed(&restart_free mcboot latest release_url, size_restart_free mcboot latest release_url, "RESTART", "Free McBoot Latest Release.url", mcport);
 	if (retorno < 0)
 	{
 		return 6;

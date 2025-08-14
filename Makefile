@@ -11,8 +11,6 @@ EE_OBJS +=
 	apps_del_icn.o \
 	apps_icon_sys.o \
 	app_nhddl_appinfo_pbt.o \
-	app_nhddl_latest nhddl for neutrino_url.o \
-	app_nhddl_readme_md.o \
 	app_nhddl_copy_icn.o \
 	app_nhddl_del_icn.o \
 	app_nhddl_icon_sys.o \
@@ -38,8 +36,6 @@ EE_OBJS +=
 	boot_icon_sys.o \
 	boot_osdmenu_elf.o \
 	neutrino_appinfo_pbt.o \
-	neutrino_latest neutrino - download and extract here_url.o \
-	neutrino_readme_md.o \
 	neutrino_config_bsd-ata_toml.o \
 	neutrino_config_bsd-ilink_toml.o \
 	neutrino_config_bsd-mmce_toml.o \
@@ -113,7 +109,6 @@ EE_OBJS +=
 	poweroff_del_icn.o \
 	poweroff_icon_sys.o \
 	poweroff_list_icn.o \
-	restart_free mcboot latest release_url.o \
 	restart_restart_elf.o \
 	restart_del_icn.o \
 	restart_icon_sys.o \
@@ -133,12 +128,14 @@ EE_OBJS +=
 	sys-conf_icon_sys.o \
 	sys-conf_sysconf_icn.o
 EE_SRC =
+	MCMAN_irx.s \
+	SIO2MAN_irx.s \
+	MCSERV_irx.s \
+	PADMAN_irx.s \
 	apps_apps_icn.s \
 	apps_del_icn.s \
 	apps_icon_sys.s \
 	app_nhddl_appinfo_pbt.s \
-	app_nhddl_latest nhddl for neutrino_url.s \
-	app_nhddl_readme_md.s \
 	app_nhddl_copy_icn.s \
 	app_nhddl_del_icn.s \
 	app_nhddl_icon_sys.s \
@@ -164,8 +161,6 @@ EE_SRC =
 	boot_icon_sys.s \
 	boot_osdmenu_elf.s \
 	neutrino_appinfo_pbt.s \
-	neutrino_latest neutrino - download and extract here_url.s \
-	neutrino_readme_md.s \
 	neutrino_config_bsd-ata_toml.s \
 	neutrino_config_bsd-ilink_toml.s \
 	neutrino_config_bsd-mmce_toml.s \
@@ -239,7 +234,6 @@ EE_SRC =
 	poweroff_del_icn.s \
 	poweroff_icon_sys.s \
 	poweroff_list_icn.s \
-	restart_free mcboot latest release_url.s \
 	restart_restart_elf.s \
 	restart_del_icn.s \
 	restart_icon_sys.s \
@@ -263,18 +257,6 @@ EE_LIBS = -ldebug -lcdvd -lpatches -lpadx -lmc
 
 all:
 	$(MAKE) $(EE_BIN_PACKED)
-# OTHER
-SIO2MAN_irx.c: $(PS2SDK)/iop/irx/freesio2.irx
-	bin2c $(PS2SDK)/iop/irx/freesio2.irx SIO2MAN_irx.c SIO2MAN_irx
-
-MCMAN_irx.c: $(PS2SDK)/iop/irx/mcman.irx
-	bin2c $(PS2SDK)/iop/irx/mcman.irx MCMAN_irx.c MCMAN_irx
-
-MCSERV_irx.c: $(PS2SDK)/iop/irx/mcserv.irx
-	bin2c $(PS2SDK)/iop/irx/mcserv.irx MCSERV_irx.c MCSERV_irx
-
-PADMAN_irx.c: $(PS2SDK)/iop/irx/freepad.irx
-	bin2c $(PS2SDK)/iop/irx/freepad.irx PADMAN_irx.c PADMAN_irx
 
 # Auto-generated bin2s rules from INSTALL
 apps_apps_icn.s:
@@ -288,12 +270,6 @@ apps_icon_sys.s:
 
 app_nhddl_appinfo_pbt.s:
 	bin2s INSTALL/APP_NHDDL/APPINFO.PBT app_nhddl_appinfo_pbt.s app_nhddl_appinfo_pbt
-
-app_nhddl_latest nhddl for neutrino_url.s:
-	bin2s INSTALL/APP_NHDDL/LATEST NHDDL FOR NEUTRINO.URL app_nhddl_latest nhddl for neutrino_url.s app_nhddl_latest nhddl for neutrino_url
-
-app_nhddl_readme_md.s:
-	bin2s INSTALL/APP_NHDDL/README.MD app_nhddl_readme_md.s app_nhddl_readme_md
 
 app_nhddl_copy_icn.s:
 	bin2s INSTALL/APP_NHDDL/COPY.ICN app_nhddl_copy_icn.s app_nhddl_copy_icn
@@ -369,12 +345,6 @@ boot_osdmenu_elf.s:
 
 neutrino_appinfo_pbt.s:
 	bin2s INSTALL/NEUTRINO/APPINFO.PBT neutrino_appinfo_pbt.s neutrino_appinfo_pbt
-
-neutrino_latest neutrino - download and extract here_url.s:
-	bin2s INSTALL/NEUTRINO/LATEST NEUTRINO - DOWNLOAD AND EXTRACT HERE.URL neutrino_latest neutrino - download and extract here_url.s neutrino_latest neutrino - download and extract here_url
-
-neutrino_readme_md.s:
-	bin2s INSTALL/NEUTRINO/README.MD neutrino_readme_md.s neutrino_readme_md
 
 neutrino_config_bsd-ata_toml.s:
 	bin2s INSTALL/NEUTRINO/CONFIG/BSD-ATA.TOML neutrino_config_bsd-ata_toml.s neutrino_config_bsd-ata_toml
@@ -595,9 +565,6 @@ poweroff_icon_sys.s:
 poweroff_list_icn.s:
 	bin2s INSTALL/POWEROFF/LIST.ICN poweroff_list_icn.s poweroff_list_icn
 
-restart_free mcboot latest release_url.s:
-	bin2s INSTALL/RESTART/FREE MCBOOT LATEST RELEASE.URL restart_free mcboot latest release_url.s restart_free mcboot latest release_url
-
 restart_restart_elf.s:
 	bin2s INSTALL/RESTART/RESTART.ELF restart_restart_elf.s restart_restart_elf
 
@@ -651,6 +618,19 @@ sys-conf_icon_sys.s:
 
 sys-conf_sysconf_icn.s:
 	bin2s INSTALL/SYS-CONF/SYSCONF.ICN sys-conf_sysconf_icn.s sys-conf_sysconf_icn
+
+# OTHER
+SIO2MAN_irx.c: $(PS2SDK)/iop/irx/freesio2.irx
+	bin2c $(PS2SDK)/iop/irx/freesio2.irx SIO2MAN_irx.c SIO2MAN_irx
+
+MCMAN_irx.c: $(PS2SDK)/iop/irx/mcman.irx
+	bin2c $(PS2SDK)/iop/irx/mcman.irx MCMAN_irx.c MCMAN_irx
+
+MCSERV_irx.c: $(PS2SDK)/iop/irx/mcserv.irx
+	bin2c $(PS2SDK)/iop/irx/mcserv.irx MCSERV_irx.c MCSERV_irx
+
+PADMAN_irx.c: $(PS2SDK)/iop/irx/freepad.irx
+	bin2c $(PS2SDK)/iop/irx/freepad.irx PADMAN_irx.c PADMAN_irx
 
 clean:
 	rm -fr $(EE_OBJS) $(EE_BIN_PACKED) $(EE_BIN_STRIPPED) $(EE_BIN) $(EE_SRC)
