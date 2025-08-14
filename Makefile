@@ -334,23 +334,23 @@ app_opl_title_cfg.s:
 	bin2s INSTALL/APP_OPL/title.cfg app_opl_title_cfg.s app_opl_title_cfg
 
 # PS1_DKWDRV
-ps1_dkwdrv_copy_icn:
+ps1_dkwdrv_copy_icn.s:
 	bin2s INSTALL/PS1_DKWDRV/copy.icn ps1_dkwdrv_copy_icn.s ps1_dkwdrv_copy_icn
 
-ps1_dkwdrv_del_icn:
+ps1_dkwdrv_del_icn.s:
 	bin2s INSTALL/PS1_DKWDRV/del.icn ps1_dkwdrv_del_icn.s ps1_dkwdrv_del_icn
 
 
-ps1_dkwdrv_dkwdrv_elf:
+ps1_dkwdrv_dkwdrv_elf.s:
 	bin2s INSTALL/PS1_DKWDRV/DKWDRV.ELF ps1_dkwdrv_dkwdrv_elf.s ps1_dkwdrv_dkwdrv_elf
 
-ps1_dkwdrv_icon_sys:
+ps1_dkwdrv_icon_sys.s:
 	bin2s INSTALL/PS1_DKWDRV/icon.sys ps1_dkwdrv_icon_sys.s ps1_dkwdrv_icon_sys
 
-ps1_dkwdrv_list_icn:
+ps1_dkwdrv_list_icn.s:
 	bin2s INSTALL/PS1_DKWDRV/list.icn ps1_dkwdrv_list_icn.s ps1_dkwdrv_list_icn
 
-ps1_dkwdrv_title_cfg:
+ps1_dkwdrv_title_cfg.s:
 	bin2s INSTALL/PS1_DKWDRV/titl.cfg ps1_dkwdrv_title_cfg.s ps1_dkwdrv_title_cfg
 
 # BOOT
