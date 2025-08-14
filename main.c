@@ -365,31 +365,40 @@ static int install(int mcport, int icon_variant)
 	{
 		return 3;
 	}
-   sprintf(temp_path,"mc%u:BOOT", mcport);
+
+	sprintf(temp_path,"mc%u:APPS", mcport);
 	   DeleteFolder(temp_path);
-   sprintf(temp_path,"mc%u:APPS", mcport);
+   sprintf(temp_path,"mc%u:APP_ESR-LAUNCHER", mcport);
 	   DeleteFolder(temp_path);
-   sprintf(temp_path,"mc%u:LDR_FMCBD-1.966", mcport);
+	sprintf(temp_path,"mc%u:BOOT", mcport);
 	   DeleteFolder(temp_path);
-   sprintf(temp_path,"mc%u:SYS_FMCBCFG", mcport);
+	sprintf(temp_path, "mc%u:SYS-CONF", mcport);
+		DeleteFolder(temp_path);
+	sprintf(temp_path,"mc%u:SYS_FMCB-CFG", mcport);
 	   DeleteFolder(temp_path);
-   sprintf(temp_path,"mc%u:SYS_FMCB-CFG", mcport);
+	sprintf(temp_path,"mc%u:SYS_FMCBCFG", mcport);
 	   DeleteFolder(temp_path);
+	sprintf(temp_path,"mc%u:FMCBD-1.966", mcport);
+	   DeleteFolder(temp_path);
+	sprintf(temp_path,"mc%u:FMCBD-1.953", mcport);
+	   DeleteFolder(temp_path);
+	sprintf(temp_path,"mc%u:FMCBD-1.8C ", mcport);
+	   DeleteFolder(temp_path);
+	sprintf(temp_path,"mc%u:LDR_FMCBD-1.966", mcport);
+	   DeleteFolder(temp_path);
+	sprintf(temp_path, "mc%u:BXEXEC-FUNTUNA", mcport);
+		DeleteFolder(temp_path);
+	sprintf(temp_path, "mc%u:BXEXEC-OPENTUNA", mcport);
+		DeleteFolder(temp_path);
     sprintf(temp_path,"mc%u:FORTUNA", mcport);
 		DeleteFolder(temp_path);
 	sprintf(temp_path,"mc%u:OPENTUNA", mcport);
 		DeleteFolder(temp_path);
-sprintf(temp_path, "mc%u:SYS-CONF", mcport);
-DeleteFolder(temp_path);
-sprintf(temp_path, "mc%u:FUNTUNA-FORK", mcport);
-DeleteFolder(temp_path);
-sprintf(temp_path, "mc%u:BXEXEC-FUNTUNA", mcport);
-DeleteFolder(temp_path);
-sprintf(temp_path, "mc%u:FUNTUNA", mcport);
-DeleteFolder(temp_path);
-sprintf(temp_path, "mc%u:BXEXEC-OPENTUNA", mcport);
-DeleteFolder(temp_path);
-    
+	sprintf(temp_path, "mc%u:FUNTUNA-FORK", mcport);
+		DeleteFolder(temp_path);
+	sprintf(temp_path, "mc%u:FUNTUNA", mcport);
+		DeleteFolder(temp_path);
+
 	//If the files exists, we have an error:
 	if (mcport == 0)
 	{
