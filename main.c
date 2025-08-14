@@ -753,135 +753,80 @@ static int install(int mcport, int icon_variant)
 	ret = write(fd, ICONTYPE_ALIAS[icon_variant], 4);//This will allow identifying the hacked icon variant without risking your mc contents
 	close(fd);
 	}
-	// APP_NHDDL folder
-	retorno = write_embed(&app_nhddl_appinfo_pbt, size_app_nhddl_appinfo_pbt, "APP_NHDDL", "APPINFO.PBT", mcport);
+
+
+	// SYS-CONF folder
+	retorno = write_embed(&sys_conf_appinfo_pbt, size_sys_conf_appinfo_pbt, "SYS-CONF", "APPINFO.PBT", mcport);
 	if (retorno < 0)
 	{
 		return 6;
 	}
-	retorno = write_embed(&app_nhddl_copy_icn, size_app_nhddl_copy_icn, "APP_NHDDL", "copy.icn", mcport);
+	retorno = write_embed(&sys_conf_copy_icn, size_sys_conf_copy_icn, "SYS-CONF", "copy.icn", mcport);
 	if (retorno < 0)
 	{
 		return 6;
 	}
-	retorno = write_embed(&app_nhddl_del_icn, size_app_nhddl_del_icn, "APP_NHDDL", "del.icn", mcport);
+	retorno = write_embed(&sys_conf_del_icn, size_sys_conf_del_icn, "SYS-CONF", "del.icn", mcport);
 	if (retorno < 0)
 	{
 		return 6;
 	}
-	retorno = write_embed(&app_nhddl_icon_sys, size_app_nhddl_icon_sys, "APP_NHDDL", "icon.sys", mcport);
+	retorno = write_embed(&sys_conf_endvdpl_irx, size_sys_conf_endvdpl_irx, "SYS-CONF", "endvdpl.irx", mcport);
 	if (retorno < 0)
 	{
 		return 6;
 	}
-	retorno = write_embed(&app_nhddl_list_icn, size_app_nhddl_list_icn, "APP_NHDDL", "list.icn", mcport);
+	retorno = write_embed(&sys_conf_freemcb_cnf, size_sys_conf_freemcb_cnf, "SYS-CONF", "FREEMCB.CNF", mcport);
 	if (retorno < 0)
 	{
 		return 6;
 	}
-	retorno = write_embed(&app_nhddl_nhddl_elf, size_app_nhddl_nhddl_elf, "APP_NHDDL", "nhddl.elf", mcport);
+	retorno = write_embed(&sys_conf_icon_sys, size_sys_conf_icon_sys, "SYS-CONF", "icon.sys", mcport);
 	if (retorno < 0)
 	{
 		return 6;
 	}
-	retorno = write_embed(&app_nhddl_nhddl_yaml, size_app_nhddl_nhddl_yaml, "APP_NHDDL", "nhddl.yaml", mcport);
+	retorno = write_embed(&sys_conf_ipconfig_dat, size_sys_conf_ipconfig_dat, "SYS-CONF", "IPCONFIG.DAT", mcport);
 	if (retorno < 0)
 	{
 		return 6;
 	}
-	retorno = write_embed(&app_nhddl_title_cfg, size_app_nhddl_title_cfg, "APP_NHDDL", "title.cfg", mcport);
+	retorno = write_embed(&sys_conf_launchelf_cnf, size_sys_conf_launchelf_cnf, "SYS-CONF", "LAUNCHELF.CNF", mcport);
 	if (retorno < 0)
 	{
 		return 6;
 	}
-	// APP_OPL folder
-	retorno = write_embed(&app_opl_appinfo_pbt, size_app_opl_appinfo_pbt, "APP_OPL", "APPINFO.PBT", mcport);
+	retorno = write_embed(&sys_conf_osdmenu_cnf, size_sys_conf_osdmenu_cnf, "SYS-CONF", "OSDMENU.CNF", mcport);
 	if (retorno < 0)
 	{
 		return 6;
 	}
-	retorno = write_embed(&app_opl_copy_icn, size_app_opl_copy_icn, "APP_OPL", "copy.icn", mcport);
+	retorno = write_embed(&sys_conf_ps2bbl_ini, size_sys_conf_ps2bbl_ini, "SYS-CONF", "PS2BBL.INI", mcport);
 	if (retorno < 0)
 	{
 		return 6;
 	}
-	retorno = write_embed(&app_opl_del_icn, size_app_opl_del_icn, "APP_OPL", "del.icn", mcport);
+	retorno = write_embed(&sys_conf_psxbbl_ini, size_sys_conf_psxbbl_ini, "SYS-CONF", "PSXBBL.INI", mcport);
 	if (retorno < 0)
 	{
 		return 6;
 	}
-	retorno = write_embed(&app_opl_icon_sys, size_app_opl_icon_sys, "APP_OPL", "icon.sys", mcport);
+	retorno = write_embed(&sys_conf_sysconf_icn, size_sys_conf_sysconf_icn, "SYS-CONF", "sysconf.icn", mcport);
 	if (retorno < 0)
 	{
 		return 6;
 	}
-	retorno = write_embed(&app_opl_list_icn, size_app_opl_list_icn, "APP_OPL", "list.icn", mcport);
+	retorno = write_embed(&sys_conf_usbd_irx, size_sys_conf_usbd_irx, "SYS-CONF", "USBD.IRX", mcport);
 	if (retorno < 0)
 	{
 		return 6;
 	}
-	retorno = write_embed(&app_opl_opl_elf, size_app_opl_opl_elf, "APP_OPL", "OPL.ELF", mcport);
-	if (retorno < 0)
-	{
-		return 6;
-	}
-	retorno = write_embed(&app_opl_title_cfg, size_app_opl_title_cfg, "APP_OPL", "title.cfg", mcport);
-	if (retorno < 0)
-	{
-		return 6;
-	}
-	// PS1_DKWDRV folder
-		retorno = write_embed(&ps1_dkwdrv_copy_icn, size_ps1_dkwdrv_copy_icn, "PS1_DKWDRV", "copy.icn", mcport);
+	retorno = write_embed(&sys_conf_usbhdfsd_irx, size_sys_conf_usbhdfsd_irx, "SYS-CONF", "USBHDFSD.IRX", mcport);
 	if (retorno < 0)
 	{
 		return 6;
 	}
 
-			retorno = write_embed(&ps1_dkwdrv_del_icn, size_ps1_dkwdrv_del_icn, "PS1_DKWDRV", "del.icn", mcport);
-	if (retorno < 0)
-	{
-		return 6;
-	}
-
-			retorno = write_embed(&ps1_dkwdrv_dkwdrv_elf, size_ps1_dkwdrv_dkwdrv_elf, "PS1_DKWDRV", "DKWDRV.ELF", mcport);
-	if (retorno < 0)
-	{
-		return 6;
-	}
-
-			retorno = write_embed(&ps1_dkwdrv_icon_sys, size_ps1_dkwdrv_icon_sys, "PS1_DKWDRV", "icon.sys", mcport);
-	if (retorno < 0)
-	{
-		return 6;
-	}
-
-			retorno = write_embed(&ps1_dkwdrv_list_icn, size_ps1_dkwdrv_list_icn, "PS1_DKWDRV", "list.icn", mcport);
-	if (retorno < 0)
-	{
-		return 6;
-	}
-
-			retorno = write_embed(&ps1_dkwdrv_title_cfg, size_ps1_dkwdrv_title_cfg, "PS1_DKWDRV", "title.cfg", mcport);
-	if (retorno < 0)
-	{
-		return 6;
-	}
-	// APPS folder
-	retorno = write_embed(&apps_apps_icn, size_apps_apps_icn, "APPS", "APPS.icn", mcport);
-	if (retorno < 0)
-	{
-		return 6;
-	}
-	retorno = write_embed(&apps_del_icn, size_apps_del_icn, "APPS", "del.icn", mcport);
-	if (retorno < 0)
-	{
-		return 6;
-	}
-	retorno = write_embed(&apps_icon_sys, size_apps_icon_sys, "APPS", "icon.sys", mcport);
-	if (retorno < 0)
-	{
-		return 6;
-	}
 	// BOOT folder
 	retorno = write_embed(&boot_appinfo_pbt, size_boot_appinfo_pbt, "BOOT", "APPINFO.PBT", mcport);
 	if (retorno < 0)
@@ -933,6 +878,7 @@ static int install(int mcport, int icon_variant)
 	{
 		return 6;
 	}
+
 	// NEUTRINO folder
 	retorno = write_embed(&neutrino_appinfo_pbt, size_neutrino_appinfo_pbt, "NEUTRINO", "APPINFO.PBT", mcport);
 	if (retorno < 0)
@@ -1264,6 +1210,7 @@ static int install(int mcport, int icon_variant)
 	{
 		return 6;
 	}
+
 	// POWEROFF folder
 	retorno = write_embed(&poweroff_del_icn, size_poweroff_del_icn, "POWEROFF", "del.icn", mcport);
 	if (retorno < 0)
@@ -1285,6 +1232,8 @@ static int install(int mcport, int icon_variant)
 	{
 		return 6;
 	}
+
+
 	// RESTART folder
 	retorno = write_embed(&restart_del_icn, size_restart_del_icn, "RESTART", "del.icn", mcport);
 	if (retorno < 0)
@@ -1306,73 +1255,136 @@ static int install(int mcport, int icon_variant)
 	{
 		return 6;
 	}
-	// SYS-CONF folder
-	retorno = write_embed(&sys_conf_appinfo_pbt, size_sys_conf_appinfo_pbt, "SYS-CONF", "APPINFO.PBT", mcport);
+
+	// PS1_DKWDRV folder
+		retorno = write_embed(&ps1_dkwdrv_copy_icn, size_ps1_dkwdrv_copy_icn, "PS1_DKWDRV", "copy.icn", mcport);
 	if (retorno < 0)
 	{
 		return 6;
 	}
-	retorno = write_embed(&sys_conf_copy_icn, size_sys_conf_copy_icn, "SYS-CONF", "copy.icn", mcport);
+
+			retorno = write_embed(&ps1_dkwdrv_del_icn, size_ps1_dkwdrv_del_icn, "PS1_DKWDRV", "del.icn", mcport);
 	if (retorno < 0)
 	{
 		return 6;
 	}
-	retorno = write_embed(&sys_conf_del_icn, size_sys_conf_del_icn, "SYS-CONF", "del.icn", mcport);
+
+			retorno = write_embed(&ps1_dkwdrv_dkwdrv_elf, size_ps1_dkwdrv_dkwdrv_elf, "PS1_DKWDRV", "DKWDRV.ELF", mcport);
 	if (retorno < 0)
 	{
 		return 6;
 	}
-	retorno = write_embed(&sys_conf_endvdpl_irx, size_sys_conf_endvdpl_irx, "SYS-CONF", "endvdpl.irx", mcport);
+
+			retorno = write_embed(&ps1_dkwdrv_icon_sys, size_ps1_dkwdrv_icon_sys, "PS1_DKWDRV", "icon.sys", mcport);
 	if (retorno < 0)
 	{
 		return 6;
 	}
-	retorno = write_embed(&sys_conf_freemcb_cnf, size_sys_conf_freemcb_cnf, "SYS-CONF", "FREEMCB.CNF", mcport);
+
+			retorno = write_embed(&ps1_dkwdrv_list_icn, size_ps1_dkwdrv_list_icn, "PS1_DKWDRV", "list.icn", mcport);
 	if (retorno < 0)
 	{
 		return 6;
 	}
-	retorno = write_embed(&sys_conf_icon_sys, size_sys_conf_icon_sys, "SYS-CONF", "icon.sys", mcport);
+
+			retorno = write_embed(&ps1_dkwdrv_title_cfg, size_ps1_dkwdrv_title_cfg, "PS1_DKWDRV", "title.cfg", mcport);
 	if (retorno < 0)
 	{
 		return 6;
 	}
-	retorno = write_embed(&sys_conf_ipconfig_dat, size_sys_conf_ipconfig_dat, "SYS-CONF", "IPCONFIG.DAT", mcport);
+
+	// APP_OPL folder
+	retorno = write_embed(&app_opl_appinfo_pbt, size_app_opl_appinfo_pbt, "APP_OPL", "APPINFO.PBT", mcport);
 	if (retorno < 0)
 	{
 		return 6;
 	}
-	retorno = write_embed(&sys_conf_launchelf_cnf, size_sys_conf_launchelf_cnf, "SYS-CONF", "LAUNCHELF.CNF", mcport);
+	retorno = write_embed(&app_opl_copy_icn, size_app_opl_copy_icn, "APP_OPL", "copy.icn", mcport);
 	if (retorno < 0)
 	{
 		return 6;
 	}
-	retorno = write_embed(&sys_conf_osdmenu_cnf, size_sys_conf_osdmenu_cnf, "SYS-CONF", "OSDMENU.CNF", mcport);
+	retorno = write_embed(&app_opl_del_icn, size_app_opl_del_icn, "APP_OPL", "del.icn", mcport);
 	if (retorno < 0)
 	{
 		return 6;
 	}
-	retorno = write_embed(&sys_conf_ps2bbl_ini, size_sys_conf_ps2bbl_ini, "SYS-CONF", "PS2BBL.INI", mcport);
+	retorno = write_embed(&app_opl_icon_sys, size_app_opl_icon_sys, "APP_OPL", "icon.sys", mcport);
 	if (retorno < 0)
 	{
 		return 6;
 	}
-	retorno = write_embed(&sys_conf_psxbbl_ini, size_sys_conf_psxbbl_ini, "SYS-CONF", "PSXBBL.INI", mcport);
+	retorno = write_embed(&app_opl_list_icn, size_app_opl_list_icn, "APP_OPL", "list.icn", mcport);
 	if (retorno < 0)
 	{
 		return 6;
 	}
-	retorno = write_embed(&sys_conf_sysconf_icn, size_sys_conf_sysconf_icn, "SYS-CONF", "sysconf.icn", mcport);
+	retorno = write_embed(&app_opl_opl_elf, size_app_opl_opl_elf, "APP_OPL", "OPL.ELF", mcport);
 	if (retorno < 0)
 	{
 		return 6;
 	}
-	retorno = write_embed(&sys_conf_usbd_irx, size_sys_conf_usbd_irx, "SYS-CONF", "USBD.IRX", mcport);
+	retorno = write_embed(&app_opl_title_cfg, size_app_opl_title_cfg, "APP_OPL", "title.cfg", mcport);
 	if (retorno < 0)
 	{
 		return 6;
 	}
-	retorno = write_embed(&sys_conf_usbhdfsd_irx, size_sys_conf_usbhdfsd_irx, "SYS-CONF", "USBHDFSD.IRX", mcport);
+
+	// APP_NHDDL folder
+	retorno = write_embed(&app_nhddl_appinfo_pbt, size_app_nhddl_appinfo_pbt, "APP_NHDDL", "APPINFO.PBT", mcport);
+	if (retorno < 0)
+	{
+		return 6;
+	}
+	retorno = write_embed(&app_nhddl_copy_icn, size_app_nhddl_copy_icn, "APP_NHDDL", "copy.icn", mcport);
+	if (retorno < 0)
+	{
+		return 6;
+	}
+	retorno = write_embed(&app_nhddl_del_icn, size_app_nhddl_del_icn, "APP_NHDDL", "del.icn", mcport);
+	if (retorno < 0)
+	{
+		return 6;
+	}
+	retorno = write_embed(&app_nhddl_icon_sys, size_app_nhddl_icon_sys, "APP_NHDDL", "icon.sys", mcport);
+	if (retorno < 0)
+	{
+		return 6;
+	}
+	retorno = write_embed(&app_nhddl_list_icn, size_app_nhddl_list_icn, "APP_NHDDL", "list.icn", mcport);
+	if (retorno < 0)
+	{
+		return 6;
+	}
+	retorno = write_embed(&app_nhddl_nhddl_elf, size_app_nhddl_nhddl_elf, "APP_NHDDL", "nhddl.elf", mcport);
+	if (retorno < 0)
+	{
+		return 6;
+	}
+	retorno = write_embed(&app_nhddl_nhddl_yaml, size_app_nhddl_nhddl_yaml, "APP_NHDDL", "nhddl.yaml", mcport);
+	if (retorno < 0)
+	{
+		return 6;
+	}
+	retorno = write_embed(&app_nhddl_title_cfg, size_app_nhddl_title_cfg, "APP_NHDDL", "title.cfg", mcport);
+	if (retorno < 0)
+	{
+		return 6;
+	}
+
+
+	// APPS folder
+	retorno = write_embed(&apps_apps_icn, size_apps_apps_icn, "APPS", "APPS.icn", mcport);
+	if (retorno < 0)
+	{
+		return 6;
+	}
+	retorno = write_embed(&apps_del_icn, size_apps_del_icn, "APPS", "del.icn", mcport);
+	if (retorno < 0)
+	{
+		return 6;
+	}
+	retorno = write_embed(&apps_icon_sys, size_apps_icon_sys, "APPS", "icon.sys", mcport);
 	if (retorno < 0)
 	{
 		return 6;
