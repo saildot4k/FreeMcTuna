@@ -543,7 +543,7 @@ static void InitPS2(void)
 	SifExecModuleBuffer(PADMAN_irx, size_PADMAN_irx, 0, NULL, NULL);
 	SifExecModuleBuffer(MCMAN_irx, size_MCMAN_irx, 0, NULL, NULL);
 	SifExecModuleBuffer(MCSERV_irx, size_MCSERV_irx, 0, NULL, NULL);
-    sbv_patch_fileio();// THANKS fjtrujy
+	sbv_patch_fileio();// THANKS fjtrujy
 	mcInit(MC_TYPE_XMC);
 	PadInitPads();
 }
@@ -578,7 +578,7 @@ static int write_embed(void *embed_file, const int embed_size, char *folder, cha
 static int install(int mcport, int icon_variant)
 {
 	char version_manifest_path[64];
-    char temp_path[32];
+	char temp_path[32];
 	int ret, retorno,fd;
 	static int mc_Type, mc_Free, mc_Format;
 	
@@ -607,30 +607,30 @@ static int install(int mcport, int icon_variant)
 	}
 
 	sprintf(temp_path,"mc%u:APPS", mcport);
-	   DeleteFolder(temp_path);
-    sprintf(temp_path,"mc%u:APP_ESR-LAUNCHER", mcport);
-	   DeleteFolder(temp_path);
+		DeleteFolder(temp_path);
+	sprintf(temp_path,"mc%u:APP_ESR-LAUNCHER", mcport);
+		DeleteFolder(temp_path);
 	sprintf(temp_path,"mc%u:BOOT", mcport);
-	   DeleteFolder(temp_path);
+		DeleteFolder(temp_path);
 	sprintf(temp_path, "mc%u:SYS-CONF", mcport);
 		DeleteFolder(temp_path);
 	sprintf(temp_path,"mc%u:SYS_FMCB-CFG", mcport);
-	   DeleteFolder(temp_path);
+		DeleteFolder(temp_path);
 	sprintf(temp_path,"mc%u:SYS_FMCBCFG", mcport);
-	   DeleteFolder(temp_path);
+		DeleteFolder(temp_path);
 	sprintf(temp_path,"mc%u:FMCBD-1.966", mcport);
-	   DeleteFolder(temp_path);
+		DeleteFolder(temp_path);
 	sprintf(temp_path,"mc%u:FMCBD-1.953", mcport);
-	   DeleteFolder(temp_path);
+		DeleteFolder(temp_path);
 	sprintf(temp_path,"mc%u:FMCBD-1.8C ", mcport);
-	   DeleteFolder(temp_path);
+		DeleteFolder(temp_path);
 	sprintf(temp_path,"mc%u:LDR_FMCBD-1.966", mcport);
-	   DeleteFolder(temp_path);
+		DeleteFolder(temp_path);
 	sprintf(temp_path, "mc%u:BXEXEC-FUNTUNA", mcport);
 		DeleteFolder(temp_path);
 	sprintf(temp_path, "mc%u:BXEXEC-OPENTUNA", mcport);
 		DeleteFolder(temp_path);
-    sprintf(temp_path,"mc%u:FORTUNA", mcport);
+	sprintf(temp_path,"mc%u:FORTUNA", mcport);
 		DeleteFolder(temp_path);
 	sprintf(temp_path,"mc%u:OPENTUNA", mcport);
 		DeleteFolder(temp_path);

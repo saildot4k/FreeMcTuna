@@ -252,7 +252,7 @@ EE_SRC =
 	sys-conf_endvdpl_irx.s \
 	sys-conf_icon_sys.s \
 	sys-conf_sysconf_icn.s
-	   
+	
 EE_LIBS = -ldebug -lcdvd -lpatches -lpadx -lmc
 
 all:
