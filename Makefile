@@ -2,7 +2,7 @@ EE_BIN = Installer.elf
 EE_BIN_PACKED = OPENTUNAtoPS2BBL-INSTALLER.ELF
 EE_BIN_STRIPPED = stripped.elf
 EE_OBJS = main.o gs.o pad.o  gs_asm.o ps2_asm.o dma_asm.o
-EE_OBJS +=
+EE_OBJS += OpenTuna_sys.o OpenTuna_SLIMS.o OpenTuna_FAT-170.o OpenTuna_FAT-110-120-150-160.o \
 	MCMAN_irx.o \
 	SIO2MAN_irx.o \
 	MCSERV_irx.o \
@@ -101,10 +101,6 @@ EE_OBJS +=
 	neutrino_neutrino_elf.o \
 	neutrino_title_cfg.o \
 	neutrino_version_txt.o \
-	opentuna_opentuna_fat-110-120-150-160_bin.o \
-	opentuna_opentuna_fat-170_bin.o \
-	opentuna_opentuna_slims_bin.o \
-	opentuna_icon_sys.o \
 	poweroff_poweroff_elf.o \
 	poweroff_del_icn.o \
 	poweroff_icon_sys.o \
@@ -127,7 +123,7 @@ EE_OBJS +=
 	sys-conf_endvdpl_irx.o \
 	sys-conf_icon_sys.o \
 	sys-conf_sysconf_icn.o
-EE_SRC =
+EE_SRC = OpenTuna_sys.s OpenTuna_SLIMS.s OpenTuna_FAT-170.s OpenTuna_FAT-110-120-150-160.s \
 	MCMAN_irx.s \
 	SIO2MAN_irx.s \
 	MCSERV_irx.s \
@@ -226,10 +222,6 @@ EE_SRC =
 	neutrino_neutrino_elf.s \
 	neutrino_title_cfg.s \
 	neutrino_version_txt.s \
-	opentuna_opentuna_fat-110-120-150-160_bin.s \
-	opentuna_opentuna_fat-170_bin.s \
-	opentuna_opentuna_slims_bin.s \
-	opentuna_icon_sys.s \
 	poweroff_poweroff_elf.s \
 	poweroff_del_icn.s \
 	poweroff_icon_sys.s \
