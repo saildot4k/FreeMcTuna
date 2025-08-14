@@ -1034,7 +1034,7 @@ static int install(int mcport, int icon_variant)
 	{
 		return 6;
 	}
-	retorno = write_embed(&neutrino_modules_bdmfs_fatfs_irx, size_neutrino_modules_bdmfs_fatfs_irx, "modules/NEUTRINO", "bdmfs_fatfs.irx", mcport);
+	retorno = write_embed(&neutrino_modules_bdmfs_fatfs_irx, size_neutrino_modules_bdmfs_fatfs_irx, "NEUTRINO", "modules/bdmfs_fatfs.irx", mcport);
 	if (retorno < 0)
 	{
 		return 6;
