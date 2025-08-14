@@ -35,6 +35,8 @@ DETAILED_CHANGELOG
 !.mailmap
 /INSTALL/*
 /MANUAL INSTALL/*
+INSTALL/*
+MANUAL INSTALL/*
 
 #
 # Generated source files
