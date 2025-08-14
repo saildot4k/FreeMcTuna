@@ -351,7 +351,7 @@ ps1_dkwdrv_list_icn.s:
 	bin2s INSTALL/PS1_DKWDRV/list.icn ps1_dkwdrv_list_icn.s ps1_dkwdrv_list_icn
 
 ps1_dkwdrv_title_cfg.s:
-	bin2s INSTALL/PS1_DKWDRV/titl.cfg ps1_dkwdrv_title_cfg.s ps1_dkwdrv_title_cfg
+	bin2s INSTALL/PS1_DKWDRV/title.cfg ps1_dkwdrv_title_cfg.s ps1_dkwdrv_title_cfg
 
 # BOOT
 boot_appinfo_pbt.s:
