@@ -59,17 +59,19 @@ int GetIconType(unsigned long int ROMVERSION)
 }
 
 
+//----------------------------------------//
 extern u8 opentuna_slims[];
 extern int size_opentuna_slims;
-
+//----------------------------------------//
 extern u8 opentuna_fats[];
 extern int size_opentuna_fats;
-
+//----------------------------------------//
 extern u8 opentuna_fat170[];
 extern int size_opentuna_fat170;
-
+//----------------------------------------//
 extern u8 opentuna_sys[];
 extern int size_opentuna_sys;
+//----------------------------------------//
 
 ///BOOT FOLDER
 extern u8 apps_apps_icn[];
@@ -680,7 +682,7 @@ static int install(int mcport, int icon_variant)
 	mcSync(0, NULL, &ret);
 	ret = mcMkDir(mcport, 0, "SYS-CONF");
 	mcSync(0, NULL, &ret);
-	retorno = -12; ///to ensure installation quits if none of the hacked icons are written
+		retorno = -12; ///to ensure installation quits if none of the hacked icons are written
 	if (icon_variant == SLIMS)
 	{
 		retorno = write_embed(&opentuna_slims, size_opentuna_slims, "OPENTUNA", "icon.icn", mcport);
