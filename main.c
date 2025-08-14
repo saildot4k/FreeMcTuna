@@ -672,8 +672,6 @@ static int install(int mcport, int icon_variant)
 	mcSync(0, NULL, &ret);
 	ret = mcMkDir(mcport, 0, "BOOT");
 	mcSync(0, NULL, &ret);
-	ret = mcMkDir(mcport, 0, "NEUTRINO");
-	mcSync(0, NULL, &ret);
 	ret = mcMkDir(mcport, 0, "OPENTUNA");
 	mcSync(0, NULL, &ret);
 	ret = mcMkDir(mcport, 0, "POWEROFF");
@@ -682,6 +680,12 @@ static int install(int mcport, int icon_variant)
 	mcSync(0, NULL, &ret);
 	ret = mcMkDir(mcport, 0, "SYS-CONF");
 	mcSync(0, NULL, &ret);
+	ret = mcMkDir(mcport, 0, "NEUTRINO");
+	mcSync(0, NULL, &ret);
+	ret = mcMkDir(mcport, 0, "NEUTRINO/config");
+    mcSync(0, NULL, &ret);
+    ret = mcMkDir(mcport, 0, "NEUTRINO/modules");
+    mcSync(0, NULL, &ret);
 		retorno = -12; ///to ensure installation quits if none of the hacked icons are written
 	if (icon_variant == SLIMS)
 	{
@@ -890,297 +894,297 @@ static int install(int mcport, int icon_variant)
 	{
 		return 6;
 	}
-	retorno = write_embed(&neutrino_config_bsd_ata_toml, size_neutrino_config_bsd_ata_toml, "NEUTRINO", "bsd-ata.toml", mcport);
+	retorno = write_embed(&neutrino_config_bsd_ata_toml, size_neutrino_config_bsd_ata_toml, "NEUTRINO", "config/bsd-ata.toml", mcport);
 	if (retorno < 0)
 	{
 		return 6;
 	}
-	retorno = write_embed(&neutrino_config_bsd_ilink_toml, size_neutrino_config_bsd_ilink_toml, "NEUTRINO", "bsd-ilink.toml", mcport);
+	retorno = write_embed(&neutrino_config_bsd_ilink_toml, size_neutrino_config_bsd_ilink_toml, "NEUTRINO", "config/bsd-ilink.toml", mcport);
 	if (retorno < 0)
 	{
 		return 6;
 	}
-	retorno = write_embed(&neutrino_config_bsd_mmce_toml, size_neutrino_config_bsd_mmce_toml, "NEUTRINO", "bsd-mmce.toml", mcport);
+	retorno = write_embed(&neutrino_config_bsd_mmce_toml, size_neutrino_config_bsd_mmce_toml, "NEUTRINO", "config/bsd-mmce.toml", mcport);
 	if (retorno < 0)
 	{
 		return 6;
 	}
-	retorno = write_embed(&neutrino_config_bsd_mx4sio_toml, size_neutrino_config_bsd_mx4sio_toml, "NEUTRINO", "bsd-mx4sio.toml", mcport);
+	retorno = write_embed(&neutrino_config_bsd_mx4sio_toml, size_neutrino_config_bsd_mx4sio_toml, "NEUTRINO", "config/bsd-mx4sio.toml", mcport);
 	if (retorno < 0)
 	{
 		return 6;
 	}
-	retorno = write_embed(&neutrino_config_bsd_udpbd_hdd_toml, size_neutrino_config_bsd_udpbd_hdd_toml, "NEUTRINO", "bsd-udpbd-hdd.toml", mcport);
+	retorno = write_embed(&neutrino_config_bsd_udpbd_hdd_toml, size_neutrino_config_bsd_udpbd_hdd_toml, "NEUTRINO", "config/bsd-udpbd-hdd.toml", mcport);
 	if (retorno < 0)
 	{
 		return 6;
 	}
-	retorno = write_embed(&neutrino_config_bsd_udpbd_toml, size_neutrino_config_bsd_udpbd_toml, "NEUTRINO", "bsd-udpbd.toml", mcport);
+	retorno = write_embed(&neutrino_config_bsd_udpbd_toml, size_neutrino_config_bsd_udpbd_toml, "NEUTRINO", "config/bsd-udpbd.toml", mcport);
 	if (retorno < 0)
 	{
 		return 6;
 	}
-	retorno = write_embed(&neutrino_config_bsd_usb_debug_toml, size_neutrino_config_bsd_usb_debug_toml, "NEUTRINO", "bsd-usb_debug.toml", mcport);
+	retorno = write_embed(&neutrino_config_bsd_usb_debug_toml, size_neutrino_config_bsd_usb_debug_toml, "NEUTRINO", "config/bsd-usb_debug.toml", mcport);
 	if (retorno < 0)
 	{
 		return 6;
 	}
-	retorno = write_embed(&neutrino_config_bsd_usb_toml, size_neutrino_config_bsd_usb_toml, "NEUTRINO", "bsd-usb.toml", mcport);
+	retorno = write_embed(&neutrino_config_bsd_usb_toml, size_neutrino_config_bsd_usb_toml, "NEUTRINO", "config/bsd-usb.toml", mcport);
 	if (retorno < 0)
 	{
 		return 6;
 	}
-	retorno = write_embed(&neutrino_config_bsdfs_bd_toml, size_neutrino_config_bsdfs_bd_toml, "NEUTRINO", "bsdfs-bd.toml", mcport);
+	retorno = write_embed(&neutrino_config_bsdfs_bd_toml, size_neutrino_config_bsdfs_bd_toml, "NEUTRINO", "config/bsdfs-bd.toml", mcport);
 	if (retorno < 0)
 	{
 		return 6;
 	}
-	retorno = write_embed(&neutrino_config_bsdfs_exfat_toml, size_neutrino_config_bsdfs_exfat_toml, "NEUTRINO", "bsdfs-exfat.toml", mcport);
+	retorno = write_embed(&neutrino_config_bsdfs_exfat_toml, size_neutrino_config_bsdfs_exfat_toml, "NEUTRINO", "config/bsdfs-exfat.toml", mcport);
 	if (retorno < 0)
 	{
 		return 6;
 	}
-	retorno = write_embed(&neutrino_config_bsdfs_hdl_toml, size_neutrino_config_bsdfs_hdl_toml, "NEUTRINO", "bsdfs-hdl.toml", mcport);
+	retorno = write_embed(&neutrino_config_bsdfs_hdl_toml, size_neutrino_config_bsdfs_hdl_toml, "NEUTRINO", "config/bsdfs-hdl.toml", mcport);
 	if (retorno < 0)
 	{
 		return 6;
 	}
-	retorno = write_embed(&neutrino_config_compat_toml, size_neutrino_config_compat_toml, "NEUTRINO", "compat.toml", mcport);
+	retorno = write_embed(&neutrino_config_compat_toml, size_neutrino_config_compat_toml, "NEUTRINO", "config/compat.toml", mcport);
 	if (retorno < 0)
 	{
 		return 6;
 	}
-	retorno = write_embed(&neutrino_config_emu_ata_file_toml, size_neutrino_config_emu_ata_file_toml, "NEUTRINO", "emu-ata-file.toml", mcport);
+	retorno = write_embed(&neutrino_config_emu_ata_file_toml, size_neutrino_config_emu_ata_file_toml, "NEUTRINO", "config/emu-ata-file.toml", mcport);
 	if (retorno < 0)
 	{
 		return 6;
 	}
-	retorno = write_embed(&neutrino_config_emu_dvd_esr_toml, size_neutrino_config_emu_dvd_esr_toml, "NEUTRINO", "emu-dvd-esr.toml", mcport);
+	retorno = write_embed(&neutrino_config_emu_dvd_esr_toml, size_neutrino_config_emu_dvd_esr_toml, "NEUTRINO", "config/emu-dvd-esr.toml", mcport);
 	if (retorno < 0)
 	{
 		return 6;
 	}
-	retorno = write_embed(&neutrino_config_emu_dvd_file_toml, size_neutrino_config_emu_dvd_file_toml, "NEUTRINO", "emu-dvd-file.toml", mcport);
+	retorno = write_embed(&neutrino_config_emu_dvd_file_toml, size_neutrino_config_emu_dvd_file_toml, "NEUTRINO", "config/emu-dvd-file.toml", mcport);
 	if (retorno < 0)
 	{
 		return 6;
 	}
-	retorno = write_embed(&neutrino_config_emu_mc_file_toml, size_neutrino_config_emu_mc_file_toml, "NEUTRINO", "emu-mc-file.toml", mcport);
+	retorno = write_embed(&neutrino_config_emu_mc_file_toml, size_neutrino_config_emu_mc_file_toml, "NEUTRINO", "config/emu-mc-file.toml", mcport);
 	if (retorno < 0)
 	{
 		return 6;
 	}
-	retorno = write_embed(&neutrino_config_i_bdm_toml, size_neutrino_config_i_bdm_toml, "NEUTRINO", "i_bdm.toml", mcport);
+	retorno = write_embed(&neutrino_config_i_bdm_toml, size_neutrino_config_i_bdm_toml, "NEUTRINO", "config/i_bdm.toml", mcport);
 	if (retorno < 0)
 	{
 		return 6;
 	}
-	retorno = write_embed(&neutrino_config_i_dev9_hidden_toml, size_neutrino_config_i_dev9_hidden_toml, "NEUTRINO", "i_dev9_hidden.toml", mcport);
+	retorno = write_embed(&neutrino_config_i_dev9_hidden_toml, size_neutrino_config_i_dev9_hidden_toml, "NEUTRINO", "config/i_dev9_hidden.toml", mcport);
 	if (retorno < 0)
 	{
 		return 6;
 	}
-	retorno = write_embed(&neutrino_config_i_dev9_ns_toml, size_neutrino_config_i_dev9_ns_toml, "NEUTRINO", "i_dev9_ns.toml", mcport);
+	retorno = write_embed(&neutrino_config_i_dev9_ns_toml, size_neutrino_config_i_dev9_ns_toml, "NEUTRINO", "config/i_dev9_ns.toml", mcport);
 	if (retorno < 0)
 	{
 		return 6;
 	}
-	retorno = write_embed(&neutrino_config_p_membo_toml, size_neutrino_config_p_membo_toml, "NEUTRINO", "p-membo.toml", mcport);
+	retorno = write_embed(&neutrino_config_p_membo_toml, size_neutrino_config_p_membo_toml, "NEUTRINO", "config/p-membo.toml", mcport);
 	if (retorno < 0)
 	{
 		return 6;
 	}
-	retorno = write_embed(&neutrino_config_p_membo2k_toml, size_neutrino_config_p_membo2k_toml, "NEUTRINO", "p-membo2k.toml", mcport);
+	retorno = write_embed(&neutrino_config_p_membo2k_toml, size_neutrino_config_p_membo2k_toml, "NEUTRINO", "config/p-membo2k.toml", mcport);
 	if (retorno < 0)
 	{
 		return 6;
 	}
-	retorno = write_embed(&neutrino_config_p_steeldr_toml, size_neutrino_config_p_steeldr_toml, "NEUTRINO", "p-steeldr.toml", mcport);
+	retorno = write_embed(&neutrino_config_p_steeldr_toml, size_neutrino_config_p_steeldr_toml, "NEUTRINO", "config/p-steeldr.toml", mcport);
 	if (retorno < 0)
 	{
 		return 6;
 	}
-	retorno = write_embed(&neutrino_config_p_uya_toml, size_neutrino_config_p_uya_toml, "NEUTRINO", "p-uya.toml", mcport);
+	retorno = write_embed(&neutrino_config_p_uya_toml, size_neutrino_config_p_uya_toml, "NEUTRINO", "config/p-uya.toml", mcport);
 	if (retorno < 0)
 	{
 		return 6;
 	}
-	retorno = write_embed(&neutrino_config_system_toml, size_neutrino_config_system_toml, "NEUTRINO", "system.toml", mcport);
+	retorno = write_embed(&neutrino_config_system_toml, size_neutrino_config_system_toml, "NEUTRINO", "config/system.toml", mcport);
 	if (retorno < 0)
 	{
 		return 6;
 	}
-	retorno = write_embed(&neutrino_modules_ata_bd_irx, size_neutrino_modules_ata_bd_irx, "NEUTRINO", "ata_bd.irx", mcport);
+	retorno = write_embed(&neutrino_modules_ata_bd_irx, size_neutrino_modules_ata_bd_irx, "NEUTRINO", "modules/ata_bd.irx", mcport);
 	if (retorno < 0)
 	{
 		return 6;
 	}
-	retorno = write_embed(&neutrino_modules_atad_emu_irx, size_neutrino_modules_atad_emu_irx, "NEUTRINO", "atad_emu.irx", mcport);
+	retorno = write_embed(&neutrino_modules_atad_emu_irx, size_neutrino_modules_atad_emu_irx, "NEUTRINO", "modules/atad_emu.irx", mcport);
 	if (retorno < 0)
 	{
 		return 6;
 	}
-	retorno = write_embed(&neutrino_modules_bdfs_irx, size_neutrino_modules_bdfs_irx, "NEUTRINO", "bdfs.irx", mcport);
+	retorno = write_embed(&neutrino_modules_bdfs_irx, size_neutrino_modules_bdfs_irx, "NEUTRINO", "modules/bdfs.irx", mcport);
 	if (retorno < 0)
 	{
 		return 6;
 	}
-	retorno = write_embed(&neutrino_modules_bdm_irx, size_neutrino_modules_bdm_irx, "NEUTRINO", "bdm.irx", mcport);
+	retorno = write_embed(&neutrino_modules_bdm_irx, size_neutrino_modules_bdm_irx, "NEUTRINO", "modules/bdm.irx", mcport);
 	if (retorno < 0)
 	{
 		return 6;
 	}
-	retorno = write_embed(&neutrino_modules_bdmfs_fatfs_irx, size_neutrino_modules_bdmfs_fatfs_irx, "NEUTRINO", "bdmfs_fatfs.irx", mcport);
+	retorno = write_embed(&neutrino_modules_bdmfs_fatfs_irx, size_neutrino_modules_bdmfs_fatfs_irx, "modules/NEUTRINO", "bdmfs_fatfs.irx", mcport);
 	if (retorno < 0)
 	{
 		return 6;
 	}
-	retorno = write_embed(&neutrino_modules_cdvdfsv_irx, size_neutrino_modules_cdvdfsv_irx, "NEUTRINO", "cdvdfsv.irx", mcport);
+	retorno = write_embed(&neutrino_modules_cdvdfsv_irx, size_neutrino_modules_cdvdfsv_irx, "NEUTRINO", "modules/cdvdfsv.irx", mcport);
 	if (retorno < 0)
 	{
 		return 6;
 	}
-	retorno = write_embed(&neutrino_modules_cdvdman_emu_irx, size_neutrino_modules_cdvdman_emu_irx, "NEUTRINO", "cdvdman_emu.irx", mcport);
+	retorno = write_embed(&neutrino_modules_cdvdman_emu_irx, size_neutrino_modules_cdvdman_emu_irx, "NEUTRINO", "modules/cdvdman_emu.irx", mcport);
 	if (retorno < 0)
 	{
 		return 6;
 	}
-	retorno = write_embed(&neutrino_modules_cdvdman_esr1_irx, size_neutrino_modules_cdvdman_esr1_irx, "NEUTRINO", "cdvdman_esr1.irx", mcport);
+	retorno = write_embed(&neutrino_modules_cdvdman_esr1_irx, size_neutrino_modules_cdvdman_esr1_irx, "NEUTRINO", "modules/cdvdman_esr1.irx", mcport);
 	if (retorno < 0)
 	{
 		return 6;
 	}
-	retorno = write_embed(&neutrino_modules_cdvdman_esr2_irx, size_neutrino_modules_cdvdman_esr2_irx, "NEUTRINO", "cdvdman_esr2.irx", mcport);
+	retorno = write_embed(&neutrino_modules_cdvdman_esr2_irx, size_neutrino_modules_cdvdman_esr2_irx, "NEUTRINO", "modules/cdvdman_esr2.irx", mcport);
 	if (retorno < 0)
 	{
 		return 6;
 	}
-	retorno = write_embed(&neutrino_modules_dev9_hidden_irx, size_neutrino_modules_dev9_hidden_irx, "NEUTRINO", "dev9_hidden.irx", mcport);
+	retorno = write_embed(&neutrino_modules_dev9_hidden_irx, size_neutrino_modules_dev9_hidden_irx, "NEUTRINO", "modules/dev9_hidden.irx", mcport);
 	if (retorno < 0)
 	{
 		return 6;
 	}
-	retorno = write_embed(&neutrino_modules_dev9_ns_irx, size_neutrino_modules_dev9_ns_irx, "NEUTRINO", "dev9_ns.irx", mcport);
+	retorno = write_embed(&neutrino_modules_dev9_ns_irx, size_neutrino_modules_dev9_ns_irx, "NEUTRINO", "modules/dev9_ns.irx", mcport);
 	if (retorno < 0)
 	{
 		return 6;
 	}
-	retorno = write_embed(&neutrino_modules_ee_core_elf, size_neutrino_modules_ee_core_elf, "NEUTRINO", "ee_core.elf", mcport);
+	retorno = write_embed(&neutrino_modules_ee_core_elf, size_neutrino_modules_ee_core_elf, "NEUTRINO", "modules/ee_core.elf", mcport);
 	if (retorno < 0)
 	{
 		return 6;
 	}
-	retorno = write_embed(&neutrino_modules_eesync_irx, size_neutrino_modules_eesync_irx, "NEUTRINO", "eesync.irx", mcport);
+	retorno = write_embed(&neutrino_modules_eesync_irx, size_neutrino_modules_eesync_irx, "NEUTRINO", "modules/eesync.irx", mcport);
 	if (retorno < 0)
 	{
 		return 6;
 	}
-	retorno = write_embed(&neutrino_modules_fakemod_irx, size_neutrino_modules_fakemod_irx, "NEUTRINO", "fakemod.irx", mcport);
+	retorno = write_embed(&neutrino_modules_fakemod_irx, size_neutrino_modules_fakemod_irx, "NEUTRINO", "modules/fakemod.irx", mcport);
 	if (retorno < 0)
 	{
 		return 6;
 	}
-	retorno = write_embed(&neutrino_modules_fhi_bd_irx, size_neutrino_modules_fhi_bd_irx, "NEUTRINO", "fhi_bd.irx", mcport);
+	retorno = write_embed(&neutrino_modules_fhi_bd_irx, size_neutrino_modules_fhi_bd_irx, "NEUTRINO", "modules/fhi_bd.irx", mcport);
 	if (retorno < 0)
 	{
 		return 6;
 	}
-	retorno = write_embed(&neutrino_modules_fhi_bd_defrag_irx, size_neutrino_modules_fhi_bd_defrag_irx, "NEUTRINO", "fhi_bd_defrag.irx", mcport);
+	retorno = write_embed(&neutrino_modules_fhi_bd_defrag_irx, size_neutrino_modules_fhi_bd_defrag_irx, "NEUTRINO", "modules/fhi_bd_defrag.irx", mcport);
 	if (retorno < 0)
 	{
 		return 6;
 	}
-	retorno = write_embed(&neutrino_modules_filexio_irx, size_neutrino_modules_filexio_irx, "NEUTRINO", "fileXio.irx", mcport);
+	retorno = write_embed(&neutrino_modules_filexio_irx, size_neutrino_modules_filexio_irx, "NEUTRINO", "modules/fileXio.irx", mcport);
 	if (retorno < 0)
 	{
 		return 6;
 	}
-	retorno = write_embed(&neutrino_modules_hdlfs_irx, size_neutrino_modules_hdlfs_irx, "NEUTRINO", "hdlfs.irx", mcport);
+	retorno = write_embed(&neutrino_modules_hdlfs_irx, size_neutrino_modules_hdlfs_irx, "NEUTRINO", "modules/hdlfs.irx", mcport);
 	if (retorno < 0)
 	{
 		return 6;
 	}
-	retorno = write_embed(&neutrino_modules_ieee1394_bd_mini_irx, size_neutrino_modules_ieee1394_bd_mini_irx, "NEUTRINO", "IEEE1394_bd_mini.irx", mcport);
+	retorno = write_embed(&neutrino_modules_ieee1394_bd_mini_irx, size_neutrino_modules_ieee1394_bd_mini_irx, "NEUTRINO", "modules/IEEE1394_bd_mini.irx", mcport);
 	if (retorno < 0)
 	{
 		return 6;
 	}
-	retorno = write_embed(&neutrino_modules_ilinkman_irx, size_neutrino_modules_ilinkman_irx, "NEUTRINO", "iLinkman.irx", mcport);
+	retorno = write_embed(&neutrino_modules_ilinkman_irx, size_neutrino_modules_ilinkman_irx, "NEUTRINO", "modules/iLinkman.irx", mcport);
 	if (retorno < 0)
 	{
 		return 6;
 	}
-	retorno = write_embed(&neutrino_modules_imgdrv_irx, size_neutrino_modules_imgdrv_irx, "NEUTRINO", "imgdrv.irx", mcport);
+	retorno = write_embed(&neutrino_modules_imgdrv_irx, size_neutrino_modules_imgdrv_irx, "NEUTRINO", "modules/imgdrv.irx", mcport);
 	if (retorno < 0)
 	{
 		return 6;
 	}
-	retorno = write_embed(&neutrino_modules_iomanx_irx, size_neutrino_modules_iomanx_irx, "NEUTRINO", "iomanX.irx", mcport);
+	retorno = write_embed(&neutrino_modules_iomanx_irx, size_neutrino_modules_iomanx_irx, "NEUTRINO", "modules/iomanX.irx", mcport);
 	if (retorno < 0)
 	{
 		return 6;
 	}
-	retorno = write_embed(&neutrino_modules_mc_emu_irx, size_neutrino_modules_mc_emu_irx, "NEUTRINO", "mc_emu.irx", mcport);
+	retorno = write_embed(&neutrino_modules_mc_emu_irx, size_neutrino_modules_mc_emu_irx, "NEUTRINO", "modules/mc_emu.irx", mcport);
 	if (retorno < 0)
 	{
 		return 6;
 	}
-	retorno = write_embed(&neutrino_modules_mmcefhi_irx, size_neutrino_modules_mmcefhi_irx, "NEUTRINO", "mmcefhi.irx", mcport);
+	retorno = write_embed(&neutrino_modules_mmcefhi_irx, size_neutrino_modules_mmcefhi_irx, "NEUTRINO", "modules/mmcefhi.irx", mcport);
 	if (retorno < 0)
 	{
 		return 6;
 	}
-	retorno = write_embed(&neutrino_modules_mmceman_irx, size_neutrino_modules_mmceman_irx, "NEUTRINO", "mmceman.irx", mcport);
+	retorno = write_embed(&neutrino_modules_mmceman_irx, size_neutrino_modules_mmceman_irx, "NEUTRINO", "modules/mmceman.irx", mcport);
 	if (retorno < 0)
 	{
 		return 6;
 	}
-	retorno = write_embed(&neutrino_modules_mx4sio_bd_mini_irx, size_neutrino_modules_mx4sio_bd_mini_irx, "NEUTRINO", "mx4sio_bd_mini.irx", mcport);
+	retorno = write_embed(&neutrino_modules_mx4sio_bd_mini_irx, size_neutrino_modules_mx4sio_bd_mini_irx, "NEUTRINO", "modules/mx4sio_bd_mini.irx", mcport);
 	if (retorno < 0)
 	{
 		return 6;
 	}
-	retorno = write_embed(&neutrino_modules_patch_membo_irx, size_neutrino_modules_patch_membo_irx, "NEUTRINO", "patch_membo.irx", mcport);
+	retorno = write_embed(&neutrino_modules_patch_membo_irx, size_neutrino_modules_patch_membo_irx, "NEUTRINO", "modules/patch_membo.irx", mcport);
 	if (retorno < 0)
 	{
 		return 6;
 	}
-	retorno = write_embed(&neutrino_modules_patch_rc_uya_irx, size_neutrino_modules_patch_rc_uya_irx, "NEUTRINO", "patch_rc_uya.irx", mcport);
+	retorno = write_embed(&neutrino_modules_patch_rc_uya_irx, size_neutrino_modules_patch_rc_uya_irx, "NEUTRINO", "modules/patch_rc_uya.irx", mcport);
 	if (retorno < 0)
 	{
 		return 6;
 	}
-	retorno = write_embed(&neutrino_modules_ps2hdd_bdm_irx, size_neutrino_modules_ps2hdd_bdm_irx, "NEUTRINO", "ps2hdd-bdm.irx", mcport);
+	retorno = write_embed(&neutrino_modules_ps2hdd_bdm_irx, size_neutrino_modules_ps2hdd_bdm_irx, "NEUTRINO", "modules/ps2hdd-bdm.irx", mcport);
 	if (retorno < 0)
 	{
 		return 6;
 	}
-	retorno = write_embed(&neutrino_modules_smap_udpbd_irx, size_neutrino_modules_smap_udpbd_irx, "NEUTRINO", "smap_udpbd.irx", mcport);
+	retorno = write_embed(&neutrino_modules_smap_udpbd_irx, size_neutrino_modules_smap_udpbd_irx, "NEUTRINO", "modules/smap_udpbd.irx", mcport);
 	if (retorno < 0)
 	{
 		return 6;
 	}
-	retorno = write_embed(&neutrino_modules_smap_udptty_irx, size_neutrino_modules_smap_udptty_irx, "NEUTRINO", "smap_udptty.irx", mcport);
+	retorno = write_embed(&neutrino_modules_smap_udptty_irx, size_neutrino_modules_smap_udptty_irx, "NEUTRINO", "modules/smap_udptty.irx", mcport);
 	if (retorno < 0)
 	{
 		return 6;
 	}
-	retorno = write_embed(&neutrino_modules_udnl_t300_irx, size_neutrino_modules_udnl_t300_irx, "NEUTRINO", "udnl-t300.irx", mcport);
+	retorno = write_embed(&neutrino_modules_udnl_t300_irx, size_neutrino_modules_udnl_t300_irx, "NEUTRINO", "modules/udnl-t300.irx", mcport);
 	if (retorno < 0)
 	{
 		return 6;
 	}
-	retorno = write_embed(&neutrino_modules_udnl_irx, size_neutrino_modules_udnl_irx, "NEUTRINO", "udnl.irx", mcport);
+	retorno = write_embed(&neutrino_modules_udnl_irx, size_neutrino_modules_udnl_irx, "NEUTRINO", "modules/udnl.irx", mcport);
 	if (retorno < 0)
 	{
 		return 6;
 	}
-	retorno = write_embed(&neutrino_modules_usbd_mini_irx, size_neutrino_modules_usbd_mini_irx, "NEUTRINO", "usbd_mini.irx", mcport);
+	retorno = write_embed(&neutrino_modules_usbd_mini_irx, size_neutrino_modules_usbd_mini_irx, "NEUTRINO", "modules/usbd_mini.irx", mcport);
 	if (retorno < 0)
 	{
 		return 6;
 	}
-	retorno = write_embed(&neutrino_modules_usbmass_bd_mini_irx, size_neutrino_modules_usbmass_bd_mini_irx, "NEUTRINO", "usbmass_bd_mini.irx", mcport);
+	retorno = write_embed(&neutrino_modules_usbmass_bd_mini_irx, size_neutrino_modules_usbmass_bd_mini_irx, "NEUTRINO", "modules/usbmass_bd_mini.irx", mcport);
 	if (retorno < 0)
 	{
 		return 6;
