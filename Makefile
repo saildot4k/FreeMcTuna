@@ -543,7 +543,7 @@ opentuna_opentuna_slims_bin.s:
 	bin2s INSTALL/OPENTUNA/OPENTUNA_SLIMS.BIN opentuna_opentuna_slims_bin.s opentuna_opentuna_slims_bin
 
 opentuna_icon_sys.s:
-	bin2s INSTALL/OPENTUNA/ICON.SYS opentuna_icon_sys.s opentuna_icon_sys
+	bin2s INSTALL/OPENTUNA/icon.sys opentuna_icon_sys.s opentuna_icon_sys
 
 poweroff_poweroff_elf.s:
 	bin2s INSTALL/POWEROFF/POWEROFF.ELF poweroff_poweroff_elf.s poweroff_poweroff_elf
