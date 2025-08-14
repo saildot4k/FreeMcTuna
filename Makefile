@@ -288,7 +288,7 @@ app_opl_appinfo_pbt.s:
 	bin2s INSTALL/APP_OPL/APPINFO.PBT app_opl_appinfo_pbt.s app_opl_appinfo_pbt
 
 app_opl_opl_elf.s:
-	bin2s INSTALL/APP_OPL/opl.elf app_opl_opl_elf.s app_opl_opl_elf
+	bin2s INSTALL/APP_OPL/OPL.ELF app_opl_opl_elf.s app_opl_opl_elf
 
 app_opl_copy_icn.s:
 	bin2s INSTALL/APP_OPL/copy.icn app_opl_copy_icn.s app_opl_copy_icn
@@ -471,7 +471,7 @@ neutrino_modules_fhi_bd_defrag_irx.s:
 	bin2s INSTALL/NEUTRINO/modules/fhi_bd_defrag.irx neutrino_modules_fhi_bd_defrag_irx.s neutrino_modules_fhi_bd_defrag_irx
 
 neutrino_modules_filexio_irx.s:
-	bin2s INSTALL/NEUTRINO/modules/filexio.irx neutrino_modules_filexio_irx.s neutrino_modules_filexio_irx
+	bin2s INSTALL/NEUTRINO/modules/filexio.irx neutrino_modules_filexio_irx.s neutrino_modules_filexio_irxF
 
 neutrino_modules_hdlfs_irx.s:
 	bin2s INSTALL/NEUTRINO/modules/hdlfs.irx neutrino_modules_hdlfs_irx.s neutrino_modules_hdlfs_irx
