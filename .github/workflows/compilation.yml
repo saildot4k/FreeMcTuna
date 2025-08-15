@@ -38,10 +38,10 @@ jobs:
         run: ls -lah OPENTUNAtoPS2BBL-INSTALLER-AIO.ELF
 
       - name: Create release
-        if: github.ref == 'refs/heads/Free-McTuna-OpenTuna-Installer-AIO'
+        if: github.ref == 'refs/heads/UMCS-AIO'
         uses: marvinpinto/action-automatic-releases@latest
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
-          automatic_release_tag: "TunaPS2BBL2OSDMENU-AIO"
+          automatic_release_tag: "All-In-One"
           title: "OpenTuna w/ PS2BBL & OSDMenu-AIO"
           files: OPENTUNAtoPS2BBL-INSTALLER-AIO.ELF
