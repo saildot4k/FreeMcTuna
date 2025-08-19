@@ -32,31 +32,38 @@ ps1drv_use_ps1vn = 0
 # boot_custom_payload = 1
 path_DKWDRV_ELF = mc?:/PS1_DKWDRV/DKWDRV.ELF
 # --------------------------------------------------
-name_OSDSYS_ITEM_1 = Launch Disc
+name_OSDSYS_ITEM_1 = Launch Disc: No Logo
 path1_OSDSYS_ITEM_1 = cdrom
 arg_OSDSYS_ITEM_1 = -nologo
 # --------------------------------------------------
+name_OSDSYS_ITEM_2 = Launch Disc: with Logo
+path1_OSDSYS_ITEM_2 = cdrom
 # --------------------------------------------------
-name_OSDSYS_ITEM_2 = NHDDL - MMCE & exFAT HDD
-path1_OSDSYS_ITEM_2 = usb:/APPS/nhddl.elf
-path2_OSDSYS_ITEM_2 = mmce?:/APPS/nhddl.elf
-path3_OSDSYS_ITEM_2 = mc?:/APP_NHDDL/nhddl.elf
-arg_OSDSYS_ITEM_2 = -mode=mmce
-arg_OSDSYS_ITEM_2 = -mode=ata
+name_OSDSYS_ITEM_3 = ESR Launcher
+path1_OSDSYS_ITEM_3 = mc?:BOOT/ESR.ELF
 # --------------------------------------------------
-name_OSDSYS_ITEM_4 = Open PS2 Loader
-path1_OSDSYS_ITEM_4 = usb:/APPS/APP_OPL/OPL.ELF
-path2_OSDSYS_ITEM_4 = mmce?:/APPS/APP_OPL/OPL.ELF
-path3_OSDSYS_ITEM_4 = mc?:/APP_OPL/OPL.ELF
+name_OSDSYS_ITEM_4 = DKWDRV
+path1_OSDSYS_ITEM_4 = mc?:PS1_DKWDRV/DKWDRV.ELF
+# --------------------------------------------------
+# --------------------------------------------------
+name_OSDSYS_ITEM_7 = NHDDL
+path1_OSDSYS_ITEM_7 = usb:/APPS/nhddl.elf
+path2_OSDSYS_ITEM_7 = mmce?:/APPS/nhddl.elf
+path3_OSDSYS_ITEM_7 = mc?:/APP_NHDDL/nhddl.elf
+# --------------------------------------------------
+name_OSDSYS_ITEM_8 = Open PS2 Loader
+path1_OSDSYS_ITEM_8 = usb:/APPS/APP_OPL/OPL.ELF
+path2_OSDSYS_ITEM_8 = mmce?:/APPS/APP_OPL/OPL.ELF
+path3_OSDSYS_ITEM_8 = mc?:/APP_OPL/OPL.ELF
 # --------------------------------------------------
 # --------------------------------------------------
 name_OSDSYS_ITEM_9 = wLE ISR exFAT USB
-path1_OSDSYS_ITEM_9 = mc?:/APP_WLE-ISR-XF/WLE-ISR-XF.ELF
-path2_OSDSYS_ITEM_9 = mmce?:/APPS/APP_WLE-ISR-XF/WLE-ISR-XF.ELF
-path3_OSDSYS_ITEM_9 = usb:/APPS/APP_WLE-ISR-XF/WLE-ISR-XF.ELF
+path1_OSDSYS_ITEM_9 = mass:/APPS/APP_WLE-ISR-XF/WLE-ISR-XF.ELF
+path2_OSDSYS_ITEM_9 = mc?:/APP_WLE-ISR-XF/WLE-ISR-XF.ELF
+path3_OSDSYS_ITEM_9 = mc?:/BOOT/BOOT2.ELF
 # --------------------------------------------------
 # --------------------------------------------------
-name_OSDSYS_ITEM_249 = Reboot
+name_OSDSYS_ITEM_249 = Reboot OSDMenu
 path1_OSDSYS_ITEM_249 = mc?:/BOOT/BOOT.ELF
 # --------------------------------------------------
 name_OSDSYS_ITEM_250 = Shutdown
