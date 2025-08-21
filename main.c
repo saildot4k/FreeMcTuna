@@ -1374,7 +1374,7 @@ static int install(int mcport, int icon_variant)
 
 
 	// APPS folder
-	retorno = write_embed(&apps_apps_icn, size_apps_apps_icn, "APPS", "APPS.icn", mcport);
+	retorno = write_embed(&apps_apps_icn, size_apps_apps_icn, "APPS", "apps.icn", mcport);
 	if (retorno < 0)
 	{
 		return 6;
