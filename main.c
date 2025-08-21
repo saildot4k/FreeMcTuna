@@ -628,7 +628,7 @@ static int install(int mcport, int icon_variant)
     {
         return 6;
     }
-        retorno = write_embed(&apps_icn, size_apps_icn, "APPS", "APPS.icn", mcport);
+        retorno = write_embed(&apps_icn, size_apps_icn, "APPS", "apps.icn", mcport);
     if (retorno < 0)
     {
         return 6;
