@@ -619,16 +619,16 @@ restart_list_icn.s:
 	bin2s INSTALL/RESTART/LIST.ICN restart_list_icn.s restart_list_icn
 
 # SYS-OSDMENU
-sys_osdmenu_appinfo_pbt:
+sys_osdmenu_appinfo_pbt.s:
 	bin2s INSTALL/SYS-OSDMENU/APPINFO.PBT sys_osdmenu_appinfo_pbt.s sys_osdmenu_appinfo_pbt
 
-sys_osdmenu_copy_icn:
+sys_osdmenu_copy_icn.s:
 	bin2s INSTALL/SYS-OSDMENU/COPY.ICN sys_osdmenu_copy_icn.s sys_osdmenu_copy_icn
 
-sys_osdmenu_del_icn:
+sys_osdmenu_del_icn.s:
 	bin2s INSTALL/SYS-OSDMENU/DEL.ICN sys_osdmenu_del_icn.s sys_osdmenu_del_icn
 
-sys_osdmenu_icon_sys:
+sys_osdmenu_icon_sys.s:
 	bin2s INSTALL/SYS-OSDMENU/ICON.SYS sys_osdmenu_icon_sys.s sys_osdmenu_icon_sys
 
 sys_osdmenu_list_icn.s:
