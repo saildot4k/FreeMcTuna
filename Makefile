@@ -620,25 +620,25 @@ restart_list_icn.s:
 
 # SYS-OSDMENU
 sys_osdmenu_appinfo_pbt.s:
-	bin2s INSTALL/SYS-OSDMENU/APPINFO.PBT sys_osdmenu_appinfo_pbt.s sys_osdmenu_appinfo_pbt
+	bin2s INSTALL/SYS_OSDMENU/APPINFO.PBT sys_osdmenu_appinfo_pbt.s sys_osdmenu_appinfo_pbt
 
 sys_osdmenu_copy_icn.s:
-	bin2s INSTALL/SYS-OSDMENU/COPY.ICN sys_osdmenu_copy_icn.s sys_osdmenu_copy_icn
+	bin2s INSTALL/SYS_OSDMENU/COPY.ICN sys_osdmenu_copy_icn.s sys_osdmenu_copy_icn
 
 sys_osdmenu_del_icn.s:
-	bin2s INSTALL/SYS-OSDMENU/DEL.ICN sys_osdmenu_del_icn.s sys_osdmenu_del_icn
+	bin2s INSTALL/SYS_OSDMENU/DEL.ICN sys_osdmenu_del_icn.s sys_osdmenu_del_icn
 
 sys_osdmenu_icon_sys.s:
-	bin2s INSTALL/SYS-OSDMENU/ICON.SYS sys_osdmenu_icon_sys.s sys_osdmenu_icon_sys
+	bin2s INSTALL/SYS_OSDMENU/ICON.SYS sys_osdmenu_icon_sys.s sys_osdmenu_icon_sys
 
 sys_osdmenu_list_icn.s:
-	bin2s INSTALL/SYS-OSDMENU/LIST.ICN sys_osdmenu_list_icn.s sys_osdmenu_list_icn
+	bin2s INSTALL/SYS_OSDMENU/LIST.ICN sys_osdmenu_list_icn.s sys_osdmenu_list_icn
 
 sys_osdmenu_osdmenu_elf.s:
-	bin2s INSTALL/SYS-OSDMENU/OSDMENU.ELF sys_osdmenu_osdmenu_elf.s sys_osdmenu_osdmenu_elf
+	bin2s INSTALL/SYS_OSDMENU/OSDMENU.ELF sys_osdmenu_osdmenu_elf.s sys_osdmenu_osdmenu_elf
 
 sys_osdmenu_title_cfg.s:
-	bin2s INSTALL/SYS-OSDMENU/TITLE.CFG sys_osdmenu_title_cfg.s sys_osdmenu_title_cfg
+	bin2s INSTALL/SYS_OSDMENU/TITLE.CFG sys_osdmenu_title_cfg.s sys_osdmenu_title_cfg
 
 # SYS-CONF
 sys_conf_appinfo_pbt.s:
