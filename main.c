@@ -454,7 +454,7 @@ extern u8 sys_osdmenu_copy_icn[];
 extern int size_sys_osdmenu_copy_icn;
 
 extern u8 sys_osdmenu_del_icn[];
-extern int size_sys_osdmenu_del_icon;
+extern int size_sys_osdmenu_del_icn;
 
 extern u8 sys_osdmenu_icon_sys[];
 extern int size_sys_osdmenu_icon_sys;
@@ -787,7 +787,7 @@ static int install(int mcport, int icon_variant)
 	{
 		return 6;
 	}
-	retorno = write_embed(&sys_osdmenu_del_icn, size_sys_osdmenu_del_icon, "SYS_OSDMENU", "del.icn", mcport);
+	retorno = write_embed(&sys_osdmenu_del_icn, size_sys_osdmenu_del_icn, "SYS_OSDMENU", "del.icn", mcport);
 	if (retorno < 0)
 	{
 		return 6;
