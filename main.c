@@ -447,8 +447,8 @@ extern int size_sys_conf_sysconf_icn;
 
 // SYS_OSDMENU
 
-extern u8 sys_osdmenu_appinfo.pbt[];
-extern int size_sys_osdmenu_appinfo.pbt;
+extern u8 sys_osdmenu_appinfo_pbt[];
+extern int size_sys_osdmenu_appinfo_pbt;
 
 extern u8 sys_osdmenu_copy_icn[];
 extern int size_sys_osdmenu_copy_icn;
@@ -777,7 +777,7 @@ static int install(int mcport, int icon_variant)
 	}
 
 	// SYS_OSDMENU
-	retorno = write_embed(&sys_osdmenu_appinfo, size_sys_osdmenu_appinfo, "SYS_OSDMENU", "APPINFO.PBT", mcport);
+	retorno = write_embed(&sys_osdmenu_appinfo_pbt, size_sys_osdmenu_appinfo_pbt, "SYS_OSDMENU", "APPINFO.PBT", mcport);
 	if (retorno < 0)
 	{
 		return 6;
