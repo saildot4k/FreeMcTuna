@@ -134,7 +134,7 @@ EE_OBJS += OpenTuna_sys.o OpenTuna_SLIMS.o OpenTuna_FAT-170.o OpenTuna_FAT-110-1
 	sys_osdmenu_icon_sys.o \
 	sys_osdmenu_list_icn.o \
 	sys_osdmenu_osdmenu_elf.o \
-	sys_osdmenu_title_cfg.o \
+	sys_osdmenu_title_cfg.o
 EE_SRC = OpenTuna_sys.s OpenTuna_SLIMS.s OpenTuna_FAT-170.s OpenTuna_FAT-110-120-150-160.s \
 	MCMAN_irx.s \
 	SIO2MAN_irx.s \
@@ -267,7 +267,7 @@ EE_SRC = OpenTuna_sys.s OpenTuna_SLIMS.s OpenTuna_FAT-170.s OpenTuna_FAT-110-120
 	sys_osdmenu_icon_sys.s \
 	sys_osdmenu_list_icn.s \
 	sys_osdmenu_osdmenu_elf.s \
-	sys_osdmenu_title_cfg.s \
+	sys_osdmenu_title_cfg.s
 	
 EE_LIBS = -ldebug -lcdvd -lpatches -lpadx -lmc
 
