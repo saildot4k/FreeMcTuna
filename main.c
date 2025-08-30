@@ -177,9 +177,6 @@ extern int size_boot_del_icn;
 extern u8 boot_icon_sys[];
 extern int size_boot_icon_sys;
 
-extern u8 boot_osdmenu_elf[];
-extern int size_boot_osdmenu_elf;
-
 // NEUTRINO
 extern u8 neutrino_appinfo_pbt[];
 extern int size_neutrino_appinfo_pbt;
@@ -448,6 +445,29 @@ extern int size_sys_conf_icon_sys;
 extern u8 sys_conf_sysconf_icn[];
 extern int size_sys_conf_sysconf_icn;
 
+// SYS_OSDMENU
+
+extern u8 sys_osdmenu_appinfo.pbt[];
+extern int size_sys_osdmenu_appinfo.pbt;
+
+extern u8 sys_osdmenu_copy_icn[];
+extern int size_sys_osdmenu_copy_icn;
+
+extern u8 sys_osdmenu_del_icn[];
+extern int size_sys_osdmenu_del_icon;
+
+extern u8 sys_osdmenu_icon_sys[];
+extern int size_sys_osdmenu_icon_sys;
+
+extern u8 sys_osdmenu_list_icn[];
+extern int size_sys_osdmenu_list_icn;
+
+extern u8 sys_osdmenu_osdmenu_elf[];
+extern int size_sys_osdmenu_osdmenu_elf;
+
+extern u8 sys_osdmenu_title_cfg[];
+extern int size_sys_osdmenu_title_cfg;
+
 
 // Embedded IOP drivers
 // Embedded IOP drivers
@@ -700,6 +720,8 @@ static int install(int mcport, int icon_variant)
 			return 4;
 		}
 	}
+	ret = mcMkDir(mcport, 0, "SYS_OSDMENU");
+	mcSync(0, NULL, &ret);
 	ret = mcMkDir(mcport, 0, "APP_NHDDL");
 	mcSync(0, NULL, &ret);
 	ret = mcMkDir(mcport, 0, "APP_OPL");
@@ -754,6 +776,42 @@ static int install(int mcport, int icon_variant)
 	close(fd);
 	}
 
+	// SYS_OSDMENU
+	retorno = write_embed(&sys_osdmenu_appinfo, size_sys_osdmenu_appinfo, "SYS_OSDMENU", "APPINFO.PBT", mcport);
+	if (retorno < 0)
+	{
+		return 6;
+	}
+	retorno = write_embed(&sys_osdmenu_copy_icn, size_sys_osdmenu_copy_icn, "SYS_OSDMENU", "copy.icn", mcport);
+	if (retorno < 0)
+	{
+		return 6;
+	}
+	retorno = write_embed(&sys_osdmenu_del_icn, size_sys_osdmenu_del_icon, "SYS_OSDMENU", "del.icn", mcport);
+	if (retorno < 0)
+	{
+		return 6;
+	}
+	retorno = write_embed(&sys_osdmenu_icon_sys, size_sys_osdmenu_icon_sys, "SYS_OSDMENU", "icon.sys", mcport);
+	if (retorno < 0)
+	{
+		return 6;
+	}
+	retorno = write_embed(&sys_osdmenu_list_icn, size_sys_osdmenu_list_icn, "SYS_OSDMENU", "list.icn", mcport);
+	if (retorno < 0)
+	{
+		return 6;
+	}
+	retorno = write_embed(&sys_osdmenu_osdmenu_elf, size_sys_osdmenu_osdmenu_elf, "SYS_OSDMENU", "osdmenu.elf", mcport);
+	if (retorno < 0)
+	{
+		return 6;
+	}
+	retorno = write_embed(&sys_osdmenu_title_cfg, size_sys_osdmenu_title_cfg, "SYS_OSDMENU", "title.cfg", mcport);
+	if (retorno < 0)
+	{
+		return 6;
+	}
 
 	// SYS-CONF folder
 	retorno = write_embed(&sys_conf_appinfo_pbt, size_sys_conf_appinfo_pbt, "SYS-CONF", "APPINFO.PBT", mcport);
@@ -864,11 +922,6 @@ static int install(int mcport, int icon_variant)
 		return 6;
 	}
 	retorno = write_embed(&boot_icon_sys, size_boot_icon_sys, "BOOT", "icon.sys", mcport);
-	if (retorno < 0)
-	{
-		return 6;
-	}
-	retorno = write_embed(&boot_osdmenu_elf, size_boot_osdmenu_elf, "BOOT", "osdmenu.elf", mcport);
 	if (retorno < 0)
 	{
 		return 6;
