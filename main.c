@@ -96,9 +96,6 @@ extern int size_icon_sys;
 extern u8 esr_elf[];
 extern int size_esr_elf;
 //----------------------------------------//
-extern u8 osdmenu_elf[];
-extern int size_osdmenu_elf;
-//----------------------------------------//
 extern u8 whatisbootx_txt[];
 extern int size_whatisbootx_txt;
 //----------------------------------------//
@@ -180,6 +177,28 @@ extern int size_appsdel_icn;
 //----------------------------------------//
 extern u8 appsicon_sys[];
 extern int size_appsicon_sys;
+//----------------------------------------//
+///SYS_OSDMENU FOLDER
+extern u8 sys_osdmenu_appinfo_pbt[];
+extern int size_sys_osdmenu_appinfo_pbt;
+//----------------------------------------//
+extern u8 sys_osdmenu_copy_icn[];
+extern int size_sys_osdmenu_copy_icn;
+//----------------------------------------//
+extern u8 sys_osdmenu_del_icn[];
+extern int size_sys_osdmenu_del_icn;
+//----------------------------------------//
+extern u8 sys_osdmenu_icon_sys[];
+extern int size_sys_osdmenu_icon_sys;
+//----------------------------------------//
+extern u8 sys_osdmenu_list_icn[];
+extern int size_sys_osdmenu_list_icn;
+//----------------------------------------//
+extern u8 sys_osdmenu_osdmenu_elf[];
+extern int size_sys_osdmenu_osdmenu_elf;
+//----------------------------------------//
+extern u8 sys_osdmenu_title_cfg[];
+extern int size_sys_osdmenu_title_cfg;
 //----------------------------------------//
 
 // Embedded IOP drivers
@@ -424,6 +443,8 @@ static int install(int mcport, int icon_variant)
 	}
 	ret = mcMkDir(mcport, 0, "OPENTUNA");
 	mcSync(0, NULL, &ret);
+	ret = mcMkDir(mcport, 0, "SYS_OSDMENU");
+	mcSync(0, NULL, &ret);
 	ret = mcMkDir(mcport, 0, "SYS-CONF");
 	mcSync(0, NULL, &ret);
 	ret = mcMkDir(mcport, 0, "BOOT");
@@ -462,56 +483,44 @@ static int install(int mcport, int icon_variant)
 	ret = write(fd, ICONTYPE_ALIAS[icon_variant], 4);//This will allow identifying the hacked icon variant without risking your mc contents
 	close(fd);
 	}
-	    retorno = write_embed(&boot_elf, size_boot_elf, "BOOT", "BOOT.ELF", mcport);
-    if (retorno < 0)
-    {
-        return 6;
-    }
-    retorno = write_embed(&boot2_elf, size_boot2_elf, "BOOT", "BOOT2.ELF", mcport);
-    if (retorno < 0)
-    {
-        return 6;
-    }
-    retorno = write_embed(&icon_sys, size_icon_sys, "BOOT", "icon.sys", mcport);
-    if (retorno < 0)
-    {
-        return 6;
-    }
-    retorno = write_embed(&copy_icn, size_copy_icn, "BOOT", "copy.icn", mcport);
-    if (retorno < 0)
-    {
-        return 6;
-    }
-    retorno = write_embed(&del_icn, size_del_icn, "BOOT", "del.icn", mcport);
-    if (retorno < 0)
-    {
-        return 6;
-    }
-    retorno = write_embed(&boot_icn, size_boot_icn, "BOOT", "boot.icn", mcport);
-    if (retorno < 0)
-    {
-        return 6;
-    }
-    retorno = write_embed(&esr_elf, size_esr_elf, "BOOT", "ESR.ELF", mcport);
-    if (retorno < 0)
-    {
-        return 6;
-    }
-    retorno = write_embed(&osdmenu_elf, size_osdmenu_elf, "BOOT", "osdmenu.elf", mcport);
-    if (retorno < 0)
-    {
-        return 6;
-    }
-    retorno = write_embed(&whatisbootx_txt, size_whatisbootx_txt, "BOOT", "WHATISBOOTX.TXT", mcport);
-    if (retorno < 0)
-    {
-        return 6;
-    }
-    retorno = write_embed(&appinfo_pbt, size_appinfo_pbt, "BOOT", "APPINFO.PBT", mcport);
-    if (retorno < 0)
-    {
-        return 6;
-    }
+
+	// Adding SYS_OSDMENU items
+	retorno = write_embed(&sys_osdmenu_appinfo_pbt, size_sys_osdmenu_appinfo_pbt, "SYS_OSDMENU", "APPINFO.PBT", mcport);
+	if (retorno < 0)
+	{
+		return 6;
+	}
+	retorno = write_embed(&sys_osdmenu_copy_icn, size_sys_osdmenu_copy_icn, "SYS_OSDMENU", "copy.icn", mcport);
+	if (retorno < 0)
+	{
+		return 6;
+	}
+	retorno = write_embed(&sys_osdmenu_del_icn, size_sys_osdmenu_del_icn, "SYS_OSDMENU", "del.icn", mcport);
+	if (retorno < 0)
+	{
+		return 6;
+	}
+	retorno = write_embed(&sys_osdmenu_icon_sys, size_sys_osdmenu_icon_sys, "SYS_OSDMENU", "icon.sys", mcport);
+	if (retorno < 0)
+	{
+		return 6;
+	}
+	retorno = write_embed(&sys_osdmenu_list_icn, size_sys_osdmenu_list_icn, "SYS_OSDMENU", "list.icn", mcport);
+	if (retorno < 0)
+	{
+		return 6;
+	}
+	retorno = write_embed(&sys_osdmenu_osdmenu_elf, size_sys_osdmenu_osdmenu_elf, "SYS_OSDMENU", "osdmenu.elf", mcport);
+	if (retorno < 0)
+	{
+		return 6;
+	}
+	retorno = write_embed(&sys_osdmenu_title_cfg, size_sys_osdmenu_title_cfg, "SYS_OSDMENU", "title.cfg", mcport);
+	if (retorno < 0)
+	{
+		return 6;
+	}
+
     // Adding sysconf items
     retorno = write_embed(&sysconffreemcb_cnf, size_sysconffreemcb_cnf, "SYS-CONF", "FREEMCB.CNF", mcport);
     if (retorno < 0)
@@ -584,6 +593,52 @@ static int install(int mcport, int icon_variant)
         return 6;
     }
 
+	// Adding BOOT folder
+	    retorno = write_embed(&boot_elf, size_boot_elf, "BOOT", "BOOT.ELF", mcport);
+    if (retorno < 0)
+    {
+        return 6;
+    }
+    retorno = write_embed(&boot2_elf, size_boot2_elf, "BOOT", "BOOT2.ELF", mcport);
+    if (retorno < 0)
+    {
+        return 6;
+    }
+    retorno = write_embed(&icon_sys, size_icon_sys, "BOOT", "icon.sys", mcport);
+    if (retorno < 0)
+    {
+        return 6;
+    }
+    retorno = write_embed(&copy_icn, size_copy_icn, "BOOT", "copy.icn", mcport);
+    if (retorno < 0)
+    {
+        return 6;
+    }
+    retorno = write_embed(&del_icn, size_del_icn, "BOOT", "del.icn", mcport);
+    if (retorno < 0)
+    {
+        return 6;
+    }
+    retorno = write_embed(&boot_icn, size_boot_icn, "BOOT", "boot.icn", mcport);
+    if (retorno < 0)
+    {
+        return 6;
+    }
+    retorno = write_embed(&esr_elf, size_esr_elf, "BOOT", "ESR.ELF", mcport);
+    if (retorno < 0)
+    {
+        return 6;
+    }
+    retorno = write_embed(&whatisbootx_txt, size_whatisbootx_txt, "BOOT", "WHATISBOOTX.TXT", mcport);
+    if (retorno < 0)
+    {
+        return 6;
+    }
+    retorno = write_embed(&appinfo_pbt, size_appinfo_pbt, "BOOT", "APPINFO.PBT", mcport);
+    if (retorno < 0)
+    {
+        return 6;
+    }
 
 	// Adding restart items
 	

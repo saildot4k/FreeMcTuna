@@ -34,7 +34,7 @@ DETAILED_CHANGELOG
 !.clang-format-ignore
 !.mailmap
 /INSTALL/*
-/MANUAL INSTALL/*
+INSTALL/*
 
 #
 # Generated source files
