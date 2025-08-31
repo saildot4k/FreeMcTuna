@@ -35,7 +35,7 @@ jobs:
 
       # Ensure release step can find the ELF file
       - name: Debug - Check ELF file exists
-        run: ls -lah OPENTUNAtoPS2BBL-INSTALLER.ELF
+        run: ls -lah OPENTUNAtoPS2BBL-BAREBONES.ELF
 
       - name: Create release
         if: github.ref == 'refs/heads/UMCS'
