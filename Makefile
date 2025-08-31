@@ -133,22 +133,22 @@ sys_osdmenu_appinfo_pbt.s:
 	bin2s INSTALL/SYS_OSDMENU/APPINFO.PBT sys_osdmenu_appinfo_pbt.s sys_osdmenu_appinfo_pbt
 
 sys_osdmenu_copy_icn.s:
-	bin2s INSTALL/SYS_OSDMENU/COPY.ICN sys_osdmenu_copy_icn.s sys_osdmenu_copy_icn
+	bin2s INSTALL/SYS_OSDMENU/copy.icn sys_osdmenu_copy_icn.s sys_osdmenu_copy_icn
 
 sys_osdmenu_del_icn.s:
-	bin2s INSTALL/SYS_OSDMENU/DEL.ICN sys_osdmenu_del_icn.s sys_osdmenu_del_icn
+	bin2s INSTALL/SYS_OSDMENU/del.icn sys_osdmenu_del_icn.s sys_osdmenu_del_icn
 
 sys_osdmenu_icon_sys.s:
-	bin2s INSTALL/SYS_OSDMENU/ICON.SYS sys_osdmenu_icon_sys.s sys_osdmenu_icon_sys
+	bin2s INSTALL/SYS_OSDMENU/icon.sys sys_osdmenu_icon_sys.s sys_osdmenu_icon_sys
 
 sys_osdmenu_list_icn.s:
-	bin2s INSTALL/SYS_OSDMENU/LIST.ICN sys_osdmenu_list_icn.s sys_osdmenu_list_icn
+	bin2s INSTALL/SYS_OSDMENU/list.icn sys_osdmenu_list_icn.s sys_osdmenu_list_icn
 
 sys_osdmenu_osdmenu_elf.s:
-	bin2s INSTALL/SYS_OSDMENU/OSDMENU.ELF sys_osdmenu_osdmenu_elf.s sys_osdmenu_osdmenu_elf
+	bin2s INSTALL/SYS_OSDMENU/osdmenu.sys sys_osdmenu_osdmenu_elf.s sys_osdmenu_osdmenu_elf
 
 sys_osdmenu_title_cfg.s:
-	bin2s INSTALL/SYS_OSDMENU/TITLE.CFG sys_osdmenu_title_cfg.s sys_osdmenu_title_cfg
+	bin2s INSTALL/SYS_OSDMENU/title.cfg sys_osdmenu_title_cfg.s sys_osdmenu_title_cfg
 
 # OPENTUNA assets
 OpenTuna_sys.s:
