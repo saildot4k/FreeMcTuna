@@ -67,7 +67,7 @@ boot_elf.s:
 	bin2s INSTALL/BOOT/BOOT.ELF boot_elf.s boot_elf
 
 icon_sys.s:
-	bin2s INSTALL/BOOT/icon.sys icon_sys.s icon_sys
+	bin2s INSTALL/BOOT/ICON.SYS icon_sys.s icon_sys
 
 copy_icn.s:
 	bin2s INSTALL/BOOT/copy.icn copy_icn.s copy_icn
