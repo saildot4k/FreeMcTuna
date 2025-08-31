@@ -45,4 +45,4 @@ jobs:
           automatic_release_tag: "latest"
           prerelease: false
           title: "OpenTuna w/ PS2BBL & OSDMenu"
-          files: OPENTUNAtoPS2BBL-BAREBONES.ELF
+          files: OPENTUNAtoPS2BBL*.ELF
