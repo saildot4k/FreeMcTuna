@@ -38,11 +38,11 @@ jobs:
         run: ls -lah OPENTUNAtoPS2BBL-INSTALLER.ELF
 
       - name: Create release
-        if: github.ref == 'refs/heads/UMCS-AIO'
+        if: github.ref == 'refs/heads/UMCS'
         uses: marvinpinto/action-automatic-releases@latest
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
-          automatic_release_tag: "TunaPS2BBL2OSDMENU"
+          automatic_release_tag: "TunaPS2BBL2OSDMENU-BAREBONES"
           prerelease: false
           title: "OpenTuna w/ PS2BBL & OSDMenu"
           files: OPENTUNAtoPS2BBL-BAREBONES-INSTALLER.ELF
