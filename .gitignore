@@ -8,8 +8,6 @@
 .*
 *.a
 *.diff
-*.elf
-*.ELF
 *.erl
 *.exe
 *.irx
@@ -21,6 +19,8 @@
 *.zip
 *.ZIP
 *.a
+
+
 DETAILED_CHANGELOG
 
 #
@@ -34,7 +34,6 @@ DETAILED_CHANGELOG
 !.clang-format-ignore
 !.mailmap
 !/INSTALL/*
-!INSTALL/*
 
 #
 # Generated source files
