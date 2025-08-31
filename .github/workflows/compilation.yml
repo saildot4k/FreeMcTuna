@@ -38,7 +38,7 @@ jobs:
         run: ls -lah OPENTUNAtoPS2BBL-INSTALLER.ELF
 
       - name: Create release
-        if: github.ref == 'refs/heads/UMCS-AIO'
+        if: github.ref == 'refs/heads/UMCS'
         uses: marvinpinto/action-automatic-releases@latest
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
