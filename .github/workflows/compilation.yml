@@ -45,5 +45,5 @@ jobs:
           automatic_release_tag: "latest"
           prerelease: false
           title: "OpenTuna w/ PS2BBL & OSDMenu"
-          files: OPENTUNAtoPS2BBL-INSTALLER-AIO.ELF
+          files: OPENTUNAtoPS2BBL*.ELF
           
