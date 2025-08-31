@@ -42,7 +42,7 @@ jobs:
         uses: marvinpinto/action-automatic-releases@latest
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
-          automatic_release_tag: "TunaPS2BBL2OSDMENU-BAREBONES"
+          automatic_release_tag: "TunaPS2BBL2OSDMENU"
           prerelease: false
           title: "OpenTuna w/ PS2BBL & OSDMenu"
-          files: OPENTUNAtoPS2BBL-BAREBONES-INSTALLER.ELF
+          files: OPENTUNAtoPS2BBL-BAREBONES.ELF
