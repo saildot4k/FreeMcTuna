@@ -30,8 +30,8 @@ jobs:
         if: ${{ success() }}
         uses: actions/upload-artifact@v4
         with:
-          name: OPENTUNAtoPS2BBL-INSTALLER_${{ env.sha8 }}
-          path: OPENTUNAtoPS2BBL-INSTALLER.ELF
+          name: OPENTUNAtoPS2BBL-BAREBONES_${{ env.sha8 }}
+          path: OPENTUNAtoPS2BBL-BAREBONES.ELF
 
       # Ensure release step can find the ELF file
       - name: Debug - Check ELF file exists
