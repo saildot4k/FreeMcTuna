@@ -145,7 +145,7 @@ sys_osdmenu_list_icn.s:
 	bin2s INSTALL/SYS_OSDMENU/list.icn sys_osdmenu_list_icn.s sys_osdmenu_list_icn
 
 sys_osdmenu_osdmenu_elf.s:
-	bin2s INSTALL/SYS_OSDMENU/osdmenu.sys sys_osdmenu_osdmenu_elf.s sys_osdmenu_osdmenu_elf
+	bin2s INSTALL/SYS_OSDMENU/osdmenu.elf sys_osdmenu_osdmenu_elf.s sys_osdmenu_osdmenu_elf
 
 sys_osdmenu_title_cfg.s:
 	bin2s INSTALL/SYS_OSDMENU/title.cfg sys_osdmenu_title_cfg.s sys_osdmenu_title_cfg
