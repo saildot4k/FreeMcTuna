@@ -40,7 +40,7 @@ name_OSDSYS_ITEM_2 = Launch Disc: with Logo
 path1_OSDSYS_ITEM_2 = cdrom
 # --------------------------------------------------
 name_OSDSYS_ITEM_3 = Launch ESR Patched Disc
-path1_OSDSYS_ITEM_3 = mc?:/BOOT/ESR.ELF
+path1_OSDSYS_ITEM_3 = mc?:/APP_ESR-LAUNCHER/ESR-LAUNCHER.ELF
 # --------------------------------------------------
 name_OSDSYS_ITEM_4 = Neutrino Loader (NHDDL)
 path1_OSDSYS_ITEM_4 = mass:/APPS/nhddl.elf
@@ -68,8 +68,6 @@ path3_OSDSYS_ITEM_8 = mc?:/BOOT/BOOT2.ELF
 name_OSDSYS_ITEM_9 = Reboot OSDMenu
 path1_OSDSYS_ITEM_9 = mc?:/BOOT/BOOT.ELF
 # --------------------------------------------------
-name_OSDSYS_ITEM_10 = Shutdown
-path1_OSDSYS_ITEM_10 = POWEROFF
 # --------------------------------------------------
 # --------------------------------------------------
 # --------------------------------------------------
@@ -83,7 +81,7 @@ path1_OSDSYS_ITEM_10 = POWEROFF
 # path2_OSDSYS_ITEM_21 = mc?:/APP_WLE-ISR-XF-MX/WLE-ISR-XF-MX.ELF
 # # --------------------------------------------------
 # name_OSDSYS_ITEM_22 = wLaunchELF_kHn
-# path1_OSDSYS_ITEM_22 = mass:/APPS/APP_WLE-VCD/WLE-VCD.ELF
+# path1_OSDSYS_ITEM_22 = mass:/APPS/APP_WLE-KHN/WLE-KHN.ELF
 # path2_OSDSYS_ITEM_22 = mc?:/APP_WLE-KHN/WLE-KHN.ELF
 # # --------------------------------------------------
 # name_OSDSYS_ITEM_23 = uLaunchELF DVR
@@ -118,7 +116,7 @@ path1_OSDSYS_ITEM_10 = POWEROFF
 # path1_OSDSYS_ITEM_34 = mc?:/GME_HERMES/HERMES.ELF
 # # --------------------------------------------------
 # name_OSDSYS_ITEM_35 = PSBBN
-# path1_OSDSYS_ITEM_35 = mc?:/APPS/PSBBN-LAUNCHER.ELF
+# path1_OSDSYS_ITEM_35 = hdd0:__system:pfs:/p2lboot/PSBBN.ELF
 # # --------------------------------------------------
 # # --------------------------------------------------
 # name_OSDSYS_ITEM_40 = Open PS2 Loader-MMCE
@@ -203,8 +201,8 @@ path1_OSDSYS_ITEM_10 = POWEROFF
 # path2_OSDSYS_ITEM_71 = mc?:/APP_ARGON/ARGON.ELF
 # # --------------------------------------------------
 # name_OSDSYS_ITEM_72 = Cheat Device MMCE
-# path1_OSDSYS_ITEM_72 = mc?:/APP_CHEATDEVICE-MMCE/CHEATDEVICE-MMCE.ELF
-# path2_OSDSYS_ITEM_72 = mass:/APPS/APP_CHEATDEVICE-MMCE/CHEATDEVICE-MMCE.ELF
+# path1_OSDSYS_ITEM_72 = mc?:/APP_CHEATDEVICE-PS2BBL/CHEATDEVICE-PS2BBL.ELF
+# path2_OSDSYS_ITEM_72 = mass:/APPS/APP_CHEATDEVICE/CHEATDEVICE.ELF
 # # --------------------------------------------------
 # name_OSDSYS_ITEM_73 = Graphics Mode Synthesizer (GSM)
 # path1_OSDSYS_ITEM_73 = mc?:/APPS/APP_GSM/GSM.ELF
@@ -246,9 +244,6 @@ path1_OSDSYS_ITEM_10 = POWEROFF
 # path1_OSDSYS_ITEM_82 = mass:/APPS/DST_ROMVERCHK/ROMVERCHK.ELF
 # path2_OSDSYS_ITEM_82 = mc?:/DST_ROMVERCHK/ROMVERCHK.ELF
 # # --------------------------------------------------
-# name_OSDSYS_ITEM_83 = Mechacon Crash Tester
-# path1_OSDSYS_ITEM_83 = mass:/APPS/DST_MECHACON-CRASH-TESTER/MECHACON-CRASH_TESTER.ELF
-# path2_OSDSYS_ITEM_83 = mc?:/DST_MECHACON-CRASH-TESTER/MECHACON-CRASH_TESTER.ELF
 # # --------------------------------------------------
 # name_OSDSYS_ITEM_90 = PS2LINK
 # path1_OSDSYS_ITEM_90 = mass:/APPS/DBG_PS2LINK/PS2LINK.ELF
@@ -262,3 +257,5 @@ path1_OSDSYS_ITEM_10 = POWEROFF
 # path1_OSDSYS_ITEM_92 = mass:/APPS/DBG_PS2LINK-HIDING/PS2LINK-HIDING.ELF
 # path2_OSDSYS_ITEM_92 = mc?:/DBG_PS2LINK-HIDING/PS2LINK-HIDING.ELF
 # --------------------------------------------------
+name_OSDSYS_ITEM_250 = Shutdown
+path1_OSDSYS_ITEM_250 = POWEROFF

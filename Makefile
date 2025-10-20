@@ -34,7 +34,6 @@ EE_OBJS += OpenTuna_sys.o OpenTuna_SLIMS.o OpenTuna_FAT-170.o OpenTuna_FAT-110-1
 	boot_appinfo_pbt.o \
 	boot_boot_elf.o \
 	boot_boot2_elf.o \
-	boot_esr_elf.o \
 	boot_whatisbootx_txt.o \
 	boot_boot_icn.o \
 	boot_copy_icn.o \
@@ -167,7 +166,6 @@ EE_SRC = OpenTuna_sys.s OpenTuna_SLIMS.s OpenTuna_FAT-170.s OpenTuna_FAT-110-120
 	boot_appinfo_pbt.s \
 	boot_boot_elf.s \
 	boot_boot2_elf.s \
-	boot_esr_elf.s \
 	boot_whatisbootx_txt.s \
 	boot_boot_icn.s \
 	boot_copy_icn.s \
@@ -374,9 +372,6 @@ boot_boot_elf.s:
 
 boot_boot2_elf.s:
 	bin2s INSTALL/BOOT/BOOT2.ELF boot_boot2_elf.s boot_boot2_elf
-
-boot_esr_elf.s:
-	bin2s INSTALL/BOOT/ESR.ELF boot_esr_elf.s boot_esr_elf
 
 boot_whatisbootx_txt.s:
 	bin2s INSTALL/BOOT/WHATISBOOTX.TXT boot_whatisbootx_txt.s boot_whatisbootx_txt

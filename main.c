@@ -159,9 +159,6 @@ extern int size_boot_boot_elf;
 extern u8 boot_boot2_elf[];
 extern int size_boot_boot2_elf;
 
-extern u8 boot_esr_elf[];
-extern int size_boot_esr_elf;
-
 extern u8 boot_whatisbootx_txt[];
 extern int size_boot_whatisbootx_txt;
 
@@ -912,11 +909,6 @@ static int install(int mcport, int icon_variant)
 		return 6;
 	}
 	retorno = write_embed(&boot_del_icn, size_boot_del_icn, "BOOT", "del.icn", mcport);
-	if (retorno < 0)
-	{
-		return 6;
-	}
-	retorno = write_embed(&boot_esr_elf, size_boot_esr_elf, "BOOT", "ESR.ELF", mcport);
 	if (retorno < 0)
 	{
 		return 6;

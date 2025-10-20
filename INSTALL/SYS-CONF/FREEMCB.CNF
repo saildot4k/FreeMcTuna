@@ -1,7 +1,7 @@
 CNF_version = 1
 Debug_Screen = 0
 FastBoot = 0
-ESR_Path_E1 = mc?:/BOOT/ESR.ELF
+ESR_Path_E1 = mc?:/APP_ESR-LAUNCHER/ESR-LAUNCHER.ELF
 ESR_Path_E2 =
 ESR_Path_E3 =
 pad_delay = 0
@@ -36,7 +36,7 @@ name_OSDSYS_ITEM_2 = Launch Disc: no Logo
 path1_OSDSYS_ITEM_2 = FASTBOOT
 # --------------------------------------------------
 name_OSDSYS_ITEM_3 = Launch ESR Patched Disc
-path1_OSDSYS_ITEM_3 = mc?:/BOOT/ESR.ELF
+path1_OSDSYS_ITEM_3 = mc?:/APP_ESR-LAUNCHER/ESR-LAUNCHER.ELF
 # --------------------------------------------------
 name_OSDSYS_ITEM_4 = Neutrino Loader (NHDDL)
 path1_OSDSYS_ITEM_4 = mass:/APPS/nhddl.elf
@@ -64,8 +64,6 @@ path3_OSDSYS_ITEM_8 = mc?:/BOOT/BOOT2.ELF
 name_OSDSYS_ITEM_9 = Reboot FMCB
 path1_OSDSYS_ITEM_9 = mc?:/BOOT/BOOT.ELF
 # --------------------------------------------------
-name_OSDSYS_ITEM_10 = Shutdown
-path1_OSDSYS_ITEM_10 = mc?:/POWEROFF/POWEROFF.ELF
 # --------------------------------------------------
 # --------------------------------------------------
 # --------------------------------------------------
@@ -79,7 +77,7 @@ path1_OSDSYS_ITEM_21 = mass:/APPS/APP_WLE-ISR-XF-MX/WLE-ISR-XF-MX.ELF
 path2_OSDSYS_ITEM_21 = mc?:/APP_WLE-ISR-XF-MX/WLE-ISR-XF-MX.ELF
 # --------------------------------------------------
 name_OSDSYS_ITEM_22 = wLaunchELF_kHn
-path1_OSDSYS_ITEM_22 = mass:/APPS/APP_WLE-VCD/WLE-VCD.ELF
+path1_OSDSYS_ITEM_22 = mass:/APPS/APP_WLE-KHN/WLE-KHN.ELF
 path2_OSDSYS_ITEM_22 = mc?:/APP_WLE-KHN/WLE-KHN.ELF
 # --------------------------------------------------
 name_OSDSYS_ITEM_23 = uLaunchELF DVR
@@ -258,3 +256,6 @@ name_OSDSYS_ITEM_92 = PS2LINK-Highloading
 path1_OSDSYS_ITEM_92 = mass:/APPS/DBG_PS2LINK-HIDING/PS2LINK-HIDING.ELF
 path2_OSDSYS_ITEM_92 = mc?:/DBG_PS2LINK-HIDING/PS2LINK-HIDING.ELF
 # --------------------------------------------------
+# --------------------------------------------------
+name_OSDSYS_ITEM_100 = Shutdown
+path1_OSDSYS_ITEM_100 = mc?:/POWEROFF/POWEROFF.ELF

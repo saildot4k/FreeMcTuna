@@ -11,8 +11,9 @@
 #
 # Source: 
 SET "TITLE" "[SYS] OSDMenu"
-SET "VERSION" "1.0.0 RC2"
-SET "AUTHOR" ""
+SET "VERSION" "1.0.0 RC2 86"
+SET "AUTHOR" "PCM720"
+SET "ELF" "osdmenu.elf"
 SET "DESC" "Hacked OSDSYS that can run apps from MC Browser"
 SET "SAS" "SYS_OSDMENU"
 # Comment out 1 of the 2 lines below. If app is in non-mc:/$SAS$ comment out the first, if in non-mc:/APPS/$SAS$ comment out the second
@@ -71,7 +72,7 @@ RETURN -1
 
 :RUN
     CLEARWIDGETS
-    SETTITLE "$ARG2$ compatibily options:"
+    SETTITLE "$TITLE$ compatibily options:"
     ADDWIDGET "LABEL" " from"
     ADDWIDGET "LABEL" "$PWD$"
 
@@ -84,7 +85,7 @@ RETURN -1
 
 :ADVANCED_BOOT
     CLEARWIDGETS
-    SETTITLE "$ARG2$ advanced compatibily options:"
+    SETTITLE "$TITLE$ advanced compatibily options:"
     ADDWIDGET "LABEL" " from"
     ADDWIDGET "LABEL" "$PWD$"
     ADDWIDGET "CALL" "CC Sleep Mode (BIOS Patch OFF / Shutdown ALL)" "SETBIOS ^"OFF^" and SHUTDOWN ^"ALL^"" "$ARG0$" "RUN_COMP_MODE" "SLEEP1" "$ARG3$"
@@ -135,6 +136,6 @@ RETURN -1
         SET "BM.AUTOLOAD_FSD_EN" "0"
     ENDIF
 
-    ECHO LOADEXEC "PBAT" "$BM.SCRIPTS$/LOADEXEC.PBT" "$ARG3$"
-    LOADEXEC "PBAT" "$BM.SCRIPTS$/LOADEXEC.PBT" "$ARG3$"
+    ECHO LOADEXEC "PBAT" "$BM.SCRIPTS$/LOADEXEC.PBT" "$PWD$/$ELF$"
+    LOADEXEC "PBAT" "$BM.SCRIPTS$/LOADEXEC.PBT" "$PWD$/$ELF$"
     EXIT 0
