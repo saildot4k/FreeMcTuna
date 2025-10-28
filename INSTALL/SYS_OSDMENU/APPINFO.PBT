@@ -11,7 +11,7 @@
 #
 # Source: 
 SET "TITLE" "[SYS] OSDMenu"
-SET "VERSION" "1.0.0 RC2 86"
+SET "VERSION" "1.0.0 RC4"
 SET "AUTHOR" "PCM720"
 SET "ELF" "osdmenu.elf"
 SET "DESC" "Hacked OSDSYS that can run apps from MC Browser"
