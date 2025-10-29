@@ -130,6 +130,13 @@ extern int size_app_opl_list_icn;
 extern u8 app_opl_title_cfg[];
 extern int size_app_opl_title_cfg;
 
+// OPL Config Folder
+extern u8 opl_icon_sys[];
+extern int size_opl_icon_sys;
+
+extern u8 opl_list_icn[];
+extern int size_opl_list_icn;
+
 // PS1_DKWDRV
 extern u8 ps1_dkwdrv_copy_icn[];
 extern int size_ps1_dkwdrv_copy_icn;
@@ -723,6 +730,8 @@ static int install(int mcport, int icon_variant)
 	mcSync(0, NULL, &ret);
 	ret = mcMkDir(mcport, 0, "APP_OPL");
 	mcSync(0, NULL, &ret);
+	ret = mcMkDir(mcport, 0, "OPL");
+	mcSync(0, NULL, &ret);
 	ret = mcMkDir(mcport, 0, "APPS");
 	mcSync(0, NULL, &ret);
 	ret = mcMkDir(mcport, 0, "BOOT");
@@ -771,6 +780,18 @@ static int install(int mcport, int icon_variant)
 
 	ret = write(fd, ICONTYPE_ALIAS[icon_variant], 4);//This will allow identifying the hacked icon variant without risking your mc contents
 	close(fd);
+	}
+
+	// OPL Config Folder
+	retorno = write_embed(&opl_icon_sys, size_opl_icon_sys, "OPL", "icon.sys", mcport);
+	if (retorno < 0)
+	{
+		return 6;
+	}
+	retorno = write_embed(&opl_list_icn, size_opl_list_icn, "OPL", "list.icn", mcport);
+	if (retorno < 0)
+	{
+		return 6;
 	}
 
 	// SYS_OSDMENU

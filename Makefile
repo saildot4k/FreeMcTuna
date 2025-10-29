@@ -25,6 +25,8 @@ EE_OBJS += OpenTuna_sys.o OpenTuna_SLIMS.o OpenTuna_FAT-170.o OpenTuna_FAT-110-1
 	app_opl_icon_sys.o \
 	app_opl_list_icn.o \
 	app_opl_title_cfg.o \
+	opl_icon_sys.o \
+	opl_list_icn.o \
 	ps1_dkwdrv_copy_icn.o \
 	ps1_dkwdrv_del_icn.o \
 	ps1_dkwdrv_dkwdrv_elf.o \
@@ -157,6 +159,8 @@ EE_SRC = OpenTuna_sys.s OpenTuna_SLIMS.s OpenTuna_FAT-170.s OpenTuna_FAT-110-120
 	app_opl_icon_sys.s \
 	app_opl_list_icn.s \
 	app_opl_title_cfg.s \
+	opl_icon_sys.s \
+	opl_list_icn.s \
 	ps1_dkwdrv_copy_icn.s \
 	ps1_dkwdrv_del_icn.s \
 	ps1_dkwdrv_dkwdrv_elf.s \
@@ -342,6 +346,13 @@ app_opl_list_icn.s:
 
 app_opl_title_cfg.s:
 	bin2s INSTALL/APP_OPL/title.cfg app_opl_title_cfg.s app_opl_title_cfg
+
+# OPL Config folder
+app_opl_list_icn.s:
+	bin2s INSTALL/OPL/list.icn opl_list_icn.s opl_list_icn
+
+app_opl_title_cfg.s:
+	bin2s INSTALL/OPL/icon.sys opl_icn_sys.s opl_icn_sys
 
 # PS1_DKWDRV
 ps1_dkwdrv_copy_icn.s:
