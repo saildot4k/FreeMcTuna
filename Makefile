@@ -351,8 +351,8 @@ app_opl_title_cfg.s:
 opl_list_icn.s:
 	bin2s INSTALL/OPL/list.icn opl_list_icn.s opl_list_icn
 
-opl_title_cfg.s:
-	bin2s INSTALL/OPL/icon.sys opl_icn_sys.s opl_icn_sys
+opl_icon_sys.s:
+	bin2s INSTALL/OPL/icon.sys opl_icon_sys.s opl_icn_sys
 
 # PS1_DKWDRV
 ps1_dkwdrv_copy_icn.s:
