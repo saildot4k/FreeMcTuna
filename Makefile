@@ -348,10 +348,10 @@ app_opl_title_cfg.s:
 	bin2s INSTALL/APP_OPL/title.cfg app_opl_title_cfg.s app_opl_title_cfg
 
 # OPL Config folder
-app_opl_list_icn.s:
+opl_list_icn.s:
 	bin2s INSTALL/OPL/list.icn opl_list_icn.s opl_list_icn
 
-app_opl_title_cfg.s:
+opl_title_cfg.s:
 	bin2s INSTALL/OPL/icon.sys opl_icn_sys.s opl_icn_sys
 
 # PS1_DKWDRV
