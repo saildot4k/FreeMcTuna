@@ -446,8 +446,8 @@ extern int size_sys_conf_endvdpl_irx;
 extern u8 sys_conf_icon_sys[];
 extern int size_sys_conf_icon_sys;
 
-extern u8 sys_conf_sysconf_icn[];
-extern int size_sys_conf_sysconf_icn;
+extern u8 sys_conf_list_icn[];
+extern int size_sys_conf_list_icn;
 
 // SYS_OSDMENU
 
@@ -887,7 +887,7 @@ static int install(int mcport, int icon_variant)
 	{
 		return 6;
 	}
-	retorno = write_embed(&sys_conf_sysconf_icn, size_sys_conf_sysconf_icn, "SYS-CONF", "sysconf.icn", mcport);
+	retorno = write_embed(&sys_conf_list_icn, size_sys_conf_list_icn, "SYS-CONF", "sysconf.icn", mcport);
 	if (retorno < 0)
 	{
 		return 6;

@@ -128,7 +128,7 @@ EE_OBJS += OpenTuna_sys.o OpenTuna_SLIMS.o OpenTuna_FAT-170.o OpenTuna_FAT-110-1
 	sys_conf_del_icn.o \
 	sys_conf_endvdpl_irx.o \
 	sys_conf_icon_sys.o \
-	sys_conf_sysconf_icn.o \
+	sys_conf_list_icn.o \
 	sys_osdmenu_appinfo_pbt.o \
 	sys_osdmenu_copy_icn.o \
 	sys_osdmenu_del_icn.o \
@@ -262,7 +262,7 @@ EE_SRC = OpenTuna_sys.s OpenTuna_SLIMS.s OpenTuna_FAT-170.s OpenTuna_FAT-110-120
 	sys_conf_del_icn.s \
 	sys_conf_endvdpl_irx.s \
 	sys_conf_icon_sys.s \
-	sys_conf_sysconf_icn.s \
+	sys_conf_list_icn.s \
 	sys_osdmenu_appinfo_pbt.s \
 	sys_osdmenu_copy_icn.s \
 	sys_osdmenu_del_icn.s \
@@ -686,8 +686,8 @@ sys_conf_endvdpl_irx.s:
 sys_conf_icon_sys.s:
 	bin2s INSTALL/SYS-CONF/ICON.SYS sys_conf_icon_sys.s sys_conf_icon_sys
 
-sys_conf_sysconf_icn.s:
-	bin2s INSTALL/SYS-CONF/SYSCONF.ICN sys_conf_sysconf_icn.s sys_conf_sysconf_icn
+sys_conf_list_icn.s:
+	bin2s INSTALL/SYS-CONF/SYSCONF.ICN sys_conf_list_icn.s sys_conf_list_icn
 
 # OTHER
 SIO2MAN_irx.c: $(PS2SDK)/iop/irx/freesio2.irx
