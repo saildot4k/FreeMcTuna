@@ -352,7 +352,7 @@ opl_list_icn.s:
 	bin2s INSTALL/OPL/list.icn opl_list_icn.s opl_list_icn
 
 opl_icon_sys.s:
-	bin2s INSTALL/OPL/icon.sys opl_icon_sys.s opl_icn_sys
+	bin2s INSTALL/OPL/icon.sys opl_icon_sys.s opl_icon_sys
 
 # PS1_DKWDRV
 ps1_dkwdrv_copy_icn.s:
