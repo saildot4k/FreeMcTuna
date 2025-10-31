@@ -197,7 +197,7 @@ path1_OSDSYS_ITEM_71 = mass:/APPS/APP_ARGON/ARGON.ELF
 path2_OSDSYS_ITEM_71 = mc?:/APP_ARGON/ARGON.ELF
 # --------------------------------------------------
 name_OSDSYS_ITEM_72 = Cheat Device MMCE
-path1_OSDSYS_ITEM_72 = mc?:/APP_CHEATDEVICE-MMCE/CHEATDEVICE-MMCE.ELF
+path1_OSDSYS_ITEM_72 = mc?:/APP_CHEATDEVICE-FORWARDER/CHEATDEVICE-FORWARDER.ELF
 path2_OSDSYS_ITEM_72 = mass:/APPS/APP_CHEATDEVICE-MMCE/CHEATDEVICE-MMCE.ELF
 # --------------------------------------------------
 name_OSDSYS_ITEM_73 = Graphics Mode Synthesizer (GSM)
