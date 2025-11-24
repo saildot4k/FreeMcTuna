@@ -42,11 +42,11 @@ path1_OSDSYS_ITEM_2 = cdrom
 # --------------------------------------------------
 name_OSDSYS_ITEM_3 = Launch ESR Patched Disc
 path1_OSDSYS_ITEM_3 = mc?:/APP_ESR-LAUNCHER/ESR-LAUNCHER.ELF
-path2_OSDSYS_ITEM_4_OSDSYS_ITEM_3 = mass:/APP_ESR-LAUNCHER/ESR-LAUNCHER.ELF
+path2_OSDSYS_ITEM_3 = mass:/APP_ESR-LAUNCHER/ESR-LAUNCHER.ELF
 # --------------------------------------------------
 name_OSDSYS_ITEM_4 = Neutrino Loader (NHDDL)
 path1_OSDSYS_ITEM_4 = mc?:/APP_NHDDL/nhddl.elf
-path2_OSDSYS_ITEM_4 = mass:/APPS/nhddl.elf
+path2_OSDSYS_ITEM_4 = mass:/APPS/APP_NHDDL/nhddl.elf
 # --------------------------------------------------
 name_OSDSYS_ITEM_5 = Open PS2 Loader
 path1_OSDSYS_ITEM_5 = mc?:/APP_OPL/OPL.ELF
@@ -67,27 +67,27 @@ path3_OSDSYS_ITEM_8 = mass:/APPS/APP_WLE-ISR-XF/WLE-ISR-XF.ELF
 # --------------------------------------------------
 # --------------------------------------------------
 # --------------------------------------------------
-# name_OSDSYS_ITEM_20 = wLaunchELF_isr-XF-MMCE
+# name_OSDSYS_ITEM_20 = wELF ISR XF MMCE
 # path1_OSDSYS_ITEM_20 = mc?:/APP_WLE-ISR-XF-MM/WLE-ISR-XF-MM.ELF
 # path2_OSDSYS_ITEM_20 = mass:/APPS/APP_WLE-ISR-XF-MM/WLE-ISR-XF-MM.ELF
 # # --------------------------------------------------
-# name_OSDSYS_ITEM_21 = wLaunchELF_isr-XF-MX4SIO
+# name_OSDSYS_ITEM_21 = wLE ISR XF MX4SIO
 # path1_OSDSYS_ITEM_21 = mc?:/APP_WLE-ISR-XF-MX/WLE-ISR-XF-MX.ELF
 # path2_OSDSYS_ITEM_21 = mass:/APPS/APP_WLE-ISR-XF-MX/WLE-ISR-XF-MX.ELF
 # # --------------------------------------------------
-# name_OSDSYS_ITEM_22 = wLaunchELF_kHn
+# name_OSDSYS_ITEM_22 = wLE kHn
 # path1_OSDSYS_ITEM_22 = mc?:/APP_WLE-KHN/WLE-KHN.ELF
 # path2_OSDSYS_ITEM_22 = mass:/APPS/APP_WLE-KHN/WLE-KHN.ELF
 # # --------------------------------------------------
-# name_OSDSYS_ITEM_23 = uLaunchELF DVR
+# name_OSDSYS_ITEM_23 = uLE DVR
 # path1_OSDSYS_ITEM_23 = mc?:/APP_WLE-DVR/WLE-DVR.ELF
 # path2_OSDSYS_ITEM_23 = mass:/APPS/APP_WLE-DVR/WLE-DVR.ELF
 # # --------------------------------------------------
-# name_OSDSYS_ITEM_24 = uLaunchELF XFW
+# name_OSDSYS_ITEM_24 = uLE XFW
 # path1_OSDSYS_ITEM_24 = mc?:/APP_WLE-XFW/WLE-XFW.ELF
 # path2_OSDSYS_ITEM_24 = mass:/APPS/APP_WLE-XFW/WLE-XFW.ELF
 # # --------------------------------------------------
-# name_OSDSYS_ITEM_25 = wLaunchELF_isr-HDD
+# name_OSDSYS_ITEM_25 = wLE ISR HDD
 # path1_OSDSYS_ITEM_25 = mc?:/APP_WLE-ISR-HDD/WLE-ISR-HDD.ELF
 # path2_OSDSYS_ITEM_25 = mass:/APPS/APP_WLE-ISR-HDD/WLE-ISR-HDD.ELF
 # # --------------------------------------------------
@@ -118,12 +118,12 @@ path3_OSDSYS_ITEM_8 = mass:/APPS/APP_WLE-ISR-XF/WLE-ISR-XF.ELF
 # # --------------------------------------------------
 # # --------------------------------------------------
 # name_OSDSYS_ITEM_40 = Open PS2 Loader-MMCE
-# path1_OSDSYS_ITEM_40 = mc?:/APP_OPL-MMCEB2/OPL-MMCEB2.ELF
-# path2_OSDSYS_ITEM_40 = mass:/APPS/APP_OPL-MMCEB2/OPL-MMCEB2.ELF
+# path1_OSDSYS_ITEM_40 = mc?:/APP_OPL-MMCEB3/OPL-MMCEB3.ELF
+# path2_OSDSYS_ITEM_40 = mass:/APPS/APP_OPL-MMCEB3/OPL-MMCEB3.ELF
 # # --------------------------------------------------
-# name_OSDSYS_ITEM_41 = OPL 1.2.0Beta-2241
-# path1_OSDSYS_ITEM_41 = mc?:/APP_OPL120B2241/OPL120B2241.ELF
-# path2_OSDSYS_ITEM_41 = mass:/APPS/APP_OPL120B241/OPL-120B2241.ELF
+# name_OSDSYS_ITEM_41 = OPL 1.2.0Beta-2249
+# path1_OSDSYS_ITEM_41 = mc?:/APP_OPL120B2249/OPL120B2249.ELF
+# path2_OSDSYS_ITEM_41 = mass:/APPS/APP_OPL120B249/OPL-120B2249.ELF
 # # --------------------------------------------------
 # name_OSDSYS_ITEM_42 = OPL 1.2.0Beta-2212
 # path1_OSDSYS_ITEM_42 = mc?:/APP_OPL120B2212/OPL120B2212.ELF
@@ -242,6 +242,10 @@ path3_OSDSYS_ITEM_8 = mass:/APPS/APP_WLE-ISR-XF/WLE-ISR-XF.ELF
 # name_OSDSYS_ITEM_82 = ROM Version Checker
 # path1_OSDSYS_ITEM_82 = mc?:/DST_ROMVERCHK/ROMVERCHK.ELF
 # path2_OSDSYS_ITEM_82 = mass:/APPS/DST_ROMVERCHK/ROMVERCHK.ELF
+# # --------------------------------------------------
+# name_OSDSYS_ITEM_83 = NTPS2
+# path1_OSDSYS_ITEM_83 = mc?:/SYS_NTPS2/NTPS2.ELF
+# path2_OSDSYS_ITEM_83 = mass:/APPS/SYS_NTPS2/NTPS2.ELF
 # # --------------------------------------------------
 # # --------------------------------------------------
 # name_OSDSYS_ITEM_90 = PS2LINK

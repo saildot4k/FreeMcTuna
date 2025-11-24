@@ -887,7 +887,7 @@ static int install(int mcport, int icon_variant)
 	{
 		return 6;
 	}
-	retorno = write_embed(&sys_conf_list_icn, size_sys_conf_list_icn, "SYS-CONF", "sysconf.icn", mcport);
+	retorno = write_embed(&sys_conf_list_icn, size_sys_conf_list_icn, "SYS-CONF", "list.icn", mcport);
 	if (retorno < 0)
 	{
 		return 6;

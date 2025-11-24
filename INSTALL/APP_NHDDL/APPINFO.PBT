@@ -9,7 +9,7 @@
 #
 # Source: github.com/pcm720/nhddl
 SET "TITLE" "[APP] NHDDL"
-SET "VERSION" "nightly gfeeb78a"
+SET "VERSION" "1.2.0"
 SET "AUTHOR" "pcm720"
 SET "DESC" "A Neutrino launcher"
 SET "ELF" "nhddl.elf"
@@ -26,18 +26,6 @@ SET "COMP_MODE_USB" "1"
 SET "COMP_MODE_HDD_APA" "1"
 SET "COMP_MODE_DFFS" "1"
 #
-# Comment/uncomment the modes you desire. This uses argv, nhddl.yaml is not needed
-# UDPBD uses IP specified in BootManager. Do not forget to edit device:/NEUTRINO/config/bsd-udpbd.toml and/or device:/NEUTRINO/config/bsd-udpbd-hdd.toml
-SET "ATA" "-mode=ata"
-SET "HDL" "-mode=hdl"
-SET "MMCE" "-mode=mmce"
-SET "MX4SIO" "-mode=mx4sio"
-SET "UDPBD" "-mode=udpbd -udpbd_ip=$BM.CNF_NET_IP0$.$BM.CNF_NET_IP1$.$BM.CNF_NET_IP2$.$BM.CNF_NET_IP3$"
-SET "USB" "-mode=usb"
-SET "ILINK" "-mode=ilink"
-# Define the modes you want with wrapped in dollar signs $argument$ with a space in between:
-# For example: SET "ARGV" "$MMCE$ $ATA$"
-SET "ARGV" "$MMCE$"
 ###############################################################################################
 # Do not change these 2 lines!
 GOTO "$ARG1$"
@@ -49,15 +37,39 @@ RETURN -1
     EXIT 0
 
 :QUERY
+
     ADDWIDGET "CALL" "$TITLE$" "$BM.TXT_VERSION$: $VERSION$ $BM.TXT_AUTHOR$: $AUTHOR$ $BM.TXT_DESC$: $DESC$" $ARG2$ "$ARG0$" "$ARG3$" "$ARG4$" "$ARG5$" "$TITLE$" "$PWD$" "$SAS$" "$SAS_NON_MC$"
     EXIT 0
 
+:APP_CONFIG
+
+    SETTITLE "$TITLE$ Config:"
+    ADDWIDGET "LABEL" "Choose up to 3 devices for NHDDL"
+    ADDWIDGET "LABEL" "to load ISO's from."
+    ADDWIDGET "CHOICE" "Device 1:" "First device for NHDDL to scan for ISOs" "BM.APPCNF_APP_NHDDL_DEV1" "None" "ATA" "HDL" "MMCE" "MX4SIO" "USB" "iLINK" "UDPBD"
+    ADDWIDGET "CHOICE" "Device 2:" "Second device for NHDDL to scan for ISOs" "BM.APPCNF_APP_NHDDL_DEV2" "None" "ATA" "HDL" "MMCE" "MX4SIO" "USB" "iLINK" "UDPBD"
+    ADDWIDGET "CHOICE" "Device 3:" "Third device for NHDDL to scan for ISOs" "BM.APPCNF_APP_NHDDL_DEV3" "None" "ATA" "HDL" "MMCE" "MX4SIO" "USB" "iLINK" "UDPBD"
+    ADDWIDGET "LABEL" ""
+    ADDWIDGET "CALL" "Delete $TITLE$ variables." "Deletes $TITLE$ variables from BootManager" "$ARG0$" "DEL_CFG"
+    SAVEVARS "BM.APPCNF*" "$BM.BM_PATH$/CONFIG/APPCNF.PBT"
+    EXIT 0
+
+:DEL_CFG
+    CLEARWIDGETS
+    SKIPBACK
+    UNSET "BM.APPCNF_APP_NHDDL_DEV1"
+    UNSET "BM.APPCNF_APP_NHDDL_DEV2"
+    UNSET "BM.APPCNF_APP_NHDDL_DEV3"
+    SAVEVARS "BM.APPCNF*" "$BM.BM_PATH$/CONFIG/APPCNF.PBT"
+    GOTO "APP_CONFIG"
+    EXIT 0
+
 :INSTALL
-        IF MATCHES "mc?" "$ARG2$"
-            GOTO "INSTALL_TO_MC"
-        ELSEIF NOT MATCHES "mc?" "$ARG2$"
-            GOTO "INSTALL_TO_NONMC"
-        ENDIF
+    IF MATCHES "mc?" "$ARG2$"
+        GOTO "INSTALL_TO_MC"
+    ELSEIF NOT MATCHES "mc?" "$ARG2$"
+        GOTO "INSTALL_TO_NONMC"
+    ENDIF
 
 :INSTALL_TO_MC
     IF FAIL COPY "$PWD$" "$ARG2$:/$SAS$"
@@ -157,5 +169,61 @@ RETURN -1
     GOTO "RUN_COMP_MODE"
 
 :RUN_COMP_MODE
-    LOADEXEC "PBAT" "$BM.SCRIPTS$/LOADEXEC.PBT" "$PWD$/$ELF$" "$ARGV$"
+
+    # DEVICE 1
+    IF EQU "$BM.APPCNF_APP_NHDDL_DEV1$" "0"
+        SET "DEV1" ""
+    ELSEIF EQU "$BM.APPCNF_APP_NHDDL_DEV1$" "1"
+        SET "DEV1" "-mode=ata"
+    ELSEIF EQU "$BM.APPCNF_APP_NHDDL_DEV1$" "2"
+        SET "DEV1" "-mode=hdl"
+    ELSEIF EQU "$BM.APPCNF_APP_NHDDL_DEV1$" "3"
+        SET "DEV1" "-mode=mmce"
+    ELSEIF EQU "$BM.APPCNF_APP_NHDDL_DEV1$" "4"
+        SET "DEV1" "-mode=mx4sio"
+    ELSEIF EQU "$BM.APPCNF_APP_NHDDL_DEV1$" "5"
+        SET "DEV1" "-mode=usb"
+    ELSEIF EQU "$BM.APPCNF_APP_NHDDL_DEV1$" "6"
+        SET "DEV1" "-mode=ilink"
+    ELSEIF EQU "$BM.APPCNF_APP_NHDDL_DEV1$" "7"
+        SET "DEV1" "-mode=udpbd -udpbd_ip=$BM.CNF_NET_IP0$.$BM.CNF_NET_IP1$.$BM.CNF_NET_IP2$.$BM.CNF_NET_IP3$"
+    ENDIF
+    # DEVICE 2
+    IF EQU "$BM.APPCNF_APP_NHDDL_DEV2$" "0"
+        SET "DEV2" ""
+    ELSEIF EQU "$BM.APPCNF_APP_NHDDL_DEV2$" "1"
+        SET "DEV2" "-mode=ata"
+    ELSEIF EQU "$BM.APPCNF_APP_NHDDL_DEV2$" "2"
+        SET "DEV2" "-mode=hdl"
+    ELSEIF EQU "$BM.APPCNF_APP_NHDDL_DEV2$" "3"
+        SET "DEV2" "-mode=mmce"
+    ELSEIF EQU "$BM.APPCNF_APP_NHDDL_DEV2$" "4"
+        SET "DEV2" "-mode=mx4sio"
+    ELSEIF EQU "$BM.APPCNF_APP_NHDDL_DEV2$" "5"
+        SET "DEV2" "-mode=usb"
+    ELSEIF EQU "$BM.APPCNF_APP_NHDDL_DEV2$" "6"
+        SET "DEV2" "-mode=ilink"
+    ELSEIF EQU "$BM.APPCNF_APP_NHDDL_DEV2$" "7"
+        SET "DEV2" "-mode=udpbd -udpbd_ip=$BM.CNF_NET_IP0$.$BM.CNF_NET_IP1$.$BM.CNF_NET_IP2$.$BM.CNF_NET_IP3$"
+    ENDIF
+    # DEVICE 3
+    IF EQU "$BM.APPCNF_APP_NHDDL_DEV3$" "0"
+        SET "DEV3" ""
+    ELSEIF EQU "$BM.APPCNF_APP_NHDDL_DEV3$" "1"
+        SET "DEV3" "-mode=ata"
+    ELSEIF EQU "$BM.APPCNF_APP_NHDDL_DEV3$" "2"
+        SET "DEV3" "-mode=hdl"
+    ELSEIF EQU "$BM.APPCNF_APP_NHDDL_DEV3$" "3"
+        SET "DEV3" "-mode=mmce"
+    ELSEIF EQU "$BM.APPCNF_APP_NHDDL_DEV3$" "4"
+        SET "DEV3" "-mode=mx4sio"
+    ELSEIF EQU "$BM.APPCNF_APP_NHDDL_DEV3$" "5"
+        SET "DEV3" "-mode=usb"
+    ELSEIF EQU "$BM.APPCNF_APP_NHDDL_DEV3$" "6"
+        SET "DEV3" "-mode=ilink"
+    ELSEIF EQU "$BM.APPCNF_APP_NHDDL_DEV3$" "7"
+        SET "DEV3" "-mode=udpbd -udpbd_ip=$BM.CNF_NET_IP0$.$BM.CNF_NET_IP1$.$BM.CNF_NET_IP2$.$BM.CNF_NET_IP3$"
+    ENDIF
+
+    LOADEXEC "PBAT" "$BM.SCRIPTS$/LOADEXEC.PBT" "$PWD$/$ELF$" "$DEV1$ $DEV2$ $DEV3$"
     EXIT 0

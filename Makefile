@@ -687,7 +687,7 @@ sys_conf_icon_sys.s:
 	bin2s INSTALL/SYS-CONF/ICON.SYS sys_conf_icon_sys.s sys_conf_icon_sys
 
 sys_conf_list_icn.s:
-	bin2s INSTALL/SYS-CONF/SYSCONF.ICN sys_conf_list_icn.s sys_conf_list_icn
+	bin2s INSTALL/SYS-CONF/LIST.ICN sys_conf_list_icn.s sys_conf_list_icn
 
 # OTHER
 SIO2MAN_irx.c: $(PS2SDK)/iop/irx/freesio2.irx

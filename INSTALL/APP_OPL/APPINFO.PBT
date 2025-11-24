@@ -8,8 +8,8 @@
 # Some devices are case sensitive! Make sure your case matches!
 #
 # Source: github.com/ps2homebrew/Open-PS2-Loader
-SET "TITLE" "[APP] OPL 1.2 Official Beta 2247"
-SET "VERSION" "1.2.0 Beta 2247"
+SET "TITLE" "[APP] OPL 1.2 Official Beta 2249"
+SET "VERSION" "1.2.0 Beta 2249"
 SET "AUTHOR" "ps2homebrew.github.io"
 SET "DESC" "Open PS2 Loader (OPL) is a 100% Open source game and application loader for the PS2 and PS3 units. It supports three categories of devices: Block Device Mass Storage Devices, Network Shares and PlayStation 2 HDD Units."
 SET "ELF" "OPL.ELF"
@@ -37,7 +37,11 @@ RETURN -1
     EXIT 0
 
 :QUERY
-    ADDWIDGET "CALL" "$TITLE$" "$BM.TXT_VERSION$: $VERSION$ $BM.TXT_AUTHOR$: $AUTHOR$ $BM.TXT_DESC$: $DESC$" $ARG2$ "$ARG0$" "$ARG3$" "$ARG4$" "$ARG5$" "$TITLE$" "$PWD$" "$SAS$" "$SAS_NON_MC$"
+    IF MATCHES "$ARG3$" "APP_CONFIG"
+        EXIT 0
+    ELSE
+        ADDWIDGET "CALL" "$TITLE$" "$BM.TXT_VERSION$: $VERSION$ $BM.TXT_AUTHOR$: $AUTHOR$ $BM.TXT_DESC$: $DESC$" $ARG2$ "$ARG0$" "$ARG3$" "$ARG4$" "$ARG5$" "$TITLE$" "$PWD$" "$SAS$" "$SAS_NON_MC$"
+    ENDIF
     EXIT 0
 
 :INSTALL
