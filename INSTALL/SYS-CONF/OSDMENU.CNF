@@ -17,7 +17,7 @@ OSDSYS_left_cursor =
 OSDSYS_right_cursor =
 OSDSYS_menu_top_delimiter =
 OSDSYS_menu_bottom_delimiter =
-OSDSYS_num_displayed_items = 20
+OSDSYS_num_displayed_items = 6
 OSDSYS_Skip_MC = 1
 OSDSYS_Skip_HDD = 1
 OSDSYS_Skip_Disc = 1
@@ -60,18 +60,18 @@ name_OSDSYS_ITEM_7 = PS1 POPSLOADER
 path1_OSDSYS_ITEM_7 = mc?:/PS1_POPSLOADER/POPSLOADER.ELF
 path2_OSDSYS_ITEM_7 = mass:/APPS/PS1_POPSLOADER/POPSLOADER.ELF
 # --------------------------------------------------
-name_OSDSYS_ITEM_8 = wLE ISR exFAT USB
+name_OSDSYS_ITEM_8 = wLE ISR exFAT
 path1_OSDSYS_ITEM_8 = mc?:/BOOT/BOOT2.ELF
 path2_OSDSYS_ITEM_8 = mc?:/APP_WLE-ISR-XF/WLE-ISR-XF.ELF
 path3_OSDSYS_ITEM_8 = mass:/APPS/APP_WLE-ISR-XF/WLE-ISR-XF.ELF
 # --------------------------------------------------
 # --------------------------------------------------
 # --------------------------------------------------
-# name_OSDSYS_ITEM_20 = wELF ISR XF MMCE
+# name_OSDSYS_ITEM_20 = wELF ISR exFAT MMCE
 # path1_OSDSYS_ITEM_20 = mc?:/APP_WLE-ISR-XF-MM/WLE-ISR-XF-MM.ELF
 # path2_OSDSYS_ITEM_20 = mass:/APPS/APP_WLE-ISR-XF-MM/WLE-ISR-XF-MM.ELF
 # # --------------------------------------------------
-# name_OSDSYS_ITEM_21 = wLE ISR XF MX4SIO
+# name_OSDSYS_ITEM_21 = wLE ISR exFAT MX4SIO
 # path1_OSDSYS_ITEM_21 = mc?:/APP_WLE-ISR-XF-MX/WLE-ISR-XF-MX.ELF
 # path2_OSDSYS_ITEM_21 = mass:/APPS/APP_WLE-ISR-XF-MX/WLE-ISR-XF-MX.ELF
 # # --------------------------------------------------
