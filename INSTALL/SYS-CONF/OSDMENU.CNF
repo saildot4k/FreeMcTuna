@@ -40,9 +40,9 @@ arg_OSDSYS_ITEM_1 = -nologo
 name_OSDSYS_ITEM_2 = Launch Disc: with Logo
 path1_OSDSYS_ITEM_2 = cdrom
 # --------------------------------------------------
-name_OSDSYS_ITEM_3 = Launch ESR Patched Disc
-path1_OSDSYS_ITEM_3 = mc?:/APP_ESR-LAUNCHER/ESR-LAUNCHER.ELF
-path2_OSDSYS_ITEM_3 = mass:/APP_ESR-LAUNCHER/ESR-LAUNCHER.ELF
+# name_OSDSYS_ITEM_3 = Launch ESR Patched Disc
+# path1_OSDSYS_ITEM_3 = mc?:/APP_ESR-LAUNCHER/ESR-LAUNCHER.ELF
+# path2_OSDSYS_ITEM_3 = mass:/APP_ESR-LAUNCHER/ESR-LAUNCHER.ELF
 # --------------------------------------------------
 name_OSDSYS_ITEM_4 = Neutrino Loader (NHDDL)
 path1_OSDSYS_ITEM_4 = mc?:/APP_NHDDL/nhddl.elf
@@ -56,9 +56,9 @@ name_OSDSYS_ITEM_6 = PS1 DKWDRV
 path1_OSDSYS_ITEM_6 = mc?:/PS1_DKWDRV/DKWDRV.ELF
 path2_OSDSYS_ITEM_6 = mass:/APPS/PS1_DKWDRV/DKWDRV.ELF
 # --------------------------------------------------
-name_OSDSYS_ITEM_7 = PS1 POPSLOADER
-path1_OSDSYS_ITEM_7 = mc?:/PS1_POPSLOADER/POPSLOADER.ELF
-path2_OSDSYS_ITEM_7 = mass:/APPS/PS1_POPSLOADER/POPSLOADER.ELF
+# name_OSDSYS_ITEM_7 = PS1 POPSLOADER
+# path1_OSDSYS_ITEM_7 = mc?:/PS1_POPSLOADER/POPSLOADER.ELF
+# path2_OSDSYS_ITEM_7 = mass:/APPS/PS1_POPSLOADER/POPSLOADER.ELF
 # --------------------------------------------------
 name_OSDSYS_ITEM_8 = wLE ISR exFAT
 path1_OSDSYS_ITEM_8 = mc?:/BOOT/BOOT2.ELF
