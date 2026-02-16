@@ -1,9 +1,9 @@
-hacked_OSDSYS = 1
 OSDSYS_video_mode = AUTO
+OSDSYS_Skip_Disc = 1
+OSDSYS_Skip_Logo = 1
 OSDSYS_Inner_Browser = 0
-OSDSYS_Browser_Launcher = 1
-OSDSYS_selected_color = 0x10,0x80,0xE0,0x80
-OSDSYS_unselected_color = 0x33,0x33,0x33,0x80
+#----------------------------------
+OSDSYS_custom_menu = 1
 OSDSYS_scroll_menu = 1
 OSDSYS_menu_x = 320
 OSDSYS_menu_y = 110
@@ -18,10 +18,9 @@ OSDSYS_right_cursor =
 OSDSYS_menu_top_delimiter =
 OSDSYS_menu_bottom_delimiter =
 OSDSYS_num_displayed_items = 6
-OSDSYS_Skip_MC = 1
-OSDSYS_Skip_HDD = 1
-OSDSYS_Skip_Disc = 1
-OSDSYS_Skip_Logo = 1
+OSDSYS_selected_color = 0x10,0x80,0xE0,0x80
+OSDSYS_unselected_color = 0x33,0x33,0x33,0x80
+#----------------------------------
 cdrom_skip_ps2logo = 1
 cdrom_disable_gameid = 0
 cdrom_use_dkwdrv = 0
@@ -29,24 +28,44 @@ ps1drv_enable_fast = 1
 ps1drv_enable_smooth = 1
 ps1drv_use_ps1vn = 1
 app_gameid = 1
-# path_custom_payload = hdd0:__system:pfs:/p2lboot/osdboot.elf
-# boot_custom_payload = 1
 path_DKWDRV_ELF = mc?:/PS1_DKWDRV/DKWDRV.ELF
 # --------------------------------------------------
 name_OSDSYS_ITEM_1 = Launch Disc: no Logo
 path1_OSDSYS_ITEM_1 = cdrom
 arg_OSDSYS_ITEM_1 = -nologo
-# --------------------------------------------------
+arg_OSDSYS_ITEM_1 = -ps1smooth
+arg_OSDSYS_ITEM_1 = -ps1vneg
+arg_OSDSYS_ITEM_1 = -ps1fast
+#----------------------------------
 name_OSDSYS_ITEM_2 = Launch Disc: with Logo
 path1_OSDSYS_ITEM_2 = cdrom
+arg_OSDSYS_ITEM_2 = -ps1fast
+arg_OSDSYS_ITEM_2 = -ps1smooth
+arg_OSDSYS_ITEM_2 = -ps1vneg
 # --------------------------------------------------
-# name_OSDSYS_ITEM_3 = Launch ESR Patched Disc
-# path1_OSDSYS_ITEM_3 = mc?:/APP_ESR-LAUNCHER/ESR-LAUNCHER.ELF
-# path2_OSDSYS_ITEM_3 = mass:/APP_ESR-LAUNCHER/ESR-LAUNCHER.ELF
+name_OSDSYS_ITEM_3 = Launch ESR Patched Disc
+path1_OSDSYS_ITEM_3 = mc?:/APP_ESR-LAUNCHER/ESR-LAUNCHER.ELF
+path2_OSDSYS_ITEM_3 = mass:/APP_ESR-LAUNCHER/ESR-LAUNCHER.ELF
 # --------------------------------------------------
+####  NHDDL NOTE ####
+# NOTE: ARGUMENT Passing: arg_OSDSYS_ITEM_? =  is used to pass args to an ELF. This will be much faster than using nhddl.yaml
+# Uncomment as needed: remove "# "
+# ONE value per argument. Below are examples of possible values
+# -video=ntsc,pal,480p
+# -mode=usb,mx4sio,mmce,ilink,ata,hdl,udpbd
+# -udpbd_ip=xxx.xxx.xxx.xxx
 name_OSDSYS_ITEM_4 = Neutrino Loader (NHDDL)
 path1_OSDSYS_ITEM_4 = mc?:/APP_NHDDL/nhddl.elf
 path2_OSDSYS_ITEM_4 = mass:/APPS/APP_NHDDL/nhddl.elf
+# arg_OSDSYS_ITEM_4 = -video=480p
+# arg_OSDSYS_ITEM_4 = -mode=ata
+# arg_OSDSYS_ITEM_4 = -mode=hdl
+# arg_OSDSYS_ITEM_4 = -mode=mmce
+# arg_OSDSYS_ITEM_4 = -mode=mx4sio
+# arg_OSDSYS_ITEM_4 = -mode=ilink
+# arg_OSDSYS_ITEM_4 = -mode=usb
+# arg_OSDSYS_ITEM_4 = -mode=udpbd
+# arg_OSDSYS_ITEM_4 = -udpbd_ip=192.168.1.79
 # --------------------------------------------------
 name_OSDSYS_ITEM_5 = Open PS2 Loader
 path1_OSDSYS_ITEM_5 = mc?:/APP_OPL/OPL.ELF
@@ -67,7 +86,7 @@ path3_OSDSYS_ITEM_8 = mass:/APPS/APP_WLE-ISR-XF/WLE-ISR-XF.ELF
 # --------------------------------------------------
 # --------------------------------------------------
 # --------------------------------------------------
-# name_OSDSYS_ITEM_20 = wELF ISR exFAT MMCE
+# name_OSDSYS_ITEM_20 = wLE ISR exFAT MMCE
 # path1_OSDSYS_ITEM_20 = mc?:/APP_WLE-ISR-XF-MM/WLE-ISR-XF-MM.ELF
 # path2_OSDSYS_ITEM_20 = mass:/APPS/APP_WLE-ISR-XF-MM/WLE-ISR-XF-MM.ELF
 # # --------------------------------------------------
@@ -198,7 +217,7 @@ path3_OSDSYS_ITEM_8 = mass:/APPS/APP_WLE-ISR-XF/WLE-ISR-XF.ELF
 # path1_OSDSYS_ITEM_70 = mc?:/APP_APOLLO/APOLLO.ELF
 # path2_OSDSYS_ITEM_70 = mass:/APPS/APP_APOLLO/APOLLO.ELF
 # # --------------------------------------------------
-# name_OSDSYS_ITEM_72 = Argon Media Center
+# name_OSDSYS_ITEM_71 = Argon Media Center
 # path1_OSDSYS_ITEM_71 = mc?:/APP_ARGON/ARGON.ELF
 # path2_OSDSYS_ITEM_71 = mass:/APPS/APP_ARGON/ARGON.ELF
 # # --------------------------------------------------
@@ -269,6 +288,11 @@ path3_OSDSYS_ITEM_8 = mass:/APPS/APP_WLE-ISR-XF/WLE-ISR-XF.ELF
 # path2_OSDSYS_ITEM_92 = mass:/APPS/DBG_PS2LINK-HILOAD/PS2LINK-HILOAD.ELF
 # --------------------------------------------------
 # --------------------------------------------------
+name_OSDSYS_ITEM_198 = OSDMenu Configurator
+path1_OSDSYS_ITEM_198 = mmce?:/APPS/SYS_OSDMENU-CONFIGURATOR/osdmenu-configurator.elf
+path2_OSDSYS_ITEM_198 = usb:/APPS/SYS_OSDMENU-CONFIGURATOR/osdmenu-configurator.elf
+path3_OSDSYS_ITEM_198 = mx4sio:/APPS/SYS_OSDMENU-CONFIGURATOR/osdmenu-configurator.elf
+#----------------------------------
 name_OSDSYS_ITEM_199 = Reboot
 path1_OSDSYS_ITEM_199 = mc?:/BOOT/BOOT.ELF
 # --------------------------------------------------
