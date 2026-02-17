@@ -1,7 +1,7 @@
 CNF_version = 1
 Debug_Screen = 0
 FastBoot = 0
-ESR_Path_E1 = mc?:/BOOT/ESR.ELF
+ESR_Path_E1 = mc?:/APP_ESR-LAUNCHER/ESR-LAUNCHER.ELF
 ESR_Path_E2 =
 ESR_Path_E3 =
 pad_delay = 0
@@ -36,11 +36,11 @@ name_OSDSYS_ITEM_2 = Launch Disc: no Logo
 path1_OSDSYS_ITEM_2 = FASTBOOT
 # --------------------------------------------------
 name_OSDSYS_ITEM_3 = Launch ESR Patched Disc
-path1_OSDSYS_ITEM_3 = mc?:/BOOT/ESR.ELF
+path1_OSDSYS_ITEM_3 = mc?:/APP_ESR-LAUNCHER/ESR-LAUNCHER.ELF
 # --------------------------------------------------
 name_OSDSYS_ITEM_4 = Neutrino Loader (NHDDL)
-path1_OSDSYS_ITEM_4 = mass:/APPS/nhddl.elf
-path2_OSDSYS_ITEM_4 = mmce?:/APPS/nhddl.elf
+path1_OSDSYS_ITEM_4 = mass:/APPS/APP_NHDDL/nhddl.elf
+path2_OSDSYS_ITEM_4 = mmce?:/APPS/APP_NHDDL/nhddl.elf
 path3_OSDSYS_ITEM_4 = mc?:/APP_NHDDL/nhddl.elf
 # --------------------------------------------------
 name_OSDSYS_ITEM_5 = Open PS2 Loader
@@ -64,8 +64,6 @@ path3_OSDSYS_ITEM_8 = mc?:/BOOT/BOOT2.ELF
 name_OSDSYS_ITEM_9 = Reboot FMCB
 path1_OSDSYS_ITEM_9 = mc?:/BOOT/BOOT.ELF
 # --------------------------------------------------
-name_OSDSYS_ITEM_10 = Shutdown
-path1_OSDSYS_ITEM_10 = mc?:/POWEROFF/POWEROFF.ELF
 # --------------------------------------------------
 # --------------------------------------------------
 # --------------------------------------------------
@@ -79,7 +77,7 @@ path1_OSDSYS_ITEM_21 = mass:/APPS/APP_WLE-ISR-XF-MX/WLE-ISR-XF-MX.ELF
 path2_OSDSYS_ITEM_21 = mc?:/APP_WLE-ISR-XF-MX/WLE-ISR-XF-MX.ELF
 # --------------------------------------------------
 name_OSDSYS_ITEM_22 = wLaunchELF_kHn
-path1_OSDSYS_ITEM_22 = mass:/APPS/APP_WLE-VCD/WLE-VCD.ELF
+path1_OSDSYS_ITEM_22 = mass:/APPS/APP_WLE-KHN/WLE-KHN.ELF
 path2_OSDSYS_ITEM_22 = mc?:/APP_WLE-KHN/WLE-KHN.ELF
 # --------------------------------------------------
 name_OSDSYS_ITEM_23 = uLaunchELF DVR
@@ -114,28 +112,28 @@ path1_OSDSYS_ITEM_34 = mass:/APPS/GME_HERMES/HERMES.ELF
 path1_OSDSYS_ITEM_34 = mc?:/GME_HERMES/HERMES.ELF
 # --------------------------------------------------
 name_OSDSYS_ITEM_35 = PSBBN
-path1_OSDSYS_ITEM_35 = mc?:/APPS/PSBBN-LAUNCHER.ELF
+path1_OSDSYS_ITEM_35 = mc?:/APP_PSBBN-FORWARDER/PSBBN-FORWARDER.ELF
 # --------------------------------------------------
 # --------------------------------------------------
-name_OSDSYS_ITEM_40 = Open PS2 Loader-MMCE
-path1_OSDSYS_ITEM_40 = mass:/APPS/APP_OPL-MMCEB?/OPL-MMCEB?.ELF
-path2_OSDSYS_ITEM_40 = mc?:/APP_OPL-MMCEB?/OPL-MMCEB?.ELF
+name_OSDSYS_ITEM_40 = OPL 1.2.0 Beta XXXX
+path1_OSDSYS_ITEM_40 = mass:/APPS/APP_OPLBXXXX/OPLXXXX.ELF
+path2_OSDSYS_ITEM_40 = mc?:/APP_OPLBXXXX/OPLBXXXX.ELF
 # --------------------------------------------------
-name_OSDSYS_ITEM_41 = OPL 1.2.0Beta-2241
-path1_OSDSYS_ITEM_41 = mass:/APPS/APP_OPL120B241/OPL-120B2241.ELF
-path2_OSDSYS_ITEM_41 = mc?:/APP_OPL120B2241/OPL120B2241.ELF
+name_OSDSYS_ITEM_41 = OPL 1.2.0 Beta XXXX
+path1_OSDSYS_ITEM_41 = mass:/APPS/APP_OPLBXXXX/OPLXXXX.ELF
+path2_OSDSYS_ITEM_41 = mc?:/APP_OPLBXXXX/OPLBXXXX.ELF
 # --------------------------------------------------
-name_OSDSYS_ITEM_42 = OPL 1.2.0Beta-2212
-path1_OSDSYS_ITEM_42 = mass:/APPS/APP_OPL120B2212/OPL120B2212.ELF
-path2_OSDSYS_ITEM_42 = mc?:/APP_OPL120B2212/OPL120B2212.ELF
+name_OSDSYS_ITEM_42 = OPL 1.2.0 Beta XXXX
+path1_OSDSYS_ITEM_42 = mass:/APPS/APP_OPLBXXXX/OPLXXXX.ELF
+path2_OSDSYS_ITEM_42 = mc?:/APP_OPLBXXXX/OPLBXXXX.ELF
 # --------------------------------------------------
-name_OSDSYS_ITEM_43 = OPL 1.2.0Beta-2049
-path1_OSDSYS_ITEM_43 = mass:/APPS/APP_OPL-120B2049/OPL-120B2049.ELF
-path2_OSDSYS_ITEM_43 = mc?:/APP_OPL-120B2049/OPL-120B2049.ELF
+name_OSDSYS_ITEM_43 = OPL 1.2.0 Beta XXXX
+path1_OSDSYS_ITEM_43 = mass:/APPS/APP_OPLBXXXX/OPLXXXX.ELF
+path2_OSDSYS_ITEM_43 = mc?:/APP_OPLBXXXX/OPLBXXXX.ELF
 # --------------------------------------------------
-name_OSDSYS_ITEM_44 = OPL 120Beta2049GameID
-path1_OSDSYS_ITEM_44 = mass:/APPS/APP_OPL120B2049GID/OPL120B2049GID.ELF
-path2_OSDSYS_ITEM_44 = mc?:/APP_OPL-120B2049GID/OPL-120B2049GID.ELF
+name_OSDSYS_ITEM_44 = OPL 1.2.0 Beta XXXX
+path1_OSDSYS_ITEM_44 = mass:/APPS/APP_OPLBXXXX/OPLXXXX.ELF
+path2_OSDSYS_ITEM_44 = mc?:/APP_OPLBXXXX/OPLBXXXX.ELF
 # --------------------------------------------------
 name_OSDSYS_ITEM_45 = unofficial Open PS2 Loader
 path1_OSDSYS_ITEM_45 = mass:/APPS/APP_UOPL/UOPL.ELF
@@ -144,6 +142,10 @@ path2_OSDSYS_ITEM_45 = mc?:/APPS/APP_UOPL/UOPL.ELF
 name_OSDSYS_ITEM_46 = unofficial Open PS2 Loader - Betrayal
 path1_OSDSYS_ITEM_46 = mass:/APPS/APP_UOPL-BETRAYAL/UOPL-BETRAYAL.ELF
 path2_OSDSYS_ITEM_46 = mc?:/APP_UOPL-BETRAYAL/UOPL-BETRAYAL.ELF
+# --------------------------------------------------
+name_OSDSYS_ITEM_49 = Open PS2 Loader 1.2.0
+path1_OSDSYS_ITEM_49 = mass:/APPS/APP_OPL-120/OPL-120.ELF
+path2_OSDSYS_ITEM_49 = mc?:/APP_OPL-120/OPL-120.ELF
 # --------------------------------------------------
 name_OSDSYS_ITEM_50 = Open PS2 Loader 1.1.0
 path1_OSDSYS_ITEM_50 = mass:/APPS/APP_OPL-110/OPL-110.ELF
@@ -198,9 +200,9 @@ name_OSDSYS_ITEM_72 = Argon Media Center
 path1_OSDSYS_ITEM_71 = mass:/APPS/APP_ARGON/ARGON.ELF
 path2_OSDSYS_ITEM_71 = mc?:/APP_ARGON/ARGON.ELF
 # --------------------------------------------------
-name_OSDSYS_ITEM_72 = Cheat Device MMCE
-path1_OSDSYS_ITEM_72 = mc?:/APP_CHEATDEVICE-MMCE/CHEATDEVICE-MMCE.ELF
-path2_OSDSYS_ITEM_72 = mass:/APPS/APP_CHEATDEVICE-MMCE/CHEATDEVICE-MMCE.ELF
+name_OSDSYS_ITEM_72 = Cheat Device Forwarder
+path1_OSDSYS_ITEM_72 = mc?:/APP_CHEATDEVICE-FORWARDER/CHEATDEVICE-FORWARDER.ELF
+path2_OSDSYS_ITEM_72 = mass:/APPS/APP_CHEATDEVICE-USB/CHEATDEVICE-USB.ELF
 # --------------------------------------------------
 name_OSDSYS_ITEM_73 = Graphics Mode Synthesizer (GSM)
 path1_OSDSYS_ITEM_73 = mc?:/APPS/APP_GSM/GSM.ELF
@@ -233,28 +235,40 @@ path2_OSDSYS_ITEM_79 = mc?:/DST_PADTEST/PADTEST.ELF
 name_OSDSYS_ITEM_80 = PS2 RDRAM Test
 path1_OSDSYS_ITEM_80 = mass:/APPS/DST_RDRAMTEST/RDRAMTEST.ELF
 path2_OSDSYS_ITEM_80 = mc?:/DST_RDRAMTEST/RDRAMTEST.ELF
-# -----------------------------------------------
-name_OSDSYS_ITEM_81 = PS2 Temps
-path1_OSDSYS_ITEM_81 = mass:/APPS/DST_PS2TEMPS/PS2TEMPS.ELF
-path2_OSDSYS_ITEM_81 = mc?:/DST_PS2TEMPS/PS2TEMPS.ELF
+# # -----------------------------------------------
+# name_OSDSYS_ITEM_81 = PS2 Temps
+# path1_OSDSYS_ITEM_81 = mass:/APPS/DST_PS2TEMPS/PS2TEMPS.ELF
+# path2_OSDSYS_ITEM_81 = mc?:/DST_PS2TEMPS/PS2TEMPS.ELF
+# # -----------------------------------------------
+# name_OSDSYS_ITEM_82 = PS2Ident
+# path1_OSDSYS_ITEM_82 = mass:/APPS/DST_PS2IDENT/PS2IDENT.ELF
+# path2_OSDSYS_ITEM_82 = mc?:/DST_PS2IDENT/PS2IDENT.ELF
+# # -----------------------------------------------
+# name_OSDSYS_ITEM_83 = ROM Version Checker
+# path1_OSDSYS_ITEM_83 = mass:/APPS/DST_ROMVERCHK/ROMVERCHK.ELF
+# path2_OSDSYS_ITEM_83 = mc?:/DST_ROMVERCHK/ROMVERCHK.ELF
+# # --------------------------------------------------
+# name_OSDSYS_ITEM_84 = NTPS2
+# path1_OSDSYS_ITEM_84 = mass:/APPS/SYS_NTPS2/NTPS2.ELF
+# path2_OSDSYS_ITEM_84 = mc?:/SYS_NTPS2/NTPS2.ELF
+# # --------------------------------------------------
+# # --------------------------------------------------
+# name_OSDSYS_ITEM_90 = PS2LINK
+# path1_OSDSYS_ITEM_90 = mass:/APPS/DBG_PS2LINK/PS2LINK.ELF
+# path2_OSDSYS_ITEM_90 = mc?:/DBG_PS2LINK/PS2LINK.ELF
+# # --------------------------------------------------
+# name_OSDSYS_ITEM_91 = PS2LINK-External IRX
+# path1_OSDSYS_ITEM_91 = mass:/APPS/DBG_PS2LINK-EXTIRX/PS2LINK-EXTIRX.ELF
+# path2_OSDSYS_ITEM_91 = mc?:/DBG_PS2LINK-EXTIRX/PS2LINK-EXTIRX.ELF
+# # --------------------------------------------------
+# name_OSDSYS_ITEM_92 = PS2LINK-Highloading
+# path1_OSDSYS_ITEM_92 = mass:/APPS/DBG_PS2LINK-HILOAD/PS2LINK-HILOAD.ELF
+# path2_OSDSYS_ITEM_92 = mc?:/DBG_PS2LINK-HILOAD/PS2LINK-HILOAD.ELF
 # --------------------------------------------------
-name_OSDSYS_ITEM_82 = ROM Version Checker
-path1_OSDSYS_ITEM_82 = mass:/APPS/DST_ROMVERCHK/ROMVERCHK.ELF
-path2_OSDSYS_ITEM_82 = mc?:/DST_ROMVERCHK/ROMVERCHK.ELF
+name_OSDSYS_ITEM_199 = Reboot
+path1_OSDSYS_ITEM_199 = mc?:/BOOT/BOOT.ELF
+path2_OSDSYS_ITEM_199 = $REBOOT
 # --------------------------------------------------
-name_OSDSYS_ITEM_83 = Mechacon Crash Tester
-path1_OSDSYS_ITEM_83 = mass:/APPS/DST_MECHACON-CRASH-TESTER/MECHACON-CRASH_TESTER.ELF
-path2_OSDSYS_ITEM_83 = mc?:/DST_MECHACON-CRASH-TESTER/MECHACON-CRASH_TESTER.ELF
-# --------------------------------------------------
-name_OSDSYS_ITEM_90 = PS2LINK
-path1_OSDSYS_ITEM_90 = mass:/APPS/DBG_PS2LINK/PS2LINK.ELF
-path2_OSDSYS_ITEM_90 = mc?:/DBG_PS2LINK/PS2LINK.ELF
-# --------------------------------------------------
-name_OSDSYS_ITEM_91 = PS2LINK-External IRX
-path1_OSDSYS_ITEM_91 = mass:/APPS/DBG_PS2LINK-EXTRIX/PS2LINK-EXTRIX.ELF
-path2_OSDSYS_ITEM_91 = mc?:/DBG_PS2LINK-EXTRIX/PS2LINK-EXTRIX.ELF
-# --------------------------------------------------
-name_OSDSYS_ITEM_92 = PS2LINK-Highloading
-path1_OSDSYS_ITEM_92 = mass:/APPS/DBG_PS2LINK-HIDING/PS2LINK-HIDING.ELF
-path2_OSDSYS_ITEM_92 = mc?:/DBG_PS2LINK-HIDING/PS2LINK-HIDING.ELF
-# --------------------------------------------------
+name_OSDSYS_ITEM_200 = Shutdown
+path1_OSDSYS_ITEM_200 = mc?:/POWEROFF/POWEROFF.ELF
+path2_OSDSYS_ITEM_200 = $POWEROFF

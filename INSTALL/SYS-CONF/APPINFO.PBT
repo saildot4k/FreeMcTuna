@@ -9,8 +9,8 @@
 #
 # Some devices are case sensitive! Make sure your case matches!
 #
-# Source: https://github.com/rickgaiser/neutrino
-SET "TITLE" "SYS-CONF"
+# Source: 
+SET "TITLE" "[SYS] SYS-CONF"
 SET "VERSION" ""
 SET "AUTHOR" ""
 SET "DESC" "Memory Card folder for shared files, alter as needed"
@@ -31,7 +31,18 @@ RETURN -1
     EXIT 0
 
 :QUERY
-    IF NOT MATCHES "RUN" "$ARG3$"
+    IF MATCHES "$ARG3$" "APP_CONFIG"
+        EXIT 0
+    ELSE
+        ADDWIDGET "CALL" "$TITLE$" "$BM.TXT_VERSION$: $VERSION$ $BM.TXT_AUTHOR$: $AUTHOR$ $BM.TXT_DESC$: $DESC$" $ARG2$ "$ARG0$" "$ARG3$" "$ARG4$" "$ARG5$" "$TITLE$" "$PWD$" "$SAS$" "$SAS_NON_MC$"
+    ENDIF
+    EXIT 0
+
+
+:QUERY
+    IF MATCHES "$ARG3$" "APP_CONFIG"
+        EXIT 0
+    ELSEIF NOT MATCHES "RUN" "$ARG3$"
         ADDWIDGET "CALL" "$TITLE$" "$BM.TXT_VERSION$: $VERSION$ $BM.TXT_AUTHOR$: $AUTHOR$ $BM.TXT_DESC$: $DESC$" $ARG2$ "$ARG0$" "$ARG3$" "$ARG4$" "$ARG5$" "$TITLE$" "$PWD$" "$SAS$" "$SAS_NON_MC$"
     ENDIF
     EXIT 0
