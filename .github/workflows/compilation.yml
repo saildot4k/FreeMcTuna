@@ -15,7 +15,7 @@ jobs:
       - name: Install dependencies
         run: |
           apk add build-base git zip
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v6
       - run: |
           git fetch --prune --unshallow
       - name: Compile
