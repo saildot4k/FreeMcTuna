@@ -93,9 +93,6 @@ extern int size_del_icn;
 extern u8 icon_sys[];
 extern int size_icon_sys;
 //----------------------------------------//
-extern u8 esr_elf[];
-extern int size_esr_elf;
-//----------------------------------------//
 extern u8 whatisbootx_txt[];
 extern int size_whatisbootx_txt;
 //----------------------------------------//
@@ -133,8 +130,8 @@ extern int size_sysconfps2bbl_ini;
 extern u8 sysconfpsxbbl_ini[];
 extern int size_sysconfpsxbbl_ini;
 //----------------------------------------//
-extern u8 sysconfsysconf_icn[];
-extern int size_sysconfsysconf_icn;
+extern u8 sysconflist_icn[];
+extern int size_sysconflist_icn;
 //----------------------------------------//
 extern u8 sysconfusbd_irx[];
 extern int size_sysconfusbd_irx;
@@ -577,7 +574,7 @@ static int install(int mcport, int icon_variant)
     {
         return 6;
     }
-    retorno = write_embed(&sysconfsysconf_icn, size_sysconfsysconf_icn, "SYS-CONF", "sysconf.icn", mcport);
+    retorno = write_embed(&sysconflist_icn, size_sysconflist_icn, "SYS-CONF", "list.icn", mcport);
     if (retorno < 0)
     {
         return 6;
@@ -620,11 +617,6 @@ static int install(int mcport, int icon_variant)
         return 6;
     }
     retorno = write_embed(&boot_icn, size_boot_icn, "BOOT", "boot.icn", mcport);
-    if (retorno < 0)
-    {
-        return 6;
-    }
-    retorno = write_embed(&esr_elf, size_esr_elf, "BOOT", "ESR.ELF", mcport);
     if (retorno < 0)
     {
         return 6;
