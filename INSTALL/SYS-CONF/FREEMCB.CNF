@@ -25,11 +25,12 @@ OSDSYS_left_cursor =
 OSDSYS_right_cursor =
 OSDSYS_menu_top_delimiter =
 OSDSYS_menu_bottom_delimiter =
-OSDSYS_num_displayed_items = 19
+OSDSYS_num_displayed_items = 7
 OSDSYS_Skip_MC = 1
 OSDSYS_Skip_HDD = 1
 # --------------------------------------------------
 name_OSDSYS_ITEM_1 = Free McBoot Configurator
+path1_OSDSYS_ITEM_1 = mass:/APPS/SYS_R3CONFIGURATOR/r3configurator.elf
 path1_OSDSYS_ITEM_1 = mc?:/SYS_FMCB-CFG/FMCB-CFG.ELF
 # --------------------------------------------------
 name_OSDSYS_ITEM_2 = Launch Disc: no Logo
