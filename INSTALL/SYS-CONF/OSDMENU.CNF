@@ -288,10 +288,10 @@ path3_OSDSYS_ITEM_8 = mass:/APPS/APP_WLE-ISR-XF/WLE-ISR-XF.ELF
 # path2_OSDSYS_ITEM_92 = mass:/APPS/DBG_PS2LINK-HILOAD/PS2LINK-HILOAD.ELF
 # --------------------------------------------------
 # --------------------------------------------------
-name_OSDSYS_ITEM_198 = OSDMenu Configurator
-path1_OSDSYS_ITEM_198 = mmce?:/APPS/SYS_OSDMENU-CONFIGURATOR/osdmenu-configurator.elf
-path2_OSDSYS_ITEM_198 = usb:/APPS/SYS_OSDMENU-CONFIGURATOR/osdmenu-configurator.elf
-path3_OSDSYS_ITEM_198 = mx4sio:/APPS/SYS_OSDMENU-CONFIGURATOR/osdmenu-configurator.elf
+name_OSDSYS_ITEM_198 = R3Configurator
+path1_OSDSYS_ITEM_198 = mmce?:/APPS/R3CONFIGURATOR/r3configurator.elf
+path2_OSDSYS_ITEM_198 = usb:/APPS/R3CONFIGURATOR/r3configurator.elf
+path3_OSDSYS_ITEM_198 = mx4sio:/APPS/R3CONFIGURATOR/r3configurator.elf
 #----------------------------------
 name_OSDSYS_ITEM_199 = Reboot
 path1_OSDSYS_ITEM_199 = mc?:/BOOT/BOOT.ELF
