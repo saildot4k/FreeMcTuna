@@ -29,17 +29,13 @@ OSDSYS_num_displayed_items = 7
 OSDSYS_Skip_MC = 1
 OSDSYS_Skip_HDD = 1
 # --------------------------------------------------
-name_OSDSYS_ITEM_1 = Free McBoot Configurator
-path1_OSDSYS_ITEM_1 = mass:/APPS/SYS_R3CONFIGURATOR/r3configurator.elf
-path1_OSDSYS_ITEM_1 = mc?:/SYS_FMCB-CFG/FMCB-CFG.ELF
-# --------------------------------------------------
 name_OSDSYS_ITEM_2 = Launch Disc: no Logo
 path1_OSDSYS_ITEM_2 = FASTBOOT
 # --------------------------------------------------
 name_OSDSYS_ITEM_3 = Launch ESR Patched Disc
 path1_OSDSYS_ITEM_3 = mc?:/APP_ESR-LAUNCHER/ESR-LAUNCHER.ELF
 # --------------------------------------------------
-name_OSDSYS_ITEM_4 = Neutrino Loader (NHDDL)
+name_OSDSYS_ITEM_4 = NHDDL (CONFIGURE ME!)
 path1_OSDSYS_ITEM_4 = mass:/APPS/APP_NHDDL/nhddl.elf
 path2_OSDSYS_ITEM_4 = mmce?:/APPS/APP_NHDDL/nhddl.elf
 path3_OSDSYS_ITEM_4 = mc?:/APP_NHDDL/nhddl.elf
@@ -57,17 +53,8 @@ name_OSDSYS_ITEM_7 = PS1 POPSLOADER
 path1_OSDSYS_ITEM_7 = mass:/APPS/PS1_POPSLOADER/POPSLOADER.ELF
 path2_OSDSYS_ITEM_7 = mc?:/PS1_POPSLOADER/POPSLOADER.ELF
 # --------------------------------------------------
-name_OSDSYS_ITEM_8 = wLE ISR exFAT USB
-path1_OSDSYS_ITEM_8 = mass:/APPS/APP_WLE-ISR-XF/WLE-ISR-XF.ELF
-path2_OSDSYS_ITEM_8 = mc?:/APP_WLE-ISR-XF/WLE-ISR-XF.ELF
+name_OSDSYS_ITEM_8 = wLE R3Z (ALL DEVICES)
 path3_OSDSYS_ITEM_8 = mc?:/BOOT/BOOT2.ELF
-# --------------------------------------------------
-name_OSDSYS_ITEM_9 = Reboot FMCB
-path1_OSDSYS_ITEM_9 = mc?:/BOOT/BOOT.ELF
-# --------------------------------------------------
-# --------------------------------------------------
-# --------------------------------------------------
-# --------------------------------------------------
 # --------------------------------------------------
 name_OSDSYS_ITEM_20 = wLE ISR exFAT USB & MMCE
 path1_OSDSYS_ITEM_20 = mass:/APPS/APP_WLE-ISR-XF-MM/WLE-ISR-XF-MM.ELF
@@ -265,6 +252,11 @@ path2_OSDSYS_ITEM_80 = mc?:/DST_RDRAMTEST/RDRAMTEST.ELF
 # name_OSDSYS_ITEM_92 = PS2LINK-Highloading
 # path1_OSDSYS_ITEM_92 = mass:/APPS/DBG_PS2LINK-HILOAD/PS2LINK-HILOAD.ELF
 # path2_OSDSYS_ITEM_92 = mc?:/DBG_PS2LINK-HILOAD/PS2LINK-HILOAD.ELF
+# # --------------------------------------------------
+name_OSDSYS_ITEM_198 = R3Configurator
+path1_OSDSYS_ITEM_198 = mmce?:/APPS/SYS_R3CONFIGURATOR/r3configurator.elf
+path2_OSDSYS_ITEM_198 = usb:/APPS/SYS_R3CONFIGURATOR/r3configurator.elf
+path3_OSDSYS_ITEM_198 = mx4sio:/APPS/SYS_R3CONFIGURATOR/r3configurator.elf
 # --------------------------------------------------
 name_OSDSYS_ITEM_199 = Reboot
 path1_OSDSYS_ITEM_199 = mc?:/BOOT/BOOT.ELF
