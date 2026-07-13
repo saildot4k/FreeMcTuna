@@ -38,3 +38,6 @@ DETAILED_CHANGELOG
 #
 # Generated source files
 #
+*.toml
+*.url
+INSTALL/NEUTRINO/README.md

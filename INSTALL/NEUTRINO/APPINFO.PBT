@@ -9,8 +9,8 @@
 #
 # Source: https://github.com/rickgaiser/neutrino
 SET "TITLE" "[RTE] NEUTRINO"
-SET "VERSION" "1.70"
-SET "AUTHOR" "https://github.com/rickgaiser/neutrinoi"
+SET "VERSION" "v1.8.0-47"
+SET "AUTHOR" "github.com/pcm720"
 SET "DESC" "A neutrino is a particle with almost zero mass, and that's what this device emulator's primary goal is. To have almost 0 mass when emulating devices to maximize compatibility."
 SET "ELF" ""
 SET "SAS" "NEUTRINO"
@@ -31,7 +31,10 @@ RETURN -1
     EXIT 0
 
 :QUERY
-    IF NOT MATCHES "RUN" "$ARG3$"
+:QUERY
+    IF MATCHES "$ARG3$" "APP_CONFIG"
+        EXIT 0
+    ELSEIF NOT MATCHES "RUN" "$ARG3$"
         ADDWIDGET "CALL" "$TITLE$" "$BM.TXT_VERSION$: $VERSION$ $BM.TXT_AUTHOR$: $AUTHOR$ $BM.TXT_DESC$: $DESC$" $ARG2$ "$ARG0$" "$ARG3$" "$ARG4$" "$ARG5$" "$TITLE$" "$PWD$" "$SAS$" "$SAS_NON_MC$"
     ENDIF
     EXIT 0

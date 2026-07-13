@@ -1,7 +1,6 @@
 OSDSYS_video_mode = AUTO
 OSDSYS_Skip_Disc = 1
-OSDSYS_Skip_Logo = 1
-OSDSYS_Inner_Browser = 0
+OSDSYS_boot = opening
 #----------------------------------
 OSDSYS_custom_menu = 1
 OSDSYS_scroll_menu = 1
@@ -15,7 +14,7 @@ OSDSYS_cursor_max_velocity = 1500
 OSDSYS_cursor_acceleration = 150
 OSDSYS_left_cursor =
 OSDSYS_right_cursor =
-OSDSYS_menu_top_delimiter =
+OSDSYS_menu_top_delimiter = y-99r0.40p60w3c2OSDc7Menuw1p00r0.00y-00
 OSDSYS_menu_bottom_delimiter =
 OSDSYS_num_displayed_items = 6
 OSDSYS_selected_color = 0x10,0x80,0xE0,0x80
@@ -54,7 +53,7 @@ path2_OSDSYS_ITEM_3 = usb:/APP_ESR-LAUNCHER/ESR-LAUNCHER.ELF
 # -video=ntsc,pal,480p
 # -mode=usb,mx4sio,mmce,ilink,ata,hdl,udpbd
 # -udpbd_ip=xxx.xxx.xxx.xxx
-name_OSDSYS_ITEM_4 = NHDDL (CONFIGURE ME!)
+name_OSDSYS_ITEM_4 = NHDDL r0.70c6y-30R3Configurator me!y-00r0.00
 path1_OSDSYS_ITEM_4 = mc?:/APP_NHDDL/nhddl.elf
 path2_OSDSYS_ITEM_4 = usb:/APPS/APP_NHDDL/nhddl.elf
 # arg_OSDSYS_ITEM_4 = -video=480p
@@ -81,6 +80,8 @@ path2_OSDSYS_ITEM_6 = usb:/APPS/PS1_DKWDRV/DKWDRV.ELF
 # --------------------------------------------------
 name_OSDSYS_ITEM_8 = wLE R3Z (ALL DEVICES)
 path1_OSDSYS_ITEM_8 = mc?:/BOOT/BOOT2.ELF
+path2_OSDSYS_ITEM_8 = mc?:/APP_WLE-R3Z/WLE-R3Z.ELF
+path3_OSDSYS_ITEM_8 = usb:/APPS/APP_WLE-R3Z/WLE-R3Z.ELF
 # --------------------------------------------------
 # --------------------------------------------------
 # --------------------------------------------------
@@ -291,8 +292,9 @@ path1_OSDSYS_ITEM_198 = mmce?:/APPS/SYS_R3CONFIGURATOR/r3configurator.elf
 path2_OSDSYS_ITEM_198 = usb:/APPS/SYS_R3CONFIGURATOR/r3configurator.elf
 path3_OSDSYS_ITEM_198 = mx4sio:/APPS/SYS_R3CONFIGURATOR/r3configurator.elf
 #----------------------------------
-name_OSDSYS_ITEM_199 = Reboot
+name_OSDSYS_ITEM_199 = c6Reboot
 path1_OSDSYS_ITEM_199 = mc?:/BOOT/BOOT.ELF
-# --------------------------------------------------
-name_OSDSYS_ITEM_200 = Shutdown
+#----------------------------------
+name_OSDSYS_ITEM_200 = c6Shutdown
 path1_OSDSYS_ITEM_200 = POWEROFF
+#----------------------------------
