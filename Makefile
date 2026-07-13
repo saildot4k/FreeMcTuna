@@ -9,156 +9,156 @@ EE_OBJS += restartdel_icn.o restarticon_sys.o restartlist_icn.o restart_elf.o po
 	sysconflaunchelf_cnf.o sysconfps2bbl_ini.o sysconfusbd_irx.o sysconfusbhdfsd_irx.o sysconfcopy_icn.o sysconfdel_icn.o sysconfendvdpl_irx.o sysconficon_sys.o \
 	sysconflist_icn.o sysconfappinfo_pbt.o sysconfpsxbbl_ini.o sysconfosdmenu_cnf.o \
 	sys_osdmenu_appinfo_pbt.o sys_osdmenu_copy_icn.o sys_osdmenu_del_icn.o sys_osdmenu_icon_sys.o sys_osdmenu_list_icn.o sys_osdmenu_osdmenu_elf.o sys_osdmenu_title_cfg.o
-EE_SRC = restartdel_icn.s restarticon_sys.s restartlist_icn.s restart_elf.s powerdel_icn.s powericon_sys.s powerlist_icn.s poweroff_elf.s \
-	apps_icn.s appsdel_icn.s appsicon_sys.s boot2_elf.s boot_elf.s icon_sys.s copy_icn.s del_icn.s \
-	boot_icn.s appinfo_pbt.s whatisbootx_txt.s OpenTuna_sys.s OpenTuna_SLIMS.s OpenTuna_FAT-170.s OpenTuna_FAT-110-120-150-160.s \
+EE_SRC = restartdel_icn.c restarticon_sys.c restartlist_icn.c restart_elf.c powerdel_icn.c powericon_sys.c powerlist_icn.c poweroff_elf.c \
+	apps_icn.c appsdel_icn.c appsicon_sys.c boot2_elf.c boot_elf.c icon_sys.c copy_icn.c del_icn.c \
+	boot_icn.c appinfo_pbt.c whatisbootx_txt.c OpenTuna_sys.c OpenTuna_SLIMS.c OpenTuna_FAT-170.c OpenTuna_FAT-110-120-150-160.c \
 	PADMAN_irx.c SIO2MAN_irx.c MCMAN_irx.c MCSERV_irx.c \
-	sysconffreemcb_cnf.s sysconfipconfig_dat.s sysconflaunchelf_cnf.s sysconfps2bbl_ini.s \
-	sysconfusbd_irx.s sysconfusbhdfsd_irx.s sysconfcopy_icn.s sysconfdel_icn.s sysconfendvdpl_irx.s sysconficon_sys.s sysconflist_icn.s sysconfappinfo_pbt.s sysconfpsxbbl_ini.s sysconfosdmenu_cnf.s \
-	sys_osdmenu_appinfo_pbt.s sys_osdmenu_copy_icn.s sys_osdmenu_del_icn.s sys_osdmenu_icon_sys.s sys_osdmenu_list_icn.s sys_osdmenu_osdmenu_elf.s sys_osdmenu_title_cfg.s
+	sysconffreemcb_cnf.c sysconfipconfig_dat.c sysconflaunchelf_cnf.c sysconfps2bbl_ini.c \
+	sysconfusbd_irx.c sysconfusbhdfsd_irx.c sysconfcopy_icn.c sysconfdel_icn.c sysconfendvdpl_irx.c sysconficon_sys.c sysconflist_icn.c sysconfappinfo_pbt.c sysconfpsxbbl_ini.c sysconfosdmenu_cnf.c \
+	sys_osdmenu_appinfo_pbt.c sys_osdmenu_copy_icn.c sys_osdmenu_del_icn.c sys_osdmenu_icon_sys.c sys_osdmenu_list_icn.c sys_osdmenu_osdmenu_elf.c sys_osdmenu_title_cfg.c
 EE_LIBS = -ldebug -lcdvd -lpatches -lpadx -lmc
 
 all:
 	$(MAKE) $(EE_BIN_PACKED)
 # RESTART assets
-restartdel_icn.s:
-	bin2s INSTALL/RESTART/DEL.ICN restartdel_icn.s restartdel_icn
+restartdel_icn.c:
+	bin2c INSTALL/RESTART/DEL.ICN restartdel_icn.c restartdel_icn
 
-restarticon_sys.s:
-	bin2s INSTALL/RESTART/ICON.SYS restarticon_sys.s restarticon_sys
+restarticon_sys.c:
+	bin2c INSTALL/RESTART/ICON.SYS restarticon_sys.c restarticon_sys
 
-restartlist_icn.s:
-	bin2s INSTALL/RESTART/LIST.ICN restartlist_icn.s restartlist_icn
+restartlist_icn.c:
+	bin2c INSTALL/RESTART/LIST.ICN restartlist_icn.c restartlist_icn
 
-restart_elf.s:
-	bin2s INSTALL/RESTART/RESTART.ELF restart_elf.s restart_elf
+restart_elf.c:
+	bin2c INSTALL/RESTART/RESTART.ELF restart_elf.c restart_elf
 
 # POWEROFF assets
-powerdel_icn.s:
-	bin2s INSTALL/POWEROFF/DEL.ICN powerdel_icn.s powerdel_icn
+powerdel_icn.c:
+	bin2c INSTALL/POWEROFF/DEL.ICN powerdel_icn.c powerdel_icn
 
-powericon_sys.s:
-	bin2s INSTALL/POWEROFF/ICON.SYS powericon_sys.s powericon_sys
+powericon_sys.c:
+	bin2c INSTALL/POWEROFF/ICON.SYS powericon_sys.c powericon_sys
 
-powerlist_icn.s:
-	bin2s INSTALL/POWEROFF/LIST.ICN powerlist_icn.s powerlist_icn
+powerlist_icn.c:
+	bin2c INSTALL/POWEROFF/LIST.ICN powerlist_icn.c powerlist_icn
 
-poweroff_elf.s:
-	bin2s INSTALL/POWEROFF/POWEROFF.ELF poweroff_elf.s poweroff_elf
+poweroff_elf.c:
+	bin2c INSTALL/POWEROFF/POWEROFF.ELF poweroff_elf.c poweroff_elf
 
 #APPS assets
-apps_icn.s:
-	bin2s INSTALL/APPS/APPS.ICN apps_icn.s apps_icn
+apps_icn.c:
+	bin2c INSTALL/APPS/APPS.ICN apps_icn.c apps_icn
 
-appsdel_icn.s:
-	bin2s INSTALL/APPS/DEL.ICN appsdel_icn.s appsdel_icn
+appsdel_icn.c:
+	bin2c INSTALL/APPS/DEL.ICN appsdel_icn.c appsdel_icn
 
-appsicon_sys.s:
-	bin2s INSTALL/APPS/ICON.SYS appsicon_sys.s appsicon_sys
+appsicon_sys.c:
+	bin2c INSTALL/APPS/ICON.SYS appsicon_sys.c appsicon_sys
 
 # BOOT assets
-boot2_elf.s:
-	bin2s INSTALL/BOOT/BOOT2.ELF boot2_elf.s boot2_elf
+boot2_elf.c:
+	bin2c INSTALL/BOOT/BOOT2.ELF boot2_elf.c boot2_elf
 
-boot_elf.s:
-	bin2s INSTALL/BOOT/BOOT.ELF boot_elf.s boot_elf
+boot_elf.c:
+	bin2c INSTALL/BOOT/BOOT.ELF boot_elf.c boot_elf
 
-icon_sys.s:
-	bin2s INSTALL/BOOT/ICON.SYS icon_sys.s icon_sys
+icon_sys.c:
+	bin2c INSTALL/BOOT/ICON.SYS icon_sys.c icon_sys
 
-copy_icn.s:
-	bin2s INSTALL/BOOT/COPY.ICN copy_icn.s copy_icn
+copy_icn.c:
+	bin2c INSTALL/BOOT/COPY.ICN copy_icn.c copy_icn
 
-del_icn.s:
-	bin2s INSTALL/BOOT/DEL.ICN del_icn.s del_icn
+del_icn.c:
+	bin2c INSTALL/BOOT/DEL.ICN del_icn.c del_icn
 
-boot_icn.s:
-	bin2s INSTALL/BOOT/BOOT.ICN boot_icn.s boot_icn
+boot_icn.c:
+	bin2c INSTALL/BOOT/BOOT.ICN boot_icn.c boot_icn
 
-appinfo_pbt.s:
-	bin2s INSTALL/BOOT/APPINFO.PBT appinfo_pbt.s appinfo_pbt
+appinfo_pbt.c:
+	bin2c INSTALL/BOOT/APPINFO.PBT appinfo_pbt.c appinfo_pbt
 
-whatisbootx_txt.s:
-	bin2s INSTALL/BOOT/WHATISBOOTX.TXT whatisbootx_txt.s whatisbootx_txt
+whatisbootx_txt.c:
+	bin2c INSTALL/BOOT/WHATISBOOTX.TXT whatisbootx_txt.c whatisbootx_txt
 
 
 # SYS-CONF assets
-sysconffreemcb_cnf.s:
-	bin2s INSTALL/SYS-CONF/FREEMCB.CNF sysconffreemcb_cnf.s sysconffreemcb_cnf
+sysconffreemcb_cnf.c:
+	bin2c INSTALL/SYS-CONF/FREEMCB.CNF sysconffreemcb_cnf.c sysconffreemcb_cnf
 
-sysconfipconfig_dat.s:
-	bin2s INSTALL/SYS-CONF/IPCONFIG.DAT sysconfipconfig_dat.s sysconfipconfig_dat
+sysconfipconfig_dat.c:
+	bin2c INSTALL/SYS-CONF/IPCONFIG.DAT sysconfipconfig_dat.c sysconfipconfig_dat
 
-sysconflaunchelf_cnf.s:
-	bin2s INSTALL/SYS-CONF/LAUNCHELF.CNF sysconflaunchelf_cnf.s sysconflaunchelf_cnf
+sysconflaunchelf_cnf.c:
+	bin2c INSTALL/SYS-CONF/LAUNCHELF.CNF sysconflaunchelf_cnf.c sysconflaunchelf_cnf
 
-sysconfps2bbl_ini.s:
-	bin2s INSTALL/SYS-CONF/PS2BBL.INI sysconfps2bbl_ini.s sysconfps2bbl_ini
+sysconfps2bbl_ini.c:
+	bin2c INSTALL/SYS-CONF/PS2BBL.INI sysconfps2bbl_ini.c sysconfps2bbl_ini
 
-sysconfusbd_irx.s:
-	bin2s INSTALL/SYS-CONF/USBD.IRX sysconfusbd_irx.s sysconfusbd_irx
+sysconfusbd_irx.c:
+	bin2c INSTALL/SYS-CONF/USBD.IRX sysconfusbd_irx.c sysconfusbd_irx
 
-sysconfusbhdfsd_irx.s:
-	bin2s INSTALL/SYS-CONF/USBHDFSD.IRX sysconfusbhdfsd_irx.s sysconfusbhdfsd_irx
+sysconfusbhdfsd_irx.c:
+	bin2c INSTALL/SYS-CONF/USBHDFSD.IRX sysconfusbhdfsd_irx.c sysconfusbhdfsd_irx
 
-sysconfcopy_icn.s:
-	bin2s INSTALL/SYS-CONF/COPY.ICN sysconfcopy_icn.s sysconfcopy_icn
+sysconfcopy_icn.c:
+	bin2c INSTALL/SYS-CONF/COPY.ICN sysconfcopy_icn.c sysconfcopy_icn
 
-sysconfdel_icn.s:
-	bin2s INSTALL/SYS-CONF/DEL.ICN sysconfdel_icn.s sysconfdel_icn
+sysconfdel_icn.c:
+	bin2c INSTALL/SYS-CONF/DEL.ICN sysconfdel_icn.c sysconfdel_icn
 
-sysconfendvdpl_irx.s:
-	bin2s INSTALL/SYS-CONF/ENDVDPL.IRX sysconfendvdpl_irx.s sysconfendvdpl_irx
+sysconfendvdpl_irx.c:
+	bin2c INSTALL/SYS-CONF/ENDVDPL.IRX sysconfendvdpl_irx.c sysconfendvdpl_irx
 
-sysconficon_sys.s:
-	bin2s INSTALL/SYS-CONF/ICON.SYS sysconficon_sys.s sysconficon_sys
+sysconficon_sys.c:
+	bin2c INSTALL/SYS-CONF/ICON.SYS sysconficon_sys.c sysconficon_sys
 
-sysconflist_icn.s:
-	bin2s INSTALL/SYS-CONF/LIST.ICN sysconflist_icn.s sysconflist_icn
+sysconflist_icn.c:
+	bin2c INSTALL/SYS-CONF/LIST.ICN sysconflist_icn.c sysconflist_icn
 
-sysconfappinfo_pbt.s:
-	bin2s INSTALL/SYS-CONF/APPINFO.PBT sysconfappinfo_pbt.s sysconfappinfo_pbt
+sysconfappinfo_pbt.c:
+	bin2c INSTALL/SYS-CONF/APPINFO.PBT sysconfappinfo_pbt.c sysconfappinfo_pbt
 
-sysconfpsxbbl_ini.s:
-	bin2s INSTALL/SYS-CONF/PSXBBL.INI sysconfpsxbbl_ini.s sysconfpsxbbl_ini
+sysconfpsxbbl_ini.c:
+	bin2c INSTALL/SYS-CONF/PSXBBL.INI sysconfpsxbbl_ini.c sysconfpsxbbl_ini
 
-sysconfosdmenu_cnf.s:
-	bin2s INSTALL/SYS-CONF/OSDMENU.CNF sysconfosdmenu_cnf.s sysconfosdmenu_cnf
+sysconfosdmenu_cnf.c:
+	bin2c INSTALL/SYS-CONF/OSDMENU.CNF sysconfosdmenu_cnf.c sysconfosdmenu_cnf
 
 # SYS-OSDMENU assets
-sys_osdmenu_appinfo_pbt.s:
-	bin2s INSTALL/SYS_OSDMENU/APPINFO.PBT sys_osdmenu_appinfo_pbt.s sys_osdmenu_appinfo_pbt
+sys_osdmenu_appinfo_pbt.c:
+	bin2c INSTALL/SYS_OSDMENU/APPINFO.PBT sys_osdmenu_appinfo_pbt.c sys_osdmenu_appinfo_pbt
 
-sys_osdmenu_copy_icn.s:
-	bin2s INSTALL/SYS_OSDMENU/copy.icn sys_osdmenu_copy_icn.s sys_osdmenu_copy_icn
+sys_osdmenu_copy_icn.c:
+	bin2c INSTALL/SYS_OSDMENU/copy.icn sys_osdmenu_copy_icn.c sys_osdmenu_copy_icn
 
-sys_osdmenu_del_icn.s:
-	bin2s INSTALL/SYS_OSDMENU/del.icn sys_osdmenu_del_icn.s sys_osdmenu_del_icn
+sys_osdmenu_del_icn.c:
+	bin2c INSTALL/SYS_OSDMENU/del.icn sys_osdmenu_del_icn.c sys_osdmenu_del_icn
 
-sys_osdmenu_icon_sys.s:
-	bin2s INSTALL/SYS_OSDMENU/icon.sys sys_osdmenu_icon_sys.s sys_osdmenu_icon_sys
+sys_osdmenu_icon_sys.c:
+	bin2c INSTALL/SYS_OSDMENU/icon.sys sys_osdmenu_icon_sys.c sys_osdmenu_icon_sys
 
-sys_osdmenu_list_icn.s:
-	bin2s INSTALL/SYS_OSDMENU/list.icn sys_osdmenu_list_icn.s sys_osdmenu_list_icn
+sys_osdmenu_list_icn.c:
+	bin2c INSTALL/SYS_OSDMENU/list.icn sys_osdmenu_list_icn.c sys_osdmenu_list_icn
 
-sys_osdmenu_osdmenu_elf.s:
-	bin2s INSTALL/SYS_OSDMENU/osdmenu.elf sys_osdmenu_osdmenu_elf.s sys_osdmenu_osdmenu_elf
+sys_osdmenu_osdmenu_elf.c:
+	bin2c INSTALL/SYS_OSDMENU/osdmenu.elf sys_osdmenu_osdmenu_elf.c sys_osdmenu_osdmenu_elf
 
-sys_osdmenu_title_cfg.s:
-	bin2s INSTALL/SYS_OSDMENU/title.cfg sys_osdmenu_title_cfg.s sys_osdmenu_title_cfg
+sys_osdmenu_title_cfg.c:
+	bin2c INSTALL/SYS_OSDMENU/title.cfg sys_osdmenu_title_cfg.c sys_osdmenu_title_cfg
 
 # OPENTUNA assets
-OpenTuna_sys.s:
-	bin2s INSTALL/OPENTUNA/icon.sys OpenTuna_sys.s opentuna_sys
+OpenTuna_sys.c:
+	bin2c INSTALL/OPENTUNA/icon.sys OpenTuna_sys.c opentuna_sys
 
-OpenTuna_SLIMS.s:
-	bin2s INSTALL/OPENTUNA/OpenTuna_Slims.bin OpenTuna_SLIMS.s opentuna_slims
+OpenTuna_SLIMS.c:
+	bin2c INSTALL/OPENTUNA/OpenTuna_Slims.bin OpenTuna_SLIMS.c opentuna_slims
 
-OpenTuna_FAT-110-120-150-160.s:
-	bin2s INSTALL/OPENTUNA/OpenTuna_FAT-110-120-150-160.bin OpenTuna_FAT-110-120-150-160.s opentuna_fats
+OpenTuna_FAT-110-120-150-160.c:
+	bin2c INSTALL/OPENTUNA/OpenTuna_FAT-110-120-150-160.bin OpenTuna_FAT-110-120-150-160.c opentuna_fats
 
-OpenTuna_FAT-170.s:
-	bin2s INSTALL/OPENTUNA/OpenTuna_FAT-170.bin OpenTuna_FAT-170.s opentuna_fat170
+OpenTuna_FAT-170.c:
+	bin2c INSTALL/OPENTUNA/OpenTuna_FAT-170.bin OpenTuna_FAT-170.c opentuna_fat170
 
 # OTHER
 SIO2MAN_irx.c: $(PS2SDK)/iop/irx/freesio2.irx
