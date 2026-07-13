@@ -27,12 +27,6 @@ EE_OBJS += OpenTuna_sys.o OpenTuna_SLIMS.o OpenTuna_FAT-170.o OpenTuna_FAT-110-1
 	app_opl_title_cfg.o \
 	opl_icon_sys.o \
 	opl_list_icn.o \
-	ps1_dkwdrv_copy_icn.o \
-	ps1_dkwdrv_del_icn.o \
-	ps1_dkwdrv_dkwdrv_elf.o \
-	ps1_dkwdrv_icon_sys.o \
-	ps1_dkwdrv_list_icn.o \
-	ps1_dkwdrv_title_cfg.o \
 	boot_appinfo_pbt.o \
 	boot_boot_elf.o \
 	boot_boot2_elf.o \
@@ -43,11 +37,14 @@ EE_OBJS += OpenTuna_sys.o OpenTuna_SLIMS.o OpenTuna_FAT-170.o OpenTuna_FAT-110-1
 	boot_icon_sys.o \
 	neutrino_appinfo_pbt.o \
 	neutrino_config_bsd_ata_toml.o \
+	neutrino_config_bsd_ata_net_toml.o \
 	neutrino_config_bsd_ilink_toml.o \
 	neutrino_config_bsd_mmce_toml.o \
 	neutrino_config_bsd_mx4sio_toml.o \
 	neutrino_config_bsd_udpbd_hdd_toml.o \
 	neutrino_config_bsd_udpbd_toml.o \
+	neutrino_config_bsd_udpfs_hdd_toml.o \
+	neutrino_config_bsd_udpfs_toml.o \
 	neutrino_config_bsd_usb_debug_toml.o \
 	neutrino_config_bsd_usb_toml.o \
 	neutrino_config_bsdfs_bd_toml.o \
@@ -61,6 +58,7 @@ EE_OBJS += OpenTuna_sys.o OpenTuna_SLIMS.o OpenTuna_FAT-170.o OpenTuna_FAT-110-1
 	neutrino_config_i_bdm_toml.o \
 	neutrino_config_i_dev9_hidden_toml.o \
 	neutrino_config_i_dev9_ns_toml.o \
+	neutrino_config_p_freemem_toml.o \
 	neutrino_config_p_membo_toml.o \
 	neutrino_config_p_membo2k_toml.o \
 	neutrino_config_p_steeldr_toml.o \
@@ -85,26 +83,31 @@ EE_OBJS += OpenTuna_sys.o OpenTuna_SLIMS.o OpenTuna_FAT-170.o OpenTuna_FAT-110-1
 	neutrino_modules_eesync_irx.o \
 	neutrino_modules_fakemod_irx.o \
 	neutrino_modules_fhi_bd_irx.o \
-	neutrino_modules_fhi_bd_defrag_irx.o \
 	neutrino_modules_filexio_irx.o \
 	neutrino_modules_hdlfs_irx.o \
 	neutrino_modules_ilinkman_irx.o \
 	neutrino_modules_imgdrv_irx.o \
 	neutrino_modules_iomanx_irx.o \
 	neutrino_modules_mc_emu_irx.o \
+	neutrino_modules_ministack_irx.o \
 	neutrino_modules_mmcefhi_irx.o \
 	neutrino_modules_mmceman_irx.o \
 	neutrino_modules_mx4sio_bd_mini_irx.o \
+	neutrino_modules_patch_freemem_irx.o \
 	neutrino_modules_patch_membo_irx.o \
 	neutrino_modules_patch_rc_uya_irx.o \
 	neutrino_modules_ps2hdd_bdm_irx.o \
-	neutrino_modules_smap_udpbd_irx.o \
-	neutrino_modules_smap_udptty_irx.o \
+	neutrino_modules_smap_irx.o \
 	neutrino_modules_udnl_t300_irx.o \
 	neutrino_modules_udnl_irx.o \
+	neutrino_modules_udpbd_irx.o \
+	neutrino_modules_udpfs_bd_irx.o \
+	neutrino_modules_udpfs_fhi_irx.o \
+	neutrino_modules_udpfs_ioman_irx.o \
 	neutrino_modules_usbd_mini_irx.o \
 	neutrino_modules_usbmass_bd_mini_irx.o \
 	neutrino_neutrino_elf.o \
+	neutrino_nhddl_elf.o \
 	neutrino_title_cfg.o \
 	neutrino_version_txt.o \
 	poweroff_poweroff_elf.o \
@@ -136,140 +139,143 @@ EE_OBJS += OpenTuna_sys.o OpenTuna_SLIMS.o OpenTuna_FAT-170.o OpenTuna_FAT-110-1
 	sys_osdmenu_list_icn.o \
 	sys_osdmenu_osdmenu_elf.o \
 	sys_osdmenu_title_cfg.o
-EE_SRC = OpenTuna_sys.s OpenTuna_SLIMS.s OpenTuna_FAT-170.s OpenTuna_FAT-110-120-150-160.s \
-	MCMAN_irx.s \
-	SIO2MAN_irx.s \
-	MCSERV_irx.s \
-	PADMAN_irx.s \
-	apps_apps_icn.s \
-	apps_del_icn.s \
-	apps_icon_sys.s \
-	app_nhddl_appinfo_pbt.s \
-	app_nhddl_copy_icn.s \
-	app_nhddl_del_icn.s \
-	app_nhddl_icon_sys.s \
-	app_nhddl_list_icn.s \
-	app_nhddl_nhddl_elf.s \
-	app_nhddl_nhddl_yaml.s \
-	app_nhddl_title_cfg.s \
-	app_opl_appinfo_pbt.s \
-	app_opl_opl_elf.s \
-	app_opl_copy_icn.s \
-	app_opl_del_icn.s \
-	app_opl_icon_sys.s \
-	app_opl_list_icn.s \
-	app_opl_title_cfg.s \
-	opl_icon_sys.s \
-	opl_list_icn.s \
-	ps1_dkwdrv_copy_icn.s \
-	ps1_dkwdrv_del_icn.s \
-	ps1_dkwdrv_dkwdrv_elf.s \
-	ps1_dkwdrv_icon_sys.s \
-	ps1_dkwdrv_list_icn.s \
-	ps1_dkwdrv_title_cfg.s \
-	boot_appinfo_pbt.s \
-	boot_boot_elf.s \
-	boot_boot2_elf.s \
-	boot_whatisbootx_txt.s \
-	boot_boot_icn.s \
-	boot_copy_icn.s \
-	boot_del_icn.s \
-	boot_icon_sys.s \
-	neutrino_appinfo_pbt.s \
-	neutrino_config_bsd_ata_toml.s \
-	neutrino_config_bsd_ilink_toml.s \
-	neutrino_config_bsd_mmce_toml.s \
-	neutrino_config_bsd_mx4sio_toml.s \
-	neutrino_config_bsd_udpbd_hdd_toml.s \
-	neutrino_config_bsd_udpbd_toml.s \
-	neutrino_config_bsd_usb_debug_toml.s \
-	neutrino_config_bsd_usb_toml.s \
-	neutrino_config_bsdfs_bd_toml.s \
-	neutrino_config_bsdfs_exfat_toml.s \
-	neutrino_config_bsdfs_hdl_toml.s \
-	neutrino_config_compat_toml.s \
-	neutrino_config_emu_ata_file_toml.s \
-	neutrino_config_emu_dvd_esr_toml.s \
-	neutrino_config_emu_dvd_file_toml.s \
-	neutrino_config_emu_mc_file_toml.s \
-	neutrino_config_i_bdm_toml.s \
-	neutrino_config_i_dev9_hidden_toml.s \
-	neutrino_config_i_dev9_ns_toml.s \
-	neutrino_config_p_membo_toml.s \
-	neutrino_config_p_membo2k_toml.s \
-	neutrino_config_p_steeldr_toml.s \
-	neutrino_config_p_uya_toml.s \
-	neutrino_config_system_toml.s \
-	neutrino_del_icn.s \
-	neutrino_icon_sys.s \
-	neutrino_list_icn.s \
-	neutrino_modules_ieee1394_bd_mini_irx.s \
-	neutrino_modules_ata_bd_irx.s \
-	neutrino_modules_atad_emu_irx.s \
-	neutrino_modules_bdfs_irx.s \
-	neutrino_modules_bdm_irx.s \
-	neutrino_modules_bdmfs_fatfs_irx.s \
-	neutrino_modules_cdvdfsv_irx.s \
-	neutrino_modules_cdvdman_emu_irx.s \
-	neutrino_modules_cdvdman_esr1_irx.s \
-	neutrino_modules_cdvdman_esr2_irx.s \
-	neutrino_modules_dev9_hidden_irx.s \
-	neutrino_modules_dev9_ns_irx.s \
-	neutrino_modules_ee_core_elf.s \
-	neutrino_modules_eesync_irx.s \
-	neutrino_modules_fakemod_irx.s \
-	neutrino_modules_fhi_bd_irx.s \
-	neutrino_modules_fhi_bd_defrag_irx.s \
-	neutrino_modules_filexio_irx.s \
-	neutrino_modules_hdlfs_irx.s \
-	neutrino_modules_ilinkman_irx.s \
-	neutrino_modules_imgdrv_irx.s \
-	neutrino_modules_iomanx_irx.s \
-	neutrino_modules_mc_emu_irx.s \
-	neutrino_modules_mmcefhi_irx.s \
-	neutrino_modules_mmceman_irx.s \
-	neutrino_modules_mx4sio_bd_mini_irx.s \
-	neutrino_modules_patch_membo_irx.s \
-	neutrino_modules_patch_rc_uya_irx.s \
-	neutrino_modules_ps2hdd_bdm_irx.s \
-	neutrino_modules_smap_udpbd_irx.s \
-	neutrino_modules_smap_udptty_irx.s \
-	neutrino_modules_udnl_t300_irx.s \
-	neutrino_modules_udnl_irx.s \
-	neutrino_modules_usbd_mini_irx.s \
-	neutrino_modules_usbmass_bd_mini_irx.s \
-	neutrino_neutrino_elf.s \
-	neutrino_title_cfg.s \
-	neutrino_version_txt.s \
-	poweroff_poweroff_elf.s \
-	poweroff_del_icn.s \
-	poweroff_icon_sys.s \
-	poweroff_list_icn.s \
-	restart_restart_elf.s \
-	restart_del_icn.s \
-	restart_icon_sys.s \
-	restart_list_icn.s \
-	sys_conf_appinfo_pbt.s \
-	sys_conf_freemcb_cnf.s \
-	sys_conf_ipconfig_dat.s \
-	sys_conf_launchelf_cnf.s \
-	sys_conf_osdmenu_cnf.s \
-	sys_conf_ps2bbl_ini.s \
-	sys_conf_psxbbl_ini.s \
-	sys_conf_usbd_irx.s \
-	sys_conf_usbhdfsd_irx.s \
-	sys_conf_copy_icn.s \
-	sys_conf_del_icn.s \
-	sys_conf_endvdpl_irx.s \
-	sys_conf_icon_sys.s \
-	sys_conf_list_icn.s \
-	sys_osdmenu_appinfo_pbt.s \
-	sys_osdmenu_copy_icn.s \
-	sys_osdmenu_del_icn.s \
-	sys_osdmenu_icon_sys.s \
-	sys_osdmenu_list_icn.s \
-	sys_osdmenu_osdmenu_elf.s \
-	sys_osdmenu_title_cfg.s
+EE_SRC = OpenTuna_sys.c OpenTuna_SLIMS.c OpenTuna_FAT-170.c OpenTuna_FAT-110-120-150-160.c \
+	MCMAN_irx.c \
+	SIO2MAN_irx.c \
+	MCSERV_irx.c \
+	PADMAN_irx.c \
+	apps_apps_icn.c \
+	apps_del_icn.c \
+	apps_icon_sys.c \
+	app_nhddl_appinfo_pbt.c \
+	app_nhddl_copy_icn.c \
+	app_nhddl_del_icn.c \
+	app_nhddl_icon_sys.c \
+	app_nhddl_list_icn.c \
+	app_nhddl_nhddl_elf.c \
+	app_nhddl_nhddl_yaml.c \
+	app_nhddl_title_cfg.c \
+	app_opl_appinfo_pbt.c \
+	app_opl_opl_elf.c \
+	app_opl_copy_icn.c \
+	app_opl_del_icn.c \
+	app_opl_icon_sys.c \
+	app_opl_list_icn.c \
+	app_opl_title_cfg.c \
+	opl_icon_sys.c \
+	opl_list_icn.c \
+	boot_appinfo_pbt.c \
+	boot_boot_elf.c \
+	boot_boot2_elf.c \
+	boot_whatisbootx_txt.c \
+	boot_boot_icn.c \
+	boot_copy_icn.c \
+	boot_del_icn.c \
+	boot_icon_sys.c \
+	neutrino_appinfo_pbt.c \
+	neutrino_config_bsd_ata_toml.c \
+	neutrino_config_bsd_ata_net_toml.c \
+	neutrino_config_bsd_ilink_toml.c \
+	neutrino_config_bsd_mmce_toml.c \
+	neutrino_config_bsd_mx4sio_toml.c \
+	neutrino_config_bsd_udpbd_hdd_toml.c \
+	neutrino_config_bsd_udpbd_toml.c \
+	neutrino_config_bsd_udpfs_hdd_toml.c \
+	neutrino_config_bsd_udpfs_toml.c \
+	neutrino_config_bsd_usb_debug_toml.c \
+	neutrino_config_bsd_usb_toml.c \
+	neutrino_config_bsdfs_bd_toml.c \
+	neutrino_config_bsdfs_exfat_toml.c \
+	neutrino_config_bsdfs_hdl_toml.c \
+	neutrino_config_compat_toml.c \
+	neutrino_config_emu_ata_file_toml.c \
+	neutrino_config_emu_dvd_esr_toml.c \
+	neutrino_config_emu_dvd_file_toml.c \
+	neutrino_config_emu_mc_file_toml.c \
+	neutrino_config_i_bdm_toml.c \
+	neutrino_config_i_dev9_hidden_toml.c \
+	neutrino_config_i_dev9_ns_toml.c \
+	neutrino_config_p_freemem_toml.c \
+	neutrino_config_p_membo_toml.c \
+	neutrino_config_p_membo2k_toml.c \
+	neutrino_config_p_steeldr_toml.c \
+	neutrino_config_p_uya_toml.c \
+	neutrino_config_system_toml.c \
+	neutrino_del_icn.c \
+	neutrino_icon_sys.c \
+	neutrino_list_icn.c \
+	neutrino_modules_ieee1394_bd_mini_irx.c \
+	neutrino_modules_ata_bd_irx.c \
+	neutrino_modules_atad_emu_irx.c \
+	neutrino_modules_bdfs_irx.c \
+	neutrino_modules_bdm_irx.c \
+	neutrino_modules_bdmfs_fatfs_irx.c \
+	neutrino_modules_cdvdfsv_irx.c \
+	neutrino_modules_cdvdman_emu_irx.c \
+	neutrino_modules_cdvdman_esr1_irx.c \
+	neutrino_modules_cdvdman_esr2_irx.c \
+	neutrino_modules_dev9_hidden_irx.c \
+	neutrino_modules_dev9_ns_irx.c \
+	neutrino_modules_ee_core_elf.c \
+	neutrino_modules_eesync_irx.c \
+	neutrino_modules_fakemod_irx.c \
+	neutrino_modules_fhi_bd_irx.c \
+	neutrino_modules_filexio_irx.c \
+	neutrino_modules_hdlfs_irx.c \
+	neutrino_modules_ilinkman_irx.c \
+	neutrino_modules_imgdrv_irx.c \
+	neutrino_modules_iomanx_irx.c \
+	neutrino_modules_mc_emu_irx.c \
+	neutrino_modules_ministack_irx.c \
+	neutrino_modules_mmcefhi_irx.c \
+	neutrino_modules_mmceman_irx.c \
+	neutrino_modules_mx4sio_bd_mini_irx.c \
+	neutrino_modules_patch_freemem_irx.c \
+	neutrino_modules_patch_membo_irx.c \
+	neutrino_modules_patch_rc_uya_irx.c \
+	neutrino_modules_ps2hdd_bdm_irx.c \
+	neutrino_modules_smap_irx.c \
+	neutrino_modules_udnl_t300_irx.c \
+	neutrino_modules_udnl_irx.c \
+	neutrino_modules_udpbd_irx.c \
+	neutrino_modules_udpfs_bd_irx.c \
+	neutrino_modules_udpfs_fhi_irx.c \
+	neutrino_modules_udpfs_ioman_irx.c \
+	neutrino_modules_usbd_mini_irx.c \
+	neutrino_modules_usbmass_bd_mini_irx.c \
+	neutrino_neutrino_elf.c \
+	neutrino_nhddl_elf.c \
+	neutrino_title_cfg.c \
+	neutrino_version_txt.c \
+	poweroff_poweroff_elf.c \
+	poweroff_del_icn.c \
+	poweroff_icon_sys.c \
+	poweroff_list_icn.c \
+	restart_restart_elf.c \
+	restart_del_icn.c \
+	restart_icon_sys.c \
+	restart_list_icn.c \
+	sys_conf_appinfo_pbt.c \
+	sys_conf_freemcb_cnf.c \
+	sys_conf_ipconfig_dat.c \
+	sys_conf_launchelf_cnf.c \
+	sys_conf_osdmenu_cnf.c \
+	sys_conf_ps2bbl_ini.c \
+	sys_conf_psxbbl_ini.c \
+	sys_conf_usbd_irx.c \
+	sys_conf_usbhdfsd_irx.c \
+	sys_conf_copy_icn.c \
+	sys_conf_del_icn.c \
+	sys_conf_endvdpl_irx.c \
+	sys_conf_icon_sys.c \
+	sys_conf_list_icn.c \
+	sys_osdmenu_appinfo_pbt.c \
+	sys_osdmenu_copy_icn.c \
+	sys_osdmenu_del_icn.c \
+	sys_osdmenu_icon_sys.c \
+	sys_osdmenu_list_icn.c \
+	sys_osdmenu_osdmenu_elf.c \
+	sys_osdmenu_title_cfg.c
 	
 EE_LIBS = -ldebug -lcdvd -lpatches -lpadx -lmc
 
@@ -277,417 +283,424 @@ all:
 	$(MAKE) $(EE_BIN_PACKED)
 
 # OPENTUNA assets
-OpenTuna_sys.s:
-	bin2s INSTALL/OPENTUNA/icon.sys OpenTuna_sys.s opentuna_sys
+OpenTuna_sys.c:
+	bin2c INSTALL/OPENTUNA/icon.sys OpenTuna_sys.c opentuna_sys
 
-OpenTuna_SLIMS.s:
-	bin2s INSTALL/OPENTUNA/OpenTuna_Slims.bin OpenTuna_SLIMS.s opentuna_slims
+OpenTuna_SLIMS.c:
+	bin2c INSTALL/OPENTUNA/OpenTuna_Slims.bin OpenTuna_SLIMS.c opentuna_slims
 
-OpenTuna_FAT-110-120-150-160.s:
-	bin2s INSTALL/OPENTUNA/OpenTuna_FAT-110-120-150-160.bin OpenTuna_FAT-110-120-150-160.s opentuna_fats
+OpenTuna_FAT-110-120-150-160.c:
+	bin2c INSTALL/OPENTUNA/OpenTuna_FAT-110-120-150-160.bin OpenTuna_FAT-110-120-150-160.c opentuna_fats
 
-OpenTuna_FAT-170.s:
-	bin2s INSTALL/OPENTUNA/OpenTuna_FAT-170.bin OpenTuna_FAT-170.s opentuna_fat170
+OpenTuna_FAT-170.c:
+	bin2c INSTALL/OPENTUNA/OpenTuna_FAT-170.bin OpenTuna_FAT-170.c opentuna_fat170
 
-# Auto-generated bin2s rules from INSTALL
+# Auto-generated bin2c rules from INSTALL
 # APPS
-apps_apps_icn.s:
-	bin2s INSTALL/APPS/APPS.ICN apps_apps_icn.s apps_apps_icn
+apps_apps_icn.c:
+	bin2c INSTALL/APPS/APPS.ICN apps_apps_icn.c apps_apps_icn
 
-apps_del_icn.s:
-	bin2s INSTALL/APPS/DEL.ICN apps_del_icn.s apps_del_icn
+apps_del_icn.c:
+	bin2c INSTALL/APPS/DEL.ICN apps_del_icn.c apps_del_icn
 
-apps_icon_sys.s:
-	bin2s INSTALL/APPS/ICON.SYS apps_icon_sys.s apps_icon_sys
+apps_icon_sys.c:
+	bin2c INSTALL/APPS/ICON.SYS apps_icon_sys.c apps_icon_sys
 
 # APP_NHDDL
-app_nhddl_appinfo_pbt.s:
-	bin2s INSTALL/APP_NHDDL/APPINFO.PBT app_nhddl_appinfo_pbt.s app_nhddl_appinfo_pbt
+app_nhddl_appinfo_pbt.c:
+	bin2c INSTALL/APP_NHDDL/APPINFO.PBT app_nhddl_appinfo_pbt.c app_nhddl_appinfo_pbt
 
-app_nhddl_copy_icn.s:
-	bin2s INSTALL/APP_NHDDL/copy.icn app_nhddl_copy_icn.s app_nhddl_copy_icn
+app_nhddl_copy_icn.c:
+	bin2c INSTALL/APP_NHDDL/copy.icn app_nhddl_copy_icn.c app_nhddl_copy_icn
 
-app_nhddl_del_icn.s:
-	bin2s INSTALL/APP_NHDDL/del.icn app_nhddl_del_icn.s app_nhddl_del_icn
+app_nhddl_del_icn.c:
+	bin2c INSTALL/APP_NHDDL/del.icn app_nhddl_del_icn.c app_nhddl_del_icn
 
-app_nhddl_icon_sys.s:
-	bin2s INSTALL/APP_NHDDL/icon.sys app_nhddl_icon_sys.s app_nhddl_icon_sys
+app_nhddl_icon_sys.c:
+	bin2c INSTALL/APP_NHDDL/icon.sys app_nhddl_icon_sys.c app_nhddl_icon_sys
 
-app_nhddl_list_icn.s:
-	bin2s INSTALL/APP_NHDDL/list.icn app_nhddl_list_icn.s app_nhddl_list_icn
+app_nhddl_list_icn.c:
+	bin2c INSTALL/APP_NHDDL/list.icn app_nhddl_list_icn.c app_nhddl_list_icn
 
-app_nhddl_nhddl_elf.s:
-	bin2s INSTALL/APP_NHDDL/nhddl.elf app_nhddl_nhddl_elf.s app_nhddl_nhddl_elf
+app_nhddl_nhddl_elf.c:
+	bin2c INSTALL/APP_NHDDL/nhddl.elf app_nhddl_nhddl_elf.c app_nhddl_nhddl_elf
 
-app_nhddl_nhddl_yaml.s:
-	bin2s INSTALL/APP_NHDDL/nhddl.yaml app_nhddl_nhddl_yaml.s app_nhddl_nhddl_yaml
+app_nhddl_nhddl_yaml.c:
+	bin2c INSTALL/APP_NHDDL/nhddl.yaml app_nhddl_nhddl_yaml.c app_nhddl_nhddl_yaml
 
-app_nhddl_title_cfg.s:
-	bin2s INSTALL/APP_NHDDL/title.cfg app_nhddl_title_cfg.s app_nhddl_title_cfg
+app_nhddl_title_cfg.c:
+	bin2c INSTALL/APP_NHDDL/title.cfg app_nhddl_title_cfg.c app_nhddl_title_cfg
 
 # APP_OPL
-app_opl_appinfo_pbt.s:
-	bin2s INSTALL/APP_OPL/APPINFO.PBT app_opl_appinfo_pbt.s app_opl_appinfo_pbt
+app_opl_appinfo_pbt.c:
+	bin2c INSTALL/APP_OPL/APPINFO.PBT app_opl_appinfo_pbt.c app_opl_appinfo_pbt
 
-app_opl_opl_elf.s:
-	bin2s INSTALL/APP_OPL/OPL.ELF app_opl_opl_elf.s app_opl_opl_elf
+app_opl_opl_elf.c:
+	bin2c INSTALL/APP_OPL/OPL.ELF app_opl_opl_elf.c app_opl_opl_elf
 
-app_opl_copy_icn.s:
-	bin2s INSTALL/APP_OPL/copy.icn app_opl_copy_icn.s app_opl_copy_icn
+app_opl_copy_icn.c:
+	bin2c INSTALL/APP_OPL/copy.icn app_opl_copy_icn.c app_opl_copy_icn
 
-app_opl_del_icn.s:
-	bin2s INSTALL/APP_OPL/del.icn app_opl_del_icn.s app_opl_del_icn
+app_opl_del_icn.c:
+	bin2c INSTALL/APP_OPL/del.icn app_opl_del_icn.c app_opl_del_icn
 
-app_opl_icon_sys.s:
-	bin2s INSTALL/APP_OPL/icon.sys app_opl_icon_sys.s app_opl_icon_sys
+app_opl_icon_sys.c:
+	bin2c INSTALL/APP_OPL/icon.sys app_opl_icon_sys.c app_opl_icon_sys
 
-app_opl_list_icn.s:
-	bin2s INSTALL/APP_OPL/list.icn app_opl_list_icn.s app_opl_list_icn
+app_opl_list_icn.c:
+	bin2c INSTALL/APP_OPL/list.icn app_opl_list_icn.c app_opl_list_icn
 
-app_opl_title_cfg.s:
-	bin2s INSTALL/APP_OPL/title.cfg app_opl_title_cfg.s app_opl_title_cfg
+app_opl_title_cfg.c:
+	bin2c INSTALL/APP_OPL/title.cfg app_opl_title_cfg.c app_opl_title_cfg
 
 # OPL Config folder
-opl_list_icn.s:
-	bin2s INSTALL/OPL/list.icn opl_list_icn.s opl_list_icn
+opl_list_icn.c:
+	bin2c INSTALL/OPL/list.icn opl_list_icn.c opl_list_icn
 
-opl_icon_sys.s:
-	bin2s INSTALL/OPL/icon.sys opl_icon_sys.s opl_icon_sys
-
-# PS1_DKWDRV
-ps1_dkwdrv_copy_icn.s:
-	bin2s INSTALL/PS1_DKWDRV/copy.icn ps1_dkwdrv_copy_icn.s ps1_dkwdrv_copy_icn
-
-ps1_dkwdrv_del_icn.s:
-	bin2s INSTALL/PS1_DKWDRV/del.icn ps1_dkwdrv_del_icn.s ps1_dkwdrv_del_icn
-
-
-ps1_dkwdrv_dkwdrv_elf.s:
-	bin2s INSTALL/PS1_DKWDRV/DKWDRV.ELF ps1_dkwdrv_dkwdrv_elf.s ps1_dkwdrv_dkwdrv_elf
-
-ps1_dkwdrv_icon_sys.s:
-	bin2s INSTALL/PS1_DKWDRV/icon.sys ps1_dkwdrv_icon_sys.s ps1_dkwdrv_icon_sys
-
-ps1_dkwdrv_list_icn.s:
-	bin2s INSTALL/PS1_DKWDRV/list.icn ps1_dkwdrv_list_icn.s ps1_dkwdrv_list_icn
-
-ps1_dkwdrv_title_cfg.s:
-	bin2s INSTALL/PS1_DKWDRV/title.cfg ps1_dkwdrv_title_cfg.s ps1_dkwdrv_title_cfg
+opl_icon_sys.c:
+	bin2c INSTALL/OPL/icon.sys opl_icon_sys.c opl_icon_sys
 
 # BOOT
-boot_appinfo_pbt.s:
-	bin2s INSTALL/BOOT/APPINFO.PBT boot_appinfo_pbt.s boot_appinfo_pbt
+boot_appinfo_pbt.c:
+	bin2c INSTALL/BOOT/APPINFO.PBT boot_appinfo_pbt.c boot_appinfo_pbt
 
-boot_boot_elf.s:
-	bin2s INSTALL/BOOT/BOOT.ELF boot_boot_elf.s boot_boot_elf
+boot_boot_elf.c:
+	bin2c INSTALL/BOOT/BOOT.ELF boot_boot_elf.c boot_boot_elf
 
-boot_boot2_elf.s:
-	bin2s INSTALL/BOOT/BOOT2.ELF boot_boot2_elf.s boot_boot2_elf
+boot_boot2_elf.c:
+	bin2c INSTALL/BOOT/BOOT2.ELF boot_boot2_elf.c boot_boot2_elf
 
-boot_whatisbootx_txt.s:
-	bin2s INSTALL/BOOT/WHATISBOOTX.TXT boot_whatisbootx_txt.s boot_whatisbootx_txt
+boot_whatisbootx_txt.c:
+	bin2c INSTALL/BOOT/WHATISBOOTX.TXT boot_whatisbootx_txt.c boot_whatisbootx_txt
 
-boot_boot_icn.s:
-	bin2s INSTALL/BOOT/BOOT.ICN boot_boot_icn.s boot_boot_icn
+boot_boot_icn.c:
+	bin2c INSTALL/BOOT/BOOT.ICN boot_boot_icn.c boot_boot_icn
 
-boot_copy_icn.s:
-	bin2s INSTALL/BOOT/COPY.ICN boot_copy_icn.s boot_copy_icn
+boot_copy_icn.c:
+	bin2c INSTALL/BOOT/COPY.ICN boot_copy_icn.c boot_copy_icn
 
-boot_del_icn.s:
-	bin2s INSTALL/BOOT/DEL.ICN boot_del_icn.s boot_del_icn
+boot_del_icn.c:
+	bin2c INSTALL/BOOT/DEL.ICN boot_del_icn.c boot_del_icn
 
-boot_icon_sys.s:
-	bin2s INSTALL/BOOT/ICON.SYS boot_icon_sys.s boot_icon_sys
+boot_icon_sys.c:
+	bin2c INSTALL/BOOT/ICON.SYS boot_icon_sys.c boot_icon_sys
 
 # NEUTRINO
-neutrino_appinfo_pbt.s:
-	bin2s INSTALL/NEUTRINO/APPINFO.PBT neutrino_appinfo_pbt.s neutrino_appinfo_pbt
+neutrino_appinfo_pbt.c:
+	bin2c INSTALL/NEUTRINO/APPINFO.PBT neutrino_appinfo_pbt.c neutrino_appinfo_pbt
 
-neutrino_config_bsd_ata_toml.s:
-	bin2s INSTALL/NEUTRINO/config/bsd-ata.toml neutrino_config_bsd_ata_toml.s neutrino_config_bsd_ata_toml
+neutrino_config_bsd_ata_toml.c:
+	bin2c INSTALL/NEUTRINO/config/bsd-ata.toml neutrino_config_bsd_ata_toml.c neutrino_config_bsd_ata_toml
 
-neutrino_config_bsd_ilink_toml.s:
-	bin2s INSTALL/NEUTRINO/config/bsd-ilink.toml neutrino_config_bsd_ilink_toml.s neutrino_config_bsd_ilink_toml
+neutrino_config_bsd_ata_net_toml.c:
+	bin2c INSTALL/NEUTRINO/config/bsd-ata-net.toml neutrino_config_bsd_ata_net_toml.c neutrino_config_bsd_ata_net_toml
 
-neutrino_config_bsd_mmce_toml.s:
-	bin2s INSTALL/NEUTRINO/config/bsd-mmce.toml neutrino_config_bsd_mmce_toml.s neutrino_config_bsd_mmce_toml
+neutrino_config_bsd_ilink_toml.c:
+	bin2c INSTALL/NEUTRINO/config/bsd-ilink.toml neutrino_config_bsd_ilink_toml.c neutrino_config_bsd_ilink_toml
 
-neutrino_config_bsd_mx4sio_toml.s:
-	bin2s INSTALL/NEUTRINO/config/bsd-mx4sio.toml neutrino_config_bsd_mx4sio_toml.s neutrino_config_bsd_mx4sio_toml
+neutrino_config_bsd_mmce_toml.c:
+	bin2c INSTALL/NEUTRINO/config/bsd-mmce.toml neutrino_config_bsd_mmce_toml.c neutrino_config_bsd_mmce_toml
 
-neutrino_config_bsd_udpbd_hdd_toml.s:
-	bin2s INSTALL/NEUTRINO/config/bsd-udpbd-hdd.toml neutrino_config_bsd_udpbd_hdd_toml.s neutrino_config_bsd_udpbd_hdd_toml
+neutrino_config_bsd_mx4sio_toml.c:
+	bin2c INSTALL/NEUTRINO/config/bsd-mx4sio.toml neutrino_config_bsd_mx4sio_toml.c neutrino_config_bsd_mx4sio_toml
 
-neutrino_config_bsd_udpbd_toml.s:
-	bin2s INSTALL/NEUTRINO/config/bsd-udpbd.toml neutrino_config_bsd_udpbd_toml.s neutrino_config_bsd_udpbd_toml
+neutrino_config_bsd_udpbd_hdd_toml.c:
+	bin2c INSTALL/NEUTRINO/config/bsd-udpbd-hdd.toml neutrino_config_bsd_udpbd_hdd_toml.c neutrino_config_bsd_udpbd_hdd_toml
 
-neutrino_config_bsd_usb_debug_toml.s:
-	bin2s INSTALL/NEUTRINO/config/bsd-usb-debug.toml neutrino_config_bsd_usb_debug_toml.s neutrino_config_bsd_usb_debug_toml
+neutrino_config_bsd_udpbd_toml.c:
+	bin2c INSTALL/NEUTRINO/config/bsd-udpbd.toml neutrino_config_bsd_udpbd_toml.c neutrino_config_bsd_udpbd_toml
 
-neutrino_config_bsd_usb_toml.s:
-	bin2s INSTALL/NEUTRINO/config/bsd-usb.toml neutrino_config_bsd_usb_toml.s neutrino_config_bsd_usb_toml
+neutrino_config_bsd_udpfs_hdd_toml.c:
+	bin2c INSTALL/NEUTRINO/config/bsd-udpfs-hdd.toml neutrino_config_bsd_udpfs_hdd_toml.c neutrino_config_bsd_udpfs_hdd_toml
 
-neutrino_config_bsdfs_bd_toml.s:
-	bin2s INSTALL/NEUTRINO/config/bsdfs-bd.toml neutrino_config_bsdfs_bd_toml.s neutrino_config_bsdfs_bd_toml
+neutrino_config_bsd_udpfs_toml.c:
+	bin2c INSTALL/NEUTRINO/config/bsd-udpfs.toml neutrino_config_bsd_udpfs_toml.c neutrino_config_bsd_udpfs_toml
 
-neutrino_config_bsdfs_exfat_toml.s:
-	bin2s INSTALL/NEUTRINO/config/bsdfs-exfat.toml neutrino_config_bsdfs_exfat_toml.s neutrino_config_bsdfs_exfat_toml
+neutrino_config_bsd_usb_debug_toml.c:
+	bin2c INSTALL/NEUTRINO/config/bsd-usb-debug.toml neutrino_config_bsd_usb_debug_toml.c neutrino_config_bsd_usb_debug_toml
 
-neutrino_config_bsdfs_hdl_toml.s:
-	bin2s INSTALL/NEUTRINO/config/bsdfs-hdl.toml neutrino_config_bsdfs_hdl_toml.s neutrino_config_bsdfs_hdl_toml
+neutrino_config_bsd_usb_toml.c:
+	bin2c INSTALL/NEUTRINO/config/bsd-usb.toml neutrino_config_bsd_usb_toml.c neutrino_config_bsd_usb_toml
 
-neutrino_config_compat_toml.s:
-	bin2s INSTALL/NEUTRINO/config/compat.toml neutrino_config_compat_toml.s neutrino_config_compat_toml
+neutrino_config_bsdfs_bd_toml.c:
+	bin2c INSTALL/NEUTRINO/config/bsdfs-bd.toml neutrino_config_bsdfs_bd_toml.c neutrino_config_bsdfs_bd_toml
 
-neutrino_config_emu_ata_file_toml.s:
-	bin2s INSTALL/NEUTRINO/config/emu-ata-file.toml neutrino_config_emu_ata_file_toml.s neutrino_config_emu_ata_file_toml
+neutrino_config_bsdfs_exfat_toml.c:
+	bin2c INSTALL/NEUTRINO/config/bsdfs-exfat.toml neutrino_config_bsdfs_exfat_toml.c neutrino_config_bsdfs_exfat_toml
 
-neutrino_config_emu_dvd_esr_toml.s:
-	bin2s INSTALL/NEUTRINO/config/emu-dvd-esr.toml neutrino_config_emu_dvd_esr_toml.s neutrino_config_emu_dvd_esr_toml
+neutrino_config_bsdfs_hdl_toml.c:
+	bin2c INSTALL/NEUTRINO/config/bsdfs-hdl.toml neutrino_config_bsdfs_hdl_toml.c neutrino_config_bsdfs_hdl_toml
 
-neutrino_config_emu_dvd_file_toml.s:
-	bin2s INSTALL/NEUTRINO/config/emu-dvd-file.toml neutrino_config_emu_dvd_file_toml.s neutrino_config_emu_dvd_file_toml
+neutrino_config_compat_toml.c:
+	bin2c INSTALL/NEUTRINO/config/compat.toml neutrino_config_compat_toml.c neutrino_config_compat_toml
 
-neutrino_config_emu_mc_file_toml.s:
-	bin2s INSTALL/NEUTRINO/config/emu-mc-file.toml neutrino_config_emu_mc_file_toml.s neutrino_config_emu_mc_file_toml
+neutrino_config_emu_ata_file_toml.c:
+	bin2c INSTALL/NEUTRINO/config/emu-ata-file.toml neutrino_config_emu_ata_file_toml.c neutrino_config_emu_ata_file_toml
 
-neutrino_config_i_bdm_toml.s:
-	bin2s INSTALL/NEUTRINO/config/i_bdm.toml neutrino_config_i_bdm_toml.s neutrino_config_i_bdm_toml
+neutrino_config_emu_dvd_esr_toml.c:
+	bin2c INSTALL/NEUTRINO/config/emu-dvd-esr.toml neutrino_config_emu_dvd_esr_toml.c neutrino_config_emu_dvd_esr_toml
 
-neutrino_config_i_dev9_hidden_toml.s:
-	bin2s INSTALL/NEUTRINO/config/i_dev9_hidden.toml neutrino_config_i_dev9_hidden_toml.s neutrino_config_i_dev9_hidden_toml
+neutrino_config_emu_dvd_file_toml.c:
+	bin2c INSTALL/NEUTRINO/config/emu-dvd-file.toml neutrino_config_emu_dvd_file_toml.c neutrino_config_emu_dvd_file_toml
 
-neutrino_config_i_dev9_ns_toml.s:
-	bin2s INSTALL/NEUTRINO/config/i_dev9_ns.toml neutrino_config_i_dev9_ns_toml.s neutrino_config_i_dev9_ns_toml
+neutrino_config_emu_mc_file_toml.c:
+	bin2c INSTALL/NEUTRINO/config/emu-mc-file.toml neutrino_config_emu_mc_file_toml.c neutrino_config_emu_mc_file_toml
 
-neutrino_config_p_membo_toml.s:
-	bin2s INSTALL/NEUTRINO/config/p-membo.toml neutrino_config_p_membo_toml.s neutrino_config_p_membo_toml
+neutrino_config_i_bdm_toml.c:
+	bin2c INSTALL/NEUTRINO/config/i_bdm.toml neutrino_config_i_bdm_toml.c neutrino_config_i_bdm_toml
 
-neutrino_config_p_membo2k_toml.s:
-	bin2s INSTALL/NEUTRINO/config/p-membo2k.toml neutrino_config_p_membo2k_toml.s neutrino_config_p_membo2k_toml
+neutrino_config_i_dev9_hidden_toml.c:
+	bin2c INSTALL/NEUTRINO/config/i_dev9_hidden.toml neutrino_config_i_dev9_hidden_toml.c neutrino_config_i_dev9_hidden_toml
 
-neutrino_config_p_steeldr_toml.s:
-	bin2s INSTALL/NEUTRINO/config/p-steeldr.toml neutrino_config_p_steeldr_toml.s neutrino_config_p_steeldr_toml
+neutrino_config_i_dev9_ns_toml.c:
+	bin2c INSTALL/NEUTRINO/config/i_dev9_ns.toml neutrino_config_i_dev9_ns_toml.c neutrino_config_i_dev9_ns_toml
 
-neutrino_config_p_uya_toml.s:
-	bin2s INSTALL/NEUTRINO/config/p-uya.toml neutrino_config_p_uya_toml.s neutrino_config_p_uya_toml
+neutrino_config_p_freemem_toml.c:
+	bin2c INSTALL/NEUTRINO/config/p-freemem.toml neutrino_config_p_freemem_toml.c neutrino_config_p_freemem_toml
 
-neutrino_config_system_toml.s:
-	bin2s INSTALL/NEUTRINO/config/system.toml neutrino_config_system_toml.s neutrino_config_system_toml
+neutrino_config_p_membo_toml.c:
+	bin2c INSTALL/NEUTRINO/config/p-membo.toml neutrino_config_p_membo_toml.c neutrino_config_p_membo_toml
 
-neutrino_del_icn.s:
-	bin2s INSTALL/NEUTRINO/del.icn neutrino_del_icn.s neutrino_del_icn
+neutrino_config_p_membo2k_toml.c:
+	bin2c INSTALL/NEUTRINO/config/p-membo2k.toml neutrino_config_p_membo2k_toml.c neutrino_config_p_membo2k_toml
 
-neutrino_icon_sys.s:
-	bin2s INSTALL/NEUTRINO/icon.sys neutrino_icon_sys.s neutrino_icon_sys
+neutrino_config_p_steeldr_toml.c:
+	bin2c INSTALL/NEUTRINO/config/p-steeldr.toml neutrino_config_p_steeldr_toml.c neutrino_config_p_steeldr_toml
 
-neutrino_list_icn.s:
-	bin2s INSTALL/NEUTRINO/list.icn neutrino_list_icn.s neutrino_list_icn
+neutrino_config_p_uya_toml.c:
+	bin2c INSTALL/NEUTRINO/config/p-uya.toml neutrino_config_p_uya_toml.c neutrino_config_p_uya_toml
 
-neutrino_modules_ieee1394_bd_mini_irx.s:
-	bin2s INSTALL/NEUTRINO/modules/IEEE1394_bd_mini.irx neutrino_modules_ieee1394_bd_mini_irx.s neutrino_modules_ieee1394_bd_mini_irx
+neutrino_config_system_toml.c:
+	bin2c INSTALL/NEUTRINO/config/system.toml neutrino_config_system_toml.c neutrino_config_system_toml
 
-neutrino_modules_ata_bd_irx.s:
-	bin2s INSTALL/NEUTRINO/modules/ata_bd.irx neutrino_modules_ata_bd_irx.s neutrino_modules_ata_bd_irx
+neutrino_del_icn.c:
+	bin2c INSTALL/NEUTRINO/del.icn neutrino_del_icn.c neutrino_del_icn
 
-neutrino_modules_atad_emu_irx.s:
-	bin2s INSTALL/NEUTRINO/modules/atad_emu.irx neutrino_modules_atad_emu_irx.s neutrino_modules_atad_emu_irx
+neutrino_icon_sys.c:
+	bin2c INSTALL/NEUTRINO/icon.sys neutrino_icon_sys.c neutrino_icon_sys
 
-neutrino_modules_bdfs_irx.s:
-	bin2s INSTALL/NEUTRINO/modules/bdfs.irx neutrino_modules_bdfs_irx.s neutrino_modules_bdfs_irx
+neutrino_list_icn.c:
+	bin2c INSTALL/NEUTRINO/list.icn neutrino_list_icn.c neutrino_list_icn
 
-neutrino_modules_bdm_irx.s:
-	bin2s INSTALL/NEUTRINO/modules/bdm.irx neutrino_modules_bdm_irx.s neutrino_modules_bdm_irx
+neutrino_modules_ieee1394_bd_mini_irx.c:
+	bin2c INSTALL/NEUTRINO/modules/IEEE1394_bd_mini.irx neutrino_modules_ieee1394_bd_mini_irx.c neutrino_modules_ieee1394_bd_mini_irx
 
-neutrino_modules_bdmfs_fatfs_irx.s:
-	bin2s INSTALL/NEUTRINO/modules/bdmfs_fatfs.irx neutrino_modules_bdmfs_fatfs_irx.s neutrino_modules_bdmfs_fatfs_irx
+neutrino_modules_ata_bd_irx.c:
+	bin2c INSTALL/NEUTRINO/modules/ata_bd.irx neutrino_modules_ata_bd_irx.c neutrino_modules_ata_bd_irx
 
-neutrino_modules_cdvdfsv_irx.s:
-	bin2s INSTALL/NEUTRINO/modules/cdvdfsv.irx neutrino_modules_cdvdfsv_irx.s neutrino_modules_cdvdfsv_irx
+neutrino_modules_atad_emu_irx.c:
+	bin2c INSTALL/NEUTRINO/modules/atad_emu.irx neutrino_modules_atad_emu_irx.c neutrino_modules_atad_emu_irx
 
-neutrino_modules_cdvdman_emu_irx.s:
-	bin2s INSTALL/NEUTRINO/modules/cdvdman_emu.irx neutrino_modules_cdvdman_emu_irx.s neutrino_modules_cdvdman_emu_irx
+neutrino_modules_bdfs_irx.c:
+	bin2c INSTALL/NEUTRINO/modules/bdfs.irx neutrino_modules_bdfs_irx.c neutrino_modules_bdfs_irx
 
-neutrino_modules_cdvdman_esr1_irx.s:
-	bin2s INSTALL/NEUTRINO/modules/cdvdman_esr1.irx neutrino_modules_cdvdman_esr1_irx.s neutrino_modules_cdvdman_esr1_irx
+neutrino_modules_bdm_irx.c:
+	bin2c INSTALL/NEUTRINO/modules/bdm.irx neutrino_modules_bdm_irx.c neutrino_modules_bdm_irx
 
-neutrino_modules_cdvdman_esr2_irx.s:
-	bin2s INSTALL/NEUTRINO/modules/cdvdman_esr2.irx neutrino_modules_cdvdman_esr2_irx.s neutrino_modules_cdvdman_esr2_irx
+neutrino_modules_bdmfs_fatfs_irx.c:
+	bin2c INSTALL/NEUTRINO/modules/bdmfs_fatfs.irx neutrino_modules_bdmfs_fatfs_irx.c neutrino_modules_bdmfs_fatfs_irx
 
-neutrino_modules_dev9_hidden_irx.s:
-	bin2s INSTALL/NEUTRINO/modules/dev9_hidden.irx neutrino_modules_dev9_hidden_irx.s neutrino_modules_dev9_hidden_irx
+neutrino_modules_cdvdfsv_irx.c:
+	bin2c INSTALL/NEUTRINO/modules/cdvdfsv.irx neutrino_modules_cdvdfsv_irx.c neutrino_modules_cdvdfsv_irx
 
-neutrino_modules_dev9_ns_irx.s:
-	bin2s INSTALL/NEUTRINO/modules/dev9_ns.irx neutrino_modules_dev9_ns_irx.s neutrino_modules_dev9_ns_irx
+neutrino_modules_cdvdman_emu_irx.c:
+	bin2c INSTALL/NEUTRINO/modules/cdvdman_emu.irx neutrino_modules_cdvdman_emu_irx.c neutrino_modules_cdvdman_emu_irx
 
-neutrino_modules_ee_core_elf.s:
-	bin2s INSTALL/NEUTRINO/modules/ee_core.elf neutrino_modules_ee_core_elf.s neutrino_modules_ee_core_elf
+neutrino_modules_cdvdman_esr1_irx.c:
+	bin2c INSTALL/NEUTRINO/modules/cdvdman_esr1.irx neutrino_modules_cdvdman_esr1_irx.c neutrino_modules_cdvdman_esr1_irx
 
-neutrino_modules_eesync_irx.s:
-	bin2s INSTALL/NEUTRINO/modules/eesync.irx neutrino_modules_eesync_irx.s neutrino_modules_eesync_irx
+neutrino_modules_cdvdman_esr2_irx.c:
+	bin2c INSTALL/NEUTRINO/modules/cdvdman_esr2.irx neutrino_modules_cdvdman_esr2_irx.c neutrino_modules_cdvdman_esr2_irx
 
-neutrino_modules_fakemod_irx.s:
-	bin2s INSTALL/NEUTRINO/modules/fakemod.irx neutrino_modules_fakemod_irx.s neutrino_modules_fakemod_irx
+neutrino_modules_dev9_hidden_irx.c:
+	bin2c INSTALL/NEUTRINO/modules/dev9_hidden.irx neutrino_modules_dev9_hidden_irx.c neutrino_modules_dev9_hidden_irx
 
-neutrino_modules_fhi_bd_irx.s:
-	bin2s INSTALL/NEUTRINO/modules/fhi_bd.irx neutrino_modules_fhi_bd_irx.s neutrino_modules_fhi_bd_irx
+neutrino_modules_dev9_ns_irx.c:
+	bin2c INSTALL/NEUTRINO/modules/dev9_ns.irx neutrino_modules_dev9_ns_irx.c neutrino_modules_dev9_ns_irx
 
-neutrino_modules_fhi_bd_defrag_irx.s:
-	bin2s INSTALL/NEUTRINO/modules/fhi_bd_defrag.irx neutrino_modules_fhi_bd_defrag_irx.s neutrino_modules_fhi_bd_defrag_irx
+neutrino_modules_ee_core_elf.c:
+	bin2c INSTALL/NEUTRINO/modules/ee_core.elf neutrino_modules_ee_core_elf.c neutrino_modules_ee_core_elf
 
-neutrino_modules_filexio_irx.s:
-	bin2s INSTALL/NEUTRINO/modules/fileXio.irx neutrino_modules_filexio_irx.s neutrino_modules_filexio_irx
+neutrino_modules_eesync_irx.c:
+	bin2c INSTALL/NEUTRINO/modules/eesync.irx neutrino_modules_eesync_irx.c neutrino_modules_eesync_irx
 
-neutrino_modules_hdlfs_irx.s:
-	bin2s INSTALL/NEUTRINO/modules/hdlfs.irx neutrino_modules_hdlfs_irx.s neutrino_modules_hdlfs_irx
+neutrino_modules_fakemod_irx.c:
+	bin2c INSTALL/NEUTRINO/modules/fakemod.irx neutrino_modules_fakemod_irx.c neutrino_modules_fakemod_irx
 
-neutrino_modules_ilinkman_irx.s:
-	bin2s INSTALL/NEUTRINO/modules/iLinkman.irx neutrino_modules_ilinkman_irx.s neutrino_modules_ilinkman_irx
+neutrino_modules_fhi_bd_irx.c:
+	bin2c INSTALL/NEUTRINO/modules/fhi_bd.irx neutrino_modules_fhi_bd_irx.c neutrino_modules_fhi_bd_irx
 
-neutrino_modules_imgdrv_irx.s:
-	bin2s INSTALL/NEUTRINO/modules/imgdrv.irx neutrino_modules_imgdrv_irx.s neutrino_modules_imgdrv_irx
+neutrino_modules_filexio_irx.c:
+	bin2c INSTALL/NEUTRINO/modules/fileXio.irx neutrino_modules_filexio_irx.c neutrino_modules_filexio_irx
 
-neutrino_modules_iomanx_irx.s:
-	bin2s INSTALL/NEUTRINO/modules/iomanX.irx neutrino_modules_iomanx_irx.s neutrino_modules_iomanx_irx
+neutrino_modules_hdlfs_irx.c:
+	bin2c INSTALL/NEUTRINO/modules/hdlfs.irx neutrino_modules_hdlfs_irx.c neutrino_modules_hdlfs_irx
 
-neutrino_modules_mc_emu_irx.s:
-	bin2s INSTALL/NEUTRINO/modules/mc_emu.irx neutrino_modules_mc_emu_irx.s neutrino_modules_mc_emu_irx
+neutrino_modules_ilinkman_irx.c:
+	bin2c INSTALL/NEUTRINO/modules/iLinkman.irx neutrino_modules_ilinkman_irx.c neutrino_modules_ilinkman_irx
 
-neutrino_modules_mmcefhi_irx.s:
-	bin2s INSTALL/NEUTRINO/modules/mmcefhi.irx neutrino_modules_mmcefhi_irx.s neutrino_modules_mmcefhi_irx
+neutrino_modules_imgdrv_irx.c:
+	bin2c INSTALL/NEUTRINO/modules/imgdrv.irx neutrino_modules_imgdrv_irx.c neutrino_modules_imgdrv_irx
 
-neutrino_modules_mmceman_irx.s:
-	bin2s INSTALL/NEUTRINO/modules/mmceman.irx neutrino_modules_mmceman_irx.s neutrino_modules_mmceman_irx
+neutrino_modules_iomanx_irx.c:
+	bin2c INSTALL/NEUTRINO/modules/iomanX.irx neutrino_modules_iomanx_irx.c neutrino_modules_iomanx_irx
 
-neutrino_modules_mx4sio_bd_mini_irx.s:
-	bin2s INSTALL/NEUTRINO/modules/mx4sio_bd_mini.irx neutrino_modules_mx4sio_bd_mini_irx.s neutrino_modules_mx4sio_bd_mini_irx
+neutrino_modules_mc_emu_irx.c:
+	bin2c INSTALL/NEUTRINO/modules/mc_emu.irx neutrino_modules_mc_emu_irx.c neutrino_modules_mc_emu_irx
 
-neutrino_modules_patch_membo_irx.s:
-	bin2s INSTALL/NEUTRINO/modules/patch_membo.irx neutrino_modules_patch_membo_irx.s neutrino_modules_patch_membo_irx
+neutrino_modules_ministack_irx.c:
+	bin2c INSTALL/NEUTRINO/modules/ministack.irx neutrino_modules_ministack_irx.c neutrino_modules_ministack_irx
 
-neutrino_modules_patch_rc_uya_irx.s:
-	bin2s INSTALL/NEUTRINO/modules/patch_rc_uya.irx neutrino_modules_patch_rc_uya_irx.s neutrino_modules_patch_rc_uya_irx
+neutrino_modules_mmcefhi_irx.c:
+	bin2c INSTALL/NEUTRINO/modules/mmcefhi.irx neutrino_modules_mmcefhi_irx.c neutrino_modules_mmcefhi_irx
 
-neutrino_modules_ps2hdd_bdm_irx.s:
-	bin2s INSTALL/NEUTRINO/modules/ps2hdd-bdm.irx neutrino_modules_ps2hdd_bdm_irx.s neutrino_modules_ps2hdd_bdm_irx
+neutrino_modules_mmceman_irx.c:
+	bin2c INSTALL/NEUTRINO/modules/mmceman.irx neutrino_modules_mmceman_irx.c neutrino_modules_mmceman_irx
 
-neutrino_modules_smap_udpbd_irx.s:
-	bin2s INSTALL/NEUTRINO/modules/smap_udpbd.irx neutrino_modules_smap_udpbd_irx.s neutrino_modules_smap_udpbd_irx
+neutrino_modules_mx4sio_bd_mini_irx.c:
+	bin2c INSTALL/NEUTRINO/modules/mx4sio_bd_mini.irx neutrino_modules_mx4sio_bd_mini_irx.c neutrino_modules_mx4sio_bd_mini_irx
 
-neutrino_modules_smap_udptty_irx.s:
-	bin2s INSTALL/NEUTRINO/modules/smap_udptty.irx neutrino_modules_smap_udptty_irx.s neutrino_modules_smap_udptty_irx
+neutrino_modules_patch_freemem_irx.c:
+	bin2c INSTALL/NEUTRINO/modules/patch_freemem.irx neutrino_modules_patch_freemem_irx.c neutrino_modules_patch_freemem_irx
 
-neutrino_modules_udnl_t300_irx.s:
-	bin2s INSTALL/NEUTRINO/modules/udnl-t300.irx neutrino_modules_udnl_t300_irx.s neutrino_modules_udnl_t300_irx
+neutrino_modules_patch_membo_irx.c:
+	bin2c INSTALL/NEUTRINO/modules/patch_membo.irx neutrino_modules_patch_membo_irx.c neutrino_modules_patch_membo_irx
 
-neutrino_modules_udnl_irx.s:
-	bin2s INSTALL/NEUTRINO/modules/udnl.irx neutrino_modules_udnl_irx.s neutrino_modules_udnl_irx
+neutrino_modules_patch_rc_uya_irx.c:
+	bin2c INSTALL/NEUTRINO/modules/patch_rc_uya.irx neutrino_modules_patch_rc_uya_irx.c neutrino_modules_patch_rc_uya_irx
 
-neutrino_modules_usbd_mini_irx.s:
-	bin2s INSTALL/NEUTRINO/modules/usbd_mini.irx neutrino_modules_usbd_mini_irx.s neutrino_modules_usbd_mini_irx
+neutrino_modules_ps2hdd_bdm_irx.c:
+	bin2c INSTALL/NEUTRINO/modules/ps2hdd-bdm.irx neutrino_modules_ps2hdd_bdm_irx.c neutrino_modules_ps2hdd_bdm_irx
 
-neutrino_modules_usbmass_bd_mini_irx.s:
-	bin2s INSTALL/NEUTRINO/modules/usbmass_bd_mini.irx neutrino_modules_usbmass_bd_mini_irx.s neutrino_modules_usbmass_bd_mini_irx
+neutrino_modules_smap_irx.c:
+	bin2c INSTALL/NEUTRINO/modules/smap.irx neutrino_modules_smap_irx.c neutrino_modules_smap_irx
 
-neutrino_neutrino_elf.s:
-	bin2s INSTALL/NEUTRINO/neutrino.elf neutrino_neutrino_elf.s neutrino_neutrino_elf
+neutrino_modules_udnl_t300_irx.c:
+	bin2c INSTALL/NEUTRINO/modules/udnl-t300.irx neutrino_modules_udnl_t300_irx.c neutrino_modules_udnl_t300_irx
 
-neutrino_title_cfg.s:
-	bin2s INSTALL/NEUTRINO/title.cfg neutrino_title_cfg.s neutrino_title_cfg
+neutrino_modules_udnl_irx.c:
+	bin2c INSTALL/NEUTRINO/modules/udnl.irx neutrino_modules_udnl_irx.c neutrino_modules_udnl_irx
 
-neutrino_version_txt.s:
-	bin2s INSTALL/NEUTRINO/version.txt neutrino_version_txt.s neutrino_version_txt
+neutrino_modules_udpbd_irx.c:
+	bin2c INSTALL/NEUTRINO/modules/udpbd.irx neutrino_modules_udpbd_irx.c neutrino_modules_udpbd_irx
+
+neutrino_modules_udpfs_bd_irx.c:
+	bin2c INSTALL/NEUTRINO/modules/udpfs_bd.irx neutrino_modules_udpfs_bd_irx.c neutrino_modules_udpfs_bd_irx
+
+neutrino_modules_udpfs_fhi_irx.c:
+	bin2c INSTALL/NEUTRINO/modules/udpfs_fhi.irx neutrino_modules_udpfs_fhi_irx.c neutrino_modules_udpfs_fhi_irx
+
+neutrino_modules_udpfs_ioman_irx.c:
+	bin2c INSTALL/NEUTRINO/modules/udpfs_ioman.irx neutrino_modules_udpfs_ioman_irx.c neutrino_modules_udpfs_ioman_irx
+
+neutrino_modules_usbd_mini_irx.c:
+	bin2c INSTALL/NEUTRINO/modules/usbd_mini.irx neutrino_modules_usbd_mini_irx.c neutrino_modules_usbd_mini_irx
+
+neutrino_modules_usbmass_bd_mini_irx.c:
+	bin2c INSTALL/NEUTRINO/modules/usbmass_bd_mini.irx neutrino_modules_usbmass_bd_mini_irx.c neutrino_modules_usbmass_bd_mini_irx
+
+neutrino_neutrino_elf.c:
+	bin2c INSTALL/NEUTRINO/neutrino.elf neutrino_neutrino_elf.c neutrino_neutrino_elf
+
+neutrino_nhddl_elf.c:
+	bin2c INSTALL/NEUTRINO/nhddl.elf neutrino_nhddl_elf.c neutrino_nhddl_elf
+
+neutrino_title_cfg.c:
+	bin2c INSTALL/NEUTRINO/title.cfg neutrino_title_cfg.c neutrino_title_cfg
+
+neutrino_version_txt.c:
+	bin2c INSTALL/NEUTRINO/version.txt neutrino_version_txt.c neutrino_version_txt
 
 # POWEROFF
-poweroff_poweroff_elf.s:
-	bin2s INSTALL/POWEROFF/POWEROFF.ELF poweroff_poweroff_elf.s poweroff_poweroff_elf
+poweroff_poweroff_elf.c:
+	bin2c INSTALL/POWEROFF/POWEROFF.ELF poweroff_poweroff_elf.c poweroff_poweroff_elf
 
-poweroff_del_icn.s:
-	bin2s INSTALL/POWEROFF/DEL.ICN poweroff_del_icn.s poweroff_del_icn
+poweroff_del_icn.c:
+	bin2c INSTALL/POWEROFF/DEL.ICN poweroff_del_icn.c poweroff_del_icn
 
-poweroff_icon_sys.s:
-	bin2s INSTALL/POWEROFF/ICON.SYS poweroff_icon_sys.s poweroff_icon_sys
+poweroff_icon_sys.c:
+	bin2c INSTALL/POWEROFF/ICON.SYS poweroff_icon_sys.c poweroff_icon_sys
 
-poweroff_list_icn.s:
-	bin2s INSTALL/POWEROFF/LIST.ICN poweroff_list_icn.s poweroff_list_icn
+poweroff_list_icn.c:
+	bin2c INSTALL/POWEROFF/LIST.ICN poweroff_list_icn.c poweroff_list_icn
 
 # RESTART
-restart_restart_elf.s:
-	bin2s INSTALL/RESTART/RESTART.ELF restart_restart_elf.s restart_restart_elf
+restart_restart_elf.c:
+	bin2c INSTALL/RESTART/RESTART.ELF restart_restart_elf.c restart_restart_elf
 
-restart_del_icn.s:
-	bin2s INSTALL/RESTART/DEL.ICN restart_del_icn.s restart_del_icn
+restart_del_icn.c:
+	bin2c INSTALL/RESTART/DEL.ICN restart_del_icn.c restart_del_icn
 
-restart_icon_sys.s:
-	bin2s INSTALL/RESTART/ICON.SYS restart_icon_sys.s restart_icon_sys
+restart_icon_sys.c:
+	bin2c INSTALL/RESTART/ICON.SYS restart_icon_sys.c restart_icon_sys
 
-restart_list_icn.s:
-	bin2s INSTALL/RESTART/LIST.ICN restart_list_icn.s restart_list_icn
+restart_list_icn.c:
+	bin2c INSTALL/RESTART/LIST.ICN restart_list_icn.c restart_list_icn
 
 # SYS-OSDMENU
-sys_osdmenu_appinfo_pbt.s:
-	bin2s INSTALL/SYS_OSDMENU/APPINFO.PBT sys_osdmenu_appinfo_pbt.s sys_osdmenu_appinfo_pbt
+sys_osdmenu_appinfo_pbt.c:
+	bin2c INSTALL/SYS_OSDMENU/APPINFO.PBT sys_osdmenu_appinfo_pbt.c sys_osdmenu_appinfo_pbt
 
-sys_osdmenu_copy_icn.s:
-	bin2s INSTALL/SYS_OSDMENU/COPY.ICN sys_osdmenu_copy_icn.s sys_osdmenu_copy_icn
+sys_osdmenu_copy_icn.c:
+	bin2c INSTALL/SYS_OSDMENU/COPY.ICN sys_osdmenu_copy_icn.c sys_osdmenu_copy_icn
 
-sys_osdmenu_del_icn.s:
-	bin2s INSTALL/SYS_OSDMENU/DEL.ICN sys_osdmenu_del_icn.s sys_osdmenu_del_icn
+sys_osdmenu_del_icn.c:
+	bin2c INSTALL/SYS_OSDMENU/DEL.ICN sys_osdmenu_del_icn.c sys_osdmenu_del_icn
 
-sys_osdmenu_icon_sys.s:
-	bin2s INSTALL/SYS_OSDMENU/ICON.SYS sys_osdmenu_icon_sys.s sys_osdmenu_icon_sys
+sys_osdmenu_icon_sys.c:
+	bin2c INSTALL/SYS_OSDMENU/ICON.SYS sys_osdmenu_icon_sys.c sys_osdmenu_icon_sys
 
-sys_osdmenu_list_icn.s:
-	bin2s INSTALL/SYS_OSDMENU/LIST.ICN sys_osdmenu_list_icn.s sys_osdmenu_list_icn
+sys_osdmenu_list_icn.c:
+	bin2c INSTALL/SYS_OSDMENU/LIST.ICN sys_osdmenu_list_icn.c sys_osdmenu_list_icn
 
-sys_osdmenu_osdmenu_elf.s:
-	bin2s INSTALL/SYS_OSDMENU/OSDMENU.ELF sys_osdmenu_osdmenu_elf.s sys_osdmenu_osdmenu_elf
+sys_osdmenu_osdmenu_elf.c:
+	bin2c INSTALL/SYS_OSDMENU/OSDMENU.ELF sys_osdmenu_osdmenu_elf.c sys_osdmenu_osdmenu_elf
 
-sys_osdmenu_title_cfg.s:
-	bin2s INSTALL/SYS_OSDMENU/TITLE.CFG sys_osdmenu_title_cfg.s sys_osdmenu_title_cfg
+sys_osdmenu_title_cfg.c:
+	bin2c INSTALL/SYS_OSDMENU/TITLE.CFG sys_osdmenu_title_cfg.c sys_osdmenu_title_cfg
 
 # SYS-CONF
-sys_conf_appinfo_pbt.s:
-	bin2s INSTALL/SYS-CONF/APPINFO.PBT sys_conf_appinfo_pbt.s sys_conf_appinfo_pbt
+sys_conf_appinfo_pbt.c:
+	bin2c INSTALL/SYS-CONF/APPINFO.PBT sys_conf_appinfo_pbt.c sys_conf_appinfo_pbt
 
-sys_conf_freemcb_cnf.s:
-	bin2s INSTALL/SYS-CONF/FREEMCB.CNF sys_conf_freemcb_cnf.s sys_conf_freemcb_cnf
+sys_conf_freemcb_cnf.c:
+	bin2c INSTALL/SYS-CONF/FREEMCB.CNF sys_conf_freemcb_cnf.c sys_conf_freemcb_cnf
 
-sys_conf_ipconfig_dat.s:
-	bin2s INSTALL/SYS-CONF/IPCONFIG.DAT sys_conf_ipconfig_dat.s sys_conf_ipconfig_dat
+sys_conf_ipconfig_dat.c:
+	bin2c INSTALL/SYS-CONF/IPCONFIG.DAT sys_conf_ipconfig_dat.c sys_conf_ipconfig_dat
 
-sys_conf_launchelf_cnf.s:
-	bin2s INSTALL/SYS-CONF/LAUNCHELF.CNF sys_conf_launchelf_cnf.s sys_conf_launchelf_cnf
+sys_conf_launchelf_cnf.c:
+	bin2c INSTALL/SYS-CONF/LAUNCHELF.CNF sys_conf_launchelf_cnf.c sys_conf_launchelf_cnf
 
-sys_conf_osdmenu_cnf.s:
-	bin2s INSTALL/SYS-CONF/OSDMENU.CNF sys_conf_osdmenu_cnf.s sys_conf_osdmenu_cnf
+sys_conf_osdmenu_cnf.c:
+	bin2c INSTALL/SYS-CONF/OSDMENU.CNF sys_conf_osdmenu_cnf.c sys_conf_osdmenu_cnf
 
-sys_conf_ps2bbl_ini.s:
-	bin2s INSTALL/SYS-CONF/PS2BBL.INI sys_conf_ps2bbl_ini.s sys_conf_ps2bbl_ini
+sys_conf_ps2bbl_ini.c:
+	bin2c INSTALL/SYS-CONF/PS2BBL.INI sys_conf_ps2bbl_ini.c sys_conf_ps2bbl_ini
 
-sys_conf_psxbbl_ini.s:
-	bin2s INSTALL/SYS-CONF/PSXBBL.INI sys_conf_psxbbl_ini.s sys_conf_psxbbl_ini
+sys_conf_psxbbl_ini.c:
+	bin2c INSTALL/SYS-CONF/PSXBBL.INI sys_conf_psxbbl_ini.c sys_conf_psxbbl_ini
 
-sys_conf_usbd_irx.s:
-	bin2s INSTALL/SYS-CONF/USBD.IRX sys_conf_usbd_irx.s sys_conf_usbd_irx
+sys_conf_usbd_irx.c:
+	bin2c INSTALL/SYS-CONF/USBD.IRX sys_conf_usbd_irx.c sys_conf_usbd_irx
 
-sys_conf_usbhdfsd_irx.s:
-	bin2s INSTALL/SYS-CONF/USBHDFSD.IRX sys_conf_usbhdfsd_irx.s sys_conf_usbhdfsd_irx
+sys_conf_usbhdfsd_irx.c:
+	bin2c INSTALL/SYS-CONF/USBHDFSD.IRX sys_conf_usbhdfsd_irx.c sys_conf_usbhdfsd_irx
 
-sys_conf_copy_icn.s:
-	bin2s INSTALL/SYS-CONF/COPY.ICN sys_conf_copy_icn.s sys_conf_copy_icn
+sys_conf_copy_icn.c:
+	bin2c INSTALL/SYS-CONF/COPY.ICN sys_conf_copy_icn.c sys_conf_copy_icn
 
-sys_conf_del_icn.s:
-	bin2s INSTALL/SYS-CONF/DEL.ICN sys_conf_del_icn.s sys_conf_del_icn
+sys_conf_del_icn.c:
+	bin2c INSTALL/SYS-CONF/DEL.ICN sys_conf_del_icn.c sys_conf_del_icn
 
-sys_conf_endvdpl_irx.s:
-	bin2s INSTALL/SYS-CONF/ENDVDPL.IRX sys_conf_endvdpl_irx.s sys_conf_endvdpl_irx
+sys_conf_endvdpl_irx.c:
+	bin2c INSTALL/SYS-CONF/ENDVDPL.IRX sys_conf_endvdpl_irx.c sys_conf_endvdpl_irx
 
-sys_conf_icon_sys.s:
-	bin2s INSTALL/SYS-CONF/ICON.SYS sys_conf_icon_sys.s sys_conf_icon_sys
+sys_conf_icon_sys.c:
+	bin2c INSTALL/SYS-CONF/ICON.SYS sys_conf_icon_sys.c sys_conf_icon_sys
 
-sys_conf_list_icn.s:
-	bin2s INSTALL/SYS-CONF/LIST.ICN sys_conf_list_icn.s sys_conf_list_icn
+sys_conf_list_icn.c:
+	bin2c INSTALL/SYS-CONF/LIST.ICN sys_conf_list_icn.c sys_conf_list_icn
 
 # OTHER
 SIO2MAN_irx.c: $(PS2SDK)/iop/irx/freesio2.irx

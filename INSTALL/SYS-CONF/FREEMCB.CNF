@@ -23,7 +23,7 @@ OSDSYS_cursor_max_velocity = 1500
 OSDSYS_cursor_acceleration = 150
 OSDSYS_left_cursor =
 OSDSYS_right_cursor =
-OSDSYS_menu_top_delimiter =
+OSDSYS_menu_top_delimiter = y-99Free MCBoot              c1[r0.80Version %VER%r0.00]y-00
 OSDSYS_menu_bottom_delimiter =
 OSDSYS_num_displayed_items = 7
 OSDSYS_Skip_MC = 1
@@ -35,7 +35,7 @@ path1_OSDSYS_ITEM_2 = FASTBOOT
 name_OSDSYS_ITEM_3 = Launch ESR Patched Disc
 path1_OSDSYS_ITEM_3 = mc?:/APP_ESR-LAUNCHER/ESR-LAUNCHER.ELF
 # --------------------------------------------------
-name_OSDSYS_ITEM_4 = NHDDL (CONFIGURE ME!)
+name_OSDSYS_ITEM_4 = NHDDL o009r0.70c6y-30Edit nhddl.yaml!y-00r0.00
 path1_OSDSYS_ITEM_4 = mass:/APPS/APP_NHDDL/nhddl.elf
 path2_OSDSYS_ITEM_4 = mmce?:/APPS/APP_NHDDL/nhddl.elf
 path3_OSDSYS_ITEM_4 = mc?:/APP_NHDDL/nhddl.elf
@@ -54,6 +54,8 @@ path1_OSDSYS_ITEM_7 = mass:/APPS/PS1_POPSLOADER/POPSLOADER.ELF
 path2_OSDSYS_ITEM_7 = mc?:/PS1_POPSLOADER/POPSLOADER.ELF
 # --------------------------------------------------
 name_OSDSYS_ITEM_8 = wLE R3Z (ALL DEVICES)
+path1_OSDSYS_ITEM_8 = mass:/APPS/APP_WLE-R3Z/WLE-R3Z.ELF
+path2_OSDSYS_ITEM_8 = mc?:/APP_WLE-R3Z/WLE-R3Z.ELF
 path3_OSDSYS_ITEM_8 = mc?:/BOOT/BOOT2.ELF
 # --------------------------------------------------
 name_OSDSYS_ITEM_20 = wLE ISR exFAT USB & MMCE
@@ -254,14 +256,13 @@ path2_OSDSYS_ITEM_80 = mc?:/DST_RDRAMTEST/RDRAMTEST.ELF
 # path2_OSDSYS_ITEM_92 = mc?:/DBG_PS2LINK-HILOAD/PS2LINK-HILOAD.ELF
 # # --------------------------------------------------
 name_OSDSYS_ITEM_198 = R3Configurator
-path1_OSDSYS_ITEM_198 = mmce?:/APPS/SYS_R3CONFIGURATOR/r3configurator.elf
-path2_OSDSYS_ITEM_198 = usb:/APPS/SYS_R3CONFIGURATOR/r3configurator.elf
-path3_OSDSYS_ITEM_198 = mx4sio:/APPS/SYS_R3CONFIGURATOR/r3configurator.elf
+path1_OSDSYS_ITEM_198 = mass:/APPS/SYS_R3CONFIGURATOR/r3configurator.elf
+path2_OSDSYS_ITEM_198 = mc?:/SYS_R3CONFIGURATOR/r3configurator.elf
 # --------------------------------------------------
-name_OSDSYS_ITEM_199 = Reboot
+name_OSDSYS_ITEM_199 = c6Reboot
 path1_OSDSYS_ITEM_199 = mc?:/BOOT/BOOT.ELF
 path2_OSDSYS_ITEM_199 = $REBOOT
 # --------------------------------------------------
-name_OSDSYS_ITEM_200 = Shutdown
+name_OSDSYS_ITEM_200 = c6Shutdown
 path1_OSDSYS_ITEM_200 = mc?:/POWEROFF/POWEROFF.ELF
 path2_OSDSYS_ITEM_200 = $POWEROFF

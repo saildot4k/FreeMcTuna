@@ -38,3 +38,14 @@ DETAILED_CHANGELOG
 #
 # Generated source files
 #
+*.toml
+*.url
+INSTALL/NEUTRINO/README.md
+
+#
+# INSTALL payload files that should be committed even though these extensions
+# are ignored globally.
+#
+!/INSTALL/NEUTRINO/*.elf
+!/INSTALL/NEUTRINO/**/*.toml
+!/INSTALL/NEUTRINO/modules/*.irx

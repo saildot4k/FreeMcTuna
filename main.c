@@ -137,25 +137,6 @@ extern int size_opl_icon_sys;
 extern u8 opl_list_icn[];
 extern int size_opl_list_icn;
 
-// PS1_DKWDRV
-extern u8 ps1_dkwdrv_copy_icn[];
-extern int size_ps1_dkwdrv_copy_icn;
-
-extern u8 ps1_dkwdrv_del_icn[];
-extern int size_ps1_dkwdrv_del_icn;
-
-extern u8 ps1_dkwdrv_dkwdrv_elf[];
-extern int size_ps1_dkwdrv_dkwdrv_elf;
-
-extern u8 ps1_dkwdrv_icon_sys[];
-extern int size_ps1_dkwdrv_icon_sys;
-
-extern u8 ps1_dkwdrv_list_icn[];
-extern int size_ps1_dkwdrv_list_icn;
-
-extern u8 ps1_dkwdrv_title_cfg[];
-extern int size_ps1_dkwdrv_title_cfg;
-
 // BOOT
 extern u8 boot_appinfo_pbt[];
 extern int size_boot_appinfo_pbt;
@@ -188,6 +169,9 @@ extern int size_neutrino_appinfo_pbt;
 extern u8 neutrino_config_bsd_ata_toml[];
 extern int size_neutrino_config_bsd_ata_toml;
 
+extern u8 neutrino_config_bsd_ata_net_toml[];
+extern int size_neutrino_config_bsd_ata_net_toml;
+
 extern u8 neutrino_config_bsd_ilink_toml[];
 extern int size_neutrino_config_bsd_ilink_toml;
 
@@ -202,6 +186,12 @@ extern int size_neutrino_config_bsd_udpbd_hdd_toml;
 
 extern u8 neutrino_config_bsd_udpbd_toml[];
 extern int size_neutrino_config_bsd_udpbd_toml;
+
+extern u8 neutrino_config_bsd_udpfs_hdd_toml[];
+extern int size_neutrino_config_bsd_udpfs_hdd_toml;
+
+extern u8 neutrino_config_bsd_udpfs_toml[];
+extern int size_neutrino_config_bsd_udpfs_toml;
 
 extern u8 neutrino_config_bsd_usb_debug_toml[];
 extern int size_neutrino_config_bsd_usb_debug_toml;
@@ -241,6 +231,9 @@ extern int size_neutrino_config_i_dev9_hidden_toml;
 
 extern u8 neutrino_config_i_dev9_ns_toml[];
 extern int size_neutrino_config_i_dev9_ns_toml;
+
+extern u8 neutrino_config_p_freemem_toml[];
+extern int size_neutrino_config_p_freemem_toml;
 
 extern u8 neutrino_config_p_membo_toml[];
 extern int size_neutrino_config_p_membo_toml;
@@ -314,9 +307,6 @@ extern int size_neutrino_modules_fakemod_irx;
 extern u8 neutrino_modules_fhi_bd_irx[];
 extern int size_neutrino_modules_fhi_bd_irx;
 
-extern u8 neutrino_modules_fhi_bd_defrag_irx[];
-extern int size_neutrino_modules_fhi_bd_defrag_irx;
-
 extern u8 neutrino_modules_filexio_irx[];
 extern int size_neutrino_modules_filexio_irx;
 
@@ -335,6 +325,9 @@ extern int size_neutrino_modules_iomanx_irx;
 extern u8 neutrino_modules_mc_emu_irx[];
 extern int size_neutrino_modules_mc_emu_irx;
 
+extern u8 neutrino_modules_ministack_irx[];
+extern int size_neutrino_modules_ministack_irx;
+
 extern u8 neutrino_modules_mmcefhi_irx[];
 extern int size_neutrino_modules_mmcefhi_irx;
 
@@ -343,6 +336,9 @@ extern int size_neutrino_modules_mmceman_irx;
 
 extern u8 neutrino_modules_mx4sio_bd_mini_irx[];
 extern int size_neutrino_modules_mx4sio_bd_mini_irx;
+
+extern u8 neutrino_modules_patch_freemem_irx[];
+extern int size_neutrino_modules_patch_freemem_irx;
 
 extern u8 neutrino_modules_patch_membo_irx[];
 extern int size_neutrino_modules_patch_membo_irx;
@@ -353,17 +349,26 @@ extern int size_neutrino_modules_patch_rc_uya_irx;
 extern u8 neutrino_modules_ps2hdd_bdm_irx[];
 extern int size_neutrino_modules_ps2hdd_bdm_irx;
 
-extern u8 neutrino_modules_smap_udpbd_irx[];
-extern int size_neutrino_modules_smap_udpbd_irx;
-
-extern u8 neutrino_modules_smap_udptty_irx[];
-extern int size_neutrino_modules_smap_udptty_irx;
+extern u8 neutrino_modules_smap_irx[];
+extern int size_neutrino_modules_smap_irx;
 
 extern u8 neutrino_modules_udnl_t300_irx[];
 extern int size_neutrino_modules_udnl_t300_irx;
 
 extern u8 neutrino_modules_udnl_irx[];
 extern int size_neutrino_modules_udnl_irx;
+
+extern u8 neutrino_modules_udpbd_irx[];
+extern int size_neutrino_modules_udpbd_irx;
+
+extern u8 neutrino_modules_udpfs_bd_irx[];
+extern int size_neutrino_modules_udpfs_bd_irx;
+
+extern u8 neutrino_modules_udpfs_fhi_irx[];
+extern int size_neutrino_modules_udpfs_fhi_irx;
+
+extern u8 neutrino_modules_udpfs_ioman_irx[];
+extern int size_neutrino_modules_udpfs_ioman_irx;
 
 extern u8 neutrino_modules_usbd_mini_irx[];
 extern int size_neutrino_modules_usbd_mini_irx;
@@ -373,6 +378,9 @@ extern int size_neutrino_modules_usbmass_bd_mini_irx;
 
 extern u8 neutrino_neutrino_elf[];
 extern int size_neutrino_neutrino_elf;
+
+extern u8 neutrino_nhddl_elf[];
+extern int size_neutrino_nhddl_elf;
 
 extern u8 neutrino_title_cfg[];
 extern int size_neutrino_title_cfg;
@@ -696,6 +704,7 @@ static int install(int mcport, int icon_variant)
 		DeleteFolder(temp_path);
 	sprintf(temp_path, "mc%u:FUNTUNA", mcport);
 		DeleteFolder(temp_path);
+	// Legacy PS1_DKWDRV cleanup.
 	sprintf(temp_path, "mc%u:DKWDRV", mcport);
 		DeleteFolder(temp_path);
 	sprintf(temp_path, "mc%u:PS1_DKWDRV", mcport);
@@ -749,8 +758,6 @@ static int install(int mcport, int icon_variant)
 	ret = mcMkDir(mcport, 0, "NEUTRINO/config");
     mcSync(0, NULL, &ret);
     ret = mcMkDir(mcport, 0, "NEUTRINO/modules");
-    mcSync(0, NULL, &ret);
-	ret = mcMkDir(mcport, 0, "PS1_DKWDRV");
     mcSync(0, NULL, &ret);
 
 		retorno = -12; ///to ensure installation quits if none of the hacked icons are written
@@ -971,6 +978,11 @@ static int install(int mcport, int icon_variant)
 	{
 		return 6;
 	}
+	retorno = write_embed(&neutrino_nhddl_elf, size_neutrino_nhddl_elf, "NEUTRINO", "nhddl.elf", mcport);
+	if (retorno < 0)
+	{
+		return 6;
+	}
 	retorno = write_embed(&neutrino_title_cfg, size_neutrino_title_cfg, "NEUTRINO", "title.cfg", mcport);
 	if (retorno < 0)
 	{
@@ -982,6 +994,11 @@ static int install(int mcport, int icon_variant)
 		return 6;
 	}
 	retorno = write_embed(&neutrino_config_bsd_ata_toml, size_neutrino_config_bsd_ata_toml, "NEUTRINO", "config/bsd-ata.toml", mcport);
+	if (retorno < 0)
+	{
+		return 6;
+	}
+	retorno = write_embed(&neutrino_config_bsd_ata_net_toml, size_neutrino_config_bsd_ata_net_toml, "NEUTRINO", "config/bsd-ata-net.toml", mcport);
 	if (retorno < 0)
 	{
 		return 6;
@@ -1011,7 +1028,17 @@ static int install(int mcport, int icon_variant)
 	{
 		return 6;
 	}
-	retorno = write_embed(&neutrino_config_bsd_usb_debug_toml, size_neutrino_config_bsd_usb_debug_toml, "NEUTRINO", "config/bsd-usb_debug.toml", mcport);
+	retorno = write_embed(&neutrino_config_bsd_udpfs_hdd_toml, size_neutrino_config_bsd_udpfs_hdd_toml, "NEUTRINO", "config/bsd-udpfs-hdd.toml", mcport);
+	if (retorno < 0)
+	{
+		return 6;
+	}
+	retorno = write_embed(&neutrino_config_bsd_udpfs_toml, size_neutrino_config_bsd_udpfs_toml, "NEUTRINO", "config/bsd-udpfs.toml", mcport);
+	if (retorno < 0)
+	{
+		return 6;
+	}
+	retorno = write_embed(&neutrino_config_bsd_usb_debug_toml, size_neutrino_config_bsd_usb_debug_toml, "NEUTRINO", "config/bsd-usb-debug.toml", mcport);
 	if (retorno < 0)
 	{
 		return 6;
@@ -1072,6 +1099,11 @@ static int install(int mcport, int icon_variant)
 		return 6;
 	}
 	retorno = write_embed(&neutrino_config_i_dev9_ns_toml, size_neutrino_config_i_dev9_ns_toml, "NEUTRINO", "config/i_dev9_ns.toml", mcport);
+	if (retorno < 0)
+	{
+		return 6;
+	}
+	retorno = write_embed(&neutrino_config_p_freemem_toml, size_neutrino_config_p_freemem_toml, "NEUTRINO", "config/p-freemem.toml", mcport);
 	if (retorno < 0)
 	{
 		return 6;
@@ -1176,11 +1208,6 @@ static int install(int mcport, int icon_variant)
 	{
 		return 6;
 	}
-	retorno = write_embed(&neutrino_modules_fhi_bd_defrag_irx, size_neutrino_modules_fhi_bd_defrag_irx, "NEUTRINO", "modules/fhi_bd_defrag.irx", mcport);
-	if (retorno < 0)
-	{
-		return 6;
-	}
 	retorno = write_embed(&neutrino_modules_filexio_irx, size_neutrino_modules_filexio_irx, "NEUTRINO", "modules/fileXio.irx", mcport);
 	if (retorno < 0)
 	{
@@ -1216,6 +1243,11 @@ static int install(int mcport, int icon_variant)
 	{
 		return 6;
 	}
+	retorno = write_embed(&neutrino_modules_ministack_irx, size_neutrino_modules_ministack_irx, "NEUTRINO", "modules/ministack.irx", mcport);
+	if (retorno < 0)
+	{
+		return 6;
+	}
 	retorno = write_embed(&neutrino_modules_mmcefhi_irx, size_neutrino_modules_mmcefhi_irx, "NEUTRINO", "modules/mmcefhi.irx", mcport);
 	if (retorno < 0)
 	{
@@ -1227,6 +1259,11 @@ static int install(int mcport, int icon_variant)
 		return 6;
 	}
 	retorno = write_embed(&neutrino_modules_mx4sio_bd_mini_irx, size_neutrino_modules_mx4sio_bd_mini_irx, "NEUTRINO", "modules/mx4sio_bd_mini.irx", mcport);
+	if (retorno < 0)
+	{
+		return 6;
+	}
+	retorno = write_embed(&neutrino_modules_patch_freemem_irx, size_neutrino_modules_patch_freemem_irx, "NEUTRINO", "modules/patch_freemem.irx", mcport);
 	if (retorno < 0)
 	{
 		return 6;
@@ -1246,12 +1283,7 @@ static int install(int mcport, int icon_variant)
 	{
 		return 6;
 	}
-	retorno = write_embed(&neutrino_modules_smap_udpbd_irx, size_neutrino_modules_smap_udpbd_irx, "NEUTRINO", "modules/smap_udpbd.irx", mcport);
-	if (retorno < 0)
-	{
-		return 6;
-	}
-	retorno = write_embed(&neutrino_modules_smap_udptty_irx, size_neutrino_modules_smap_udptty_irx, "NEUTRINO", "modules/smap_udptty.irx", mcport);
+	retorno = write_embed(&neutrino_modules_smap_irx, size_neutrino_modules_smap_irx, "NEUTRINO", "modules/smap.irx", mcport);
 	if (retorno < 0)
 	{
 		return 6;
@@ -1262,6 +1294,26 @@ static int install(int mcport, int icon_variant)
 		return 6;
 	}
 	retorno = write_embed(&neutrino_modules_udnl_irx, size_neutrino_modules_udnl_irx, "NEUTRINO", "modules/udnl.irx", mcport);
+	if (retorno < 0)
+	{
+		return 6;
+	}
+	retorno = write_embed(&neutrino_modules_udpbd_irx, size_neutrino_modules_udpbd_irx, "NEUTRINO", "modules/udpbd.irx", mcport);
+	if (retorno < 0)
+	{
+		return 6;
+	}
+	retorno = write_embed(&neutrino_modules_udpfs_bd_irx, size_neutrino_modules_udpfs_bd_irx, "NEUTRINO", "modules/udpfs_bd.irx", mcport);
+	if (retorno < 0)
+	{
+		return 6;
+	}
+	retorno = write_embed(&neutrino_modules_udpfs_fhi_irx, size_neutrino_modules_udpfs_fhi_irx, "NEUTRINO", "modules/udpfs_fhi.irx", mcport);
+	if (retorno < 0)
+	{
+		return 6;
+	}
+	retorno = write_embed(&neutrino_modules_udpfs_ioman_irx, size_neutrino_modules_udpfs_ioman_irx, "NEUTRINO", "modules/udpfs_ioman.irx", mcport);
 	if (retorno < 0)
 	{
 		return 6;
@@ -1317,43 +1369,6 @@ static int install(int mcport, int icon_variant)
 		return 6;
 	}
 	retorno = write_embed(&restart_restart_elf, size_restart_restart_elf, "RESTART", "RESTART.ELF", mcport);
-	if (retorno < 0)
-	{
-		return 6;
-	}
-
-	// PS1_DKWDRV folder
-		retorno = write_embed(&ps1_dkwdrv_copy_icn, size_ps1_dkwdrv_copy_icn, "PS1_DKWDRV", "copy.icn", mcport);
-	if (retorno < 0)
-	{
-		return 6;
-	}
-
-			retorno = write_embed(&ps1_dkwdrv_del_icn, size_ps1_dkwdrv_del_icn, "PS1_DKWDRV", "del.icn", mcport);
-	if (retorno < 0)
-	{
-		return 6;
-	}
-
-			retorno = write_embed(&ps1_dkwdrv_dkwdrv_elf, size_ps1_dkwdrv_dkwdrv_elf, "PS1_DKWDRV", "DKWDRV.ELF", mcport);
-	if (retorno < 0)
-	{
-		return 6;
-	}
-
-			retorno = write_embed(&ps1_dkwdrv_icon_sys, size_ps1_dkwdrv_icon_sys, "PS1_DKWDRV", "icon.sys", mcport);
-	if (retorno < 0)
-	{
-		return 6;
-	}
-
-			retorno = write_embed(&ps1_dkwdrv_list_icn, size_ps1_dkwdrv_list_icn, "PS1_DKWDRV", "list.icn", mcport);
-	if (retorno < 0)
-	{
-		return 6;
-	}
-
-			retorno = write_embed(&ps1_dkwdrv_title_cfg, size_ps1_dkwdrv_title_cfg, "PS1_DKWDRV", "title.cfg", mcport);
 	if (retorno < 0)
 	{
 		return 6;

@@ -9,7 +9,7 @@
 #
 # Source: github.com/pcm720/nhddl
 SET "TITLE" "[APP] NHDDL"
-SET "VERSION" "1.2.0"
+SET "VERSION" "1.2.2"
 SET "AUTHOR" "pcm720"
 SET "DESC" "A Neutrino launcher"
 SET "ELF" "nhddl.elf"
@@ -44,11 +44,13 @@ RETURN -1
 :APP_CONFIG
 
     SETTITLE "$TITLE$ Config:"
+    ADDWIDGET "LABEL" "Choose the video mode for NHDDL."
+    ADDWIDGET "CHOICE" "  Video Mode:" "Video Mode NHDDL will output" "BM.APPCNF_APP_NHDDL_VMODE" "System" "NTSC" "PAL" "480p"
     ADDWIDGET "LABEL" "Choose up to 3 devices for NHDDL"
     ADDWIDGET "LABEL" "to load ISO's from."
-    ADDWIDGET "CHOICE" "Device 1:" "First device for NHDDL to scan for ISOs" "BM.APPCNF_APP_NHDDL_DEV1" "None" "ATA" "HDL" "MMCE" "MX4SIO" "USB" "iLINK" "UDPBD"
-    ADDWIDGET "CHOICE" "Device 2:" "Second device for NHDDL to scan for ISOs" "BM.APPCNF_APP_NHDDL_DEV2" "None" "ATA" "HDL" "MMCE" "MX4SIO" "USB" "iLINK" "UDPBD"
-    ADDWIDGET "CHOICE" "Device 3:" "Third device for NHDDL to scan for ISOs" "BM.APPCNF_APP_NHDDL_DEV3" "None" "ATA" "HDL" "MMCE" "MX4SIO" "USB" "iLINK" "UDPBD"
+    ADDWIDGET "CHOICE" "  Device 1:" "First device for NHDDL to scan for ISOs" "BM.APPCNF_APP_NHDDL_DEV1" "None" "ATA" "HDL" "MMCE" "MX4SIO" "USB" "iLINK" "UDPBD"
+    ADDWIDGET "CHOICE" "  Device 2:" "Second device for NHDDL to scan for ISOs" "BM.APPCNF_APP_NHDDL_DEV2" "None" "ATA" "HDL" "MMCE" "MX4SIO" "USB" "iLINK" "UDPBD"
+    ADDWIDGET "CHOICE" "  Device 3:" "Third device for NHDDL to scan for ISOs" "BM.APPCNF_APP_NHDDL_DEV3" "None" "ATA" "HDL" "MMCE" "MX4SIO" "USB" "iLINK" "UDPBD"
     ADDWIDGET "LABEL" ""
     ADDWIDGET "CALL" "Delete $TITLE$ variables." "Deletes $TITLE$ variables from BootManager" "$ARG0$" "DEL_CFG"
     SAVEVARS "BM.APPCNF*" "$BM.BM_PATH$/CONFIG/APPCNF.PBT"
@@ -57,6 +59,7 @@ RETURN -1
 :DEL_CFG
     CLEARWIDGETS
     SKIPBACK
+    UNSET "BM.APPCNF_APP_NHDDL_VMODE"
     UNSET "BM.APPCNF_APP_NHDDL_DEV1"
     UNSET "BM.APPCNF_APP_NHDDL_DEV2"
     UNSET "BM.APPCNF_APP_NHDDL_DEV3"
@@ -170,6 +173,16 @@ RETURN -1
 
 :RUN_COMP_MODE
 
+    # VIDEO MODE
+    IF EQU "$BM.APPCNF_APP_NHDDL_VMODE$" "0"
+        SET "VMODE" ""
+    ELSEIF EQU "$BM.APPCNF_APP_NHDDL_VMODE$" "1"
+        SET "VMODE" "-video=ntsc"
+    ELSEIF EQU "$BM.APPCNF_APP_NHDDL_VMODE$" "2"
+        SET "VMODE" "-video=pal"
+    ELSEIF EQU "$BM.APPCNF_APP_NHDDL_VMODE$" "3"
+        SET "VMODE" "-video=480p"
+    ENDIF
     # DEVICE 1
     IF EQU "$BM.APPCNF_APP_NHDDL_DEV1$" "0"
         SET "DEV1" ""
@@ -225,5 +238,5 @@ RETURN -1
         SET "DEV3" "-mode=udpbd -udpbd_ip=$BM.CNF_NET_IP0$.$BM.CNF_NET_IP1$.$BM.CNF_NET_IP2$.$BM.CNF_NET_IP3$"
     ENDIF
 
-    LOADEXEC "PBAT" "$BM.SCRIPTS$/LOADEXEC.PBT" "$PWD$/$ELF$" "$DEV1$ $DEV2$ $DEV3$"
+    LOADEXEC "PBAT" "$BM.SCRIPTS$/LOADEXEC.PBT" "$PWD$/$ELF$" "$DEV1$ $DEV2$ $DEV3$ $VMODE$"
     EXIT 0
