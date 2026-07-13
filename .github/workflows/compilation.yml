@@ -7,15 +7,18 @@ on:
   repository_dispatch:
     types: [run_build]
 
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
-    container: ps2dev/ps2dev:v1.2.0
+    container: ps2dev/ps2dev:v2.0.0
     steps:
       - name: Install dependencies
         run: |
           apk add build-base git zip
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v7.0.0
       - run: |
           git fetch --prune --unshallow
       - name: Compile
@@ -28,7 +31,7 @@ jobs:
       # (Optional) Keep artifact upload if needed separately
       - name: Upload artifacts
         if: ${{ success() }}
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7.0.1
         with:
           name: OPENTUNAtoPS2BBL-BAREBONES_${{ env.sha8 }}
           path: OPENTUNAtoPS2BBL-BAREBONES.ELF
@@ -37,12 +40,22 @@ jobs:
       - name: Debug - Check ELF file exists
         run: ls -lah OPENTUNAtoPS2BBL-BAREBONES.ELF
 
+      - name: Move latest release tag
+        if: github.ref == 'refs/heads/UMCS'
+        run: |
+          git tag -f latest "${GITHUB_SHA}"
+          git push -f origin latest
+
       - name: Create release
         if: github.ref == 'refs/heads/UMCS'
-        uses: marvinpinto/action-automatic-releases@latest
+        uses: ncipollo/release-action@v1.21.0
         with:
-          repo_token: "${{ secrets.GITHUB_TOKEN }}"
-          automatic_release_tag: "latest"
+          token: "${{ secrets.GITHUB_TOKEN }}"
+          tag: "latest"
           prerelease: false
-          title: "OpenTuna w/ PS2BBL & OSDMenu"
-          files: OPENTUNAtoPS2BBL*.ELF
+          name: "OpenTuna w/ PS2BBL & OSDMenu"
+          artifacts: OPENTUNAtoPS2BBL*.ELF
+          allowUpdates: true
+          removeArtifacts: true
+          replacesArtifacts: true
+          makeLatest: true
