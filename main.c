@@ -384,7 +384,7 @@ static int install(int mcport, int icon_variant)
 
 	sprintf(temp_path,"mc%u:APPS", mcport);
 	   DeleteFolder(temp_path);
-   sprintf(temp_path,"mc%u:APP_ESR-LAUNCHER", mcport);
+    sprintf(temp_path,"mc%u:APP_ESR-LAUNCHER", mcport);
 	   DeleteFolder(temp_path);
 	sprintf(temp_path,"mc%u:BOOT", mcport);
 	   DeleteFolder(temp_path);

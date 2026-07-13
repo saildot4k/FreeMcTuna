@@ -1,7 +1,7 @@
 WHATISBOOTX?
 
-BOOT.ELF = PS2BBL Extended (9 paths)no extra devices
+BOOT.ELF = PS2BBL Extended 2.0
 	NOTE: Edit SYS-CONF/PS2BBL.INI as needed. 
 
-BOOT2.ELF = WLE ISR EXFAT
+BOOT2.ELF = WLE R3Z
 

@@ -39,3 +39,4 @@ DETAILED_CHANGELOG
 #
 # Generated source files
 #
+*.toml
