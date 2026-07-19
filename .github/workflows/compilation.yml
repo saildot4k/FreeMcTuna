@@ -18,46 +18,74 @@ jobs:
       - name: Install dependencies
         run: |
           apk add build-base git zip
+
       - uses: actions/checkout@v7.0.0
         with:
           fetch-depth: 0
+
       - name: Mark workspace as safe for Git
         run: git config --global --add safe.directory "$GITHUB_WORKSPACE"
+
+      - name: Set build metadata
+        run: |
+          artifact="$(awk -F= '/^EE_BIN_PACKED[[:space:]]*=/{gsub(/^[[:space:]]+|[[:space:]]+$/, "", $2); print $2; exit}' Makefile)"
+          if [ -z "$artifact" ]; then
+            echo "Could not determine EE_BIN_PACKED from Makefile." >&2
+            exit 1
+          fi
+
+          expected=""
+          case "${GITHUB_REF_NAME}" in
+            UMCS-AIO)
+              expected="OPENTUNAtoPS2BBL-INSTALLER-AIO.ELF"
+              ;;
+            UMCS)
+              expected="OPENTUNAtoPS2BBL-BAREBONES.ELF"
+              ;;
+          esac
+          if [ -n "$expected" ] && [ "$artifact" != "$expected" ]; then
+            echo "Expected $expected from Makefile, got $artifact." >&2
+            exit 1
+          fi
+
+          echo "RELEASE_ARTIFACT=$artifact" >> "$GITHUB_ENV"
+          echo "RELEASE_TAG=latest" >> "$GITHUB_ENV"
+          echo "RELEASE_NAME=OpenTuna to PS2BBL latest builds" >> "$GITHUB_ENV"
+
       - name: Compile
         run: |
           make
+
       - name: Get short SHA
         id: slug
-        run: echo "sha8=$(echo ${GITHUB_SHA} | cut -c1-8)" >> $GITHUB_ENV
+        run: echo "sha8=$(echo ${GITHUB_SHA} | cut -c1-8)" >> "$GITHUB_ENV"
 
-      # (Optional) Keep artifact upload if needed separately
       - name: Upload artifacts
         if: ${{ success() }}
         uses: actions/upload-artifact@v7.0.1
         with:
-          name: OPENTUNAtoPS2BBL-INSTALLER-AIO_${{ env.sha8 }}
-          path: OPENTUNAtoPS2BBL-INSTALLER-AIO.ELF
+          name: ${{ env.RELEASE_ARTIFACT }}_${{ env.sha8 }}
+          path: ${{ env.RELEASE_ARTIFACT }}
 
-      # Ensure release step can find the ELF file
       - name: Debug - Check ELF file exists
-        run: ls -lah OPENTUNAtoPS2BBL-INSTALLER-AIO.ELF
+        run: ls -lah "${RELEASE_ARTIFACT}"
 
       - name: Move latest release tag
-        if: github.ref == 'refs/heads/UMCS-AIO'
+        if: success() && (github.ref == 'refs/heads/UMCS-AIO' || github.ref == 'refs/heads/UMCS')
         run: |
-          git tag -f latest "${GITHUB_SHA}"
-          git push -f origin latest
+          git tag -f "${RELEASE_TAG}" "${GITHUB_SHA}"
+          git push -f origin "${RELEASE_TAG}"
 
       - name: Create release
-        if: github.ref == 'refs/heads/UMCS-AIO'
+        if: success() && (github.ref == 'refs/heads/UMCS-AIO' || github.ref == 'refs/heads/UMCS')
         uses: ncipollo/release-action@v1.21.0
         with:
           token: "${{ secrets.GITHUB_TOKEN }}"
-          tag: "latest"
+          tag: "${{ env.RELEASE_TAG }}"
           prerelease: false
-          name: "OpenTuna w/ PS2BBL & OSDMenu"
-          artifacts: OPENTUNAtoPS2BBL*.ELF
+          name: "${{ env.RELEASE_NAME }}"
+          artifacts: "${{ env.RELEASE_ARTIFACT }}"
           allowUpdates: true
-          removeArtifacts: true
+          removeArtifacts: false
           replacesArtifacts: true
           makeLatest: true

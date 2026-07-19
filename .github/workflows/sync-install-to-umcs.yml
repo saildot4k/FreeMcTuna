@@ -1,0 +1,147 @@
+name: Sync shared INSTALL to UMCS
+
+on:
+  push:
+    branches:
+      - UMCS-AIO
+    paths:
+      - INSTALL/SYS-CONF/**
+      - INSTALL/SYS_OSDMENU/**
+      - INSTALL/BOOT/**
+  workflow_dispatch:
+
+permissions:
+  actions: write
+  contents: write
+
+concurrency:
+  group: sync-shared-install-to-umcs
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout UMCS-AIO source
+        uses: actions/checkout@v7.0.0
+        with:
+          ref: ${{ github.sha }}
+          fetch-depth: 0
+          path: source
+
+      - name: Checkout UMCS target
+        uses: actions/checkout@v7.0.0
+        with:
+          ref: UMCS
+          fetch-depth: 0
+          path: target
+
+      - name: Sync changed shared INSTALL files
+        id: sync
+        env:
+          BEFORE_SHA: ${{ github.event.before }}
+          SOURCE_SHA: ${{ github.sha }}
+        run: |
+          set -eu
+
+          sync_paths="INSTALL/SYS-CONF INSTALL/SYS_OSDMENU INSTALL/BOOT"
+          status_file="${RUNNER_TEMP}/shared-install-status.txt"
+
+          cd source
+          if [ -n "${BEFORE_SHA}" ] &&
+            [ "${BEFORE_SHA}" != "0000000000000000000000000000000000000000" ] &&
+            git cat-file -e "${BEFORE_SHA}^{commit}" 2>/dev/null; then
+            git diff --name-status "${BEFORE_SHA}" "${SOURCE_SHA}" -- ${sync_paths} > "${status_file}"
+          else
+            find INSTALL/SYS-CONF INSTALL/SYS_OSDMENU INSTALL/BOOT -type f | awk '{ print "A\t" $0 }' > "${status_file}"
+          fi
+          cd ../target
+
+          if [ ! -s "${status_file}" ]; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "No shared INSTALL changes to sync."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          target_path_for() {
+            case "$1" in
+              INSTALL/SYS_OSDMENU/COPY.ICN | INSTALL/SYS_OSDMENU/copy.icn)
+                echo "INSTALL/SYS_OSDMENU/copy.icn"
+                ;;
+              INSTALL/SYS_OSDMENU/DEL.ICN | INSTALL/SYS_OSDMENU/del.icn)
+                echo "INSTALL/SYS_OSDMENU/del.icn"
+                ;;
+              INSTALL/SYS_OSDMENU/ICON.SYS | INSTALL/SYS_OSDMENU/icon.sys)
+                echo "INSTALL/SYS_OSDMENU/icon.sys"
+                ;;
+              INSTALL/SYS_OSDMENU/LIST.ICN | INSTALL/SYS_OSDMENU/list.icn)
+                echo "INSTALL/SYS_OSDMENU/list.icn"
+                ;;
+              INSTALL/SYS_OSDMENU/OSDMENU.ELF | INSTALL/SYS_OSDMENU/osdmenu.elf)
+                echo "INSTALL/SYS_OSDMENU/osdmenu.elf"
+                ;;
+              INSTALL/SYS_OSDMENU/TITLE.CFG | INSTALL/SYS_OSDMENU/title.cfg)
+                echo "INSTALL/SYS_OSDMENU/title.cfg"
+                ;;
+              *)
+                echo "$1"
+                ;;
+            esac
+          }
+
+          copy_from_source() {
+            src="../source/$1"
+            dst="$(target_path_for "$1")"
+
+            if [ ! -e "$src" ]; then
+              echo "Source path no longer exists, skipping copy: $1"
+              return
+            fi
+
+            mkdir -p "$(dirname "$dst")"
+            cp -a "$src" "$dst"
+            git add -A -- "$dst"
+          }
+
+          while IFS="$(printf '\t')" read -r status path new_path; do
+            [ -n "$status" ] || continue
+
+            case "$status" in
+              D*)
+                git rm -f -- "$(target_path_for "$path")" 2>/dev/null || true
+                ;;
+              R*)
+                git rm -f -- "$(target_path_for "$path")" 2>/dev/null || true
+                copy_from_source "$new_path"
+                ;;
+              *)
+                copy_from_source "$path"
+                ;;
+            esac
+          done < "${status_file}"
+
+          if git diff --cached --quiet; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "UMCS already matches the changed shared INSTALL files."
+            exit 0
+          fi
+
+          git commit -m "Sync shared INSTALL files from UMCS-AIO"
+          git push origin HEAD:UMCS
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+
+      - name: Trigger UMCS compilation
+        if: steps.sync.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          curl -fsSL \
+            -X POST \
+            -H "Accept: application/vnd.github+json" \
+            -H "Authorization: Bearer ${GH_TOKEN}" \
+            -H "X-GitHub-Api-Version: 2022-11-28" \
+            "${GITHUB_API_URL}/repos/${GITHUB_REPOSITORY}/actions/workflows/compilation.yml/dispatches" \
+            -d '{"ref":"UMCS"}'
